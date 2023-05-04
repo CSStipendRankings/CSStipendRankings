@@ -20,4 +20,4 @@ The stipend data are stored as rows in `stipend-us.csv` in the format of
 MIT Living Wage Calculator. We will review your pull request and merge it if everything looks good.
 
 ## License
-The code and data in this repository is licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
+The code and data in this repository is licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `COPYING` for details.
