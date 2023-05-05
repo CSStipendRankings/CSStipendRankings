@@ -21,10 +21,17 @@ function sort_and_display(subtract_living) {
 	style = ""
 	if (data[i][1] < data[i][2])
 	    style = "color:red"
+	namefix = ""
+	if (i == 0)
+	    namefix = " &#129351;"
+	else if (i == 1)
+	    namefix = " &#129352;"
+	else if (i == 2)
+	    namefix = " &#129353;"
         $("#ranking").find("tbody").append(
             $("<tr>")
                 .append($("<td>").text(i+1))
-                .append($("<td>").text(data[i][0]))
+                .append($("<td>").text(data[i][0]).append(namefix))
                 .append($("<td>").text(data[i][1]).attr("align", "right"))
                 .append($("<td>").text(data[i][3]).attr("align", "right"))
                 .append($("<td>").text(data[i][2]).attr("align", "right"))
