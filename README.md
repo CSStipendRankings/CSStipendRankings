@@ -11,7 +11,9 @@
 ### Add stipend for a new institution
 **The fastest way to add or update the data is through [pull requests](https://github.com/CSStipendRankings/CSStipendRankings/pulls).** The stipend data are stored as rows in `stipend-us.csv` in the format of 
 
-> ```<Institution Name (Optional Notes)>, <Annual Stipend Amount ($)>, <Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees Charged by University ($)>```
+> ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount ($)>, <Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees Charged by University ($)>```
+
+*Please quote the institution name with `"` if the name contains `,` in it (e.g., `"University of Michigan, Ann Arbor"`).*
 
 
 - **To add a new institution**, please add a new row to the `stipend-us.csv`; **to update the an existing institution**, please update the corresponding row in the `stipend-us.csv` accordingly. 
