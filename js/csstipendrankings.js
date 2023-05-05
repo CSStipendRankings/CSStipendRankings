@@ -3,6 +3,7 @@ data = $.csv.toArrays(csv)
 for (i = 0; i < data.length; i++) {
     data[i][1] = Number(data[i][1])
     data[i][2] = Number(data[i][2])
+    data[i][3] = Number(data[i][3])
 }
 
 function sort_and_display(subtract_living) {
@@ -32,10 +33,10 @@ function sort_and_display(subtract_living) {
             $("<tr>")
                 .append($("<td>").text(i+1))
                 .append($("<td>").text(data[i][0]).append(namefix))
-                .append($("<td>").text(data[i][1]).attr("align", "right"))
-                .append($("<td>").text(data[i][3]).attr("align", "right"))
-                .append($("<td>").text(data[i][2]).attr("align", "right"))
-                .append($("<td>").text(data[i][1] - data[i][2] - data[i][3]).attr("align", "right").attr("style", style))
+                .append($("<td>").text(data[i][1].toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text(data[i][3].toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text(data[i][2].toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text((data[i][1] - data[i][2] - data[i][3]).toLocaleString("en-US")).attr("align", "right").attr("style", style))
         )
     }
 }
