@@ -1,4 +1,4 @@
-csv = $.ajax({type: "GET", url: "stipend-us.csv", async: false}).responseText
+csv = $.ajax({ type: "GET", url: "stipend-us.csv", async: false }).responseText
 data = $.csv.toArrays(csv)
 for (i = 0; i < data.length; i++) {
     data[i][1] = Number(data[i][1]) // pre_qual stipend
@@ -27,11 +27,19 @@ function get_sort_by() {
     else return "error";
 }
 
+function get_summer_funding(arr) {
+    if (arr.length == 6) {
+        return arr[5]
+    } else {
+        return "Unknown"
+    }
+}
+
 function get_stipend(arr) {
     if (use_pre_qual())
-	return arr[1]
+        return arr[1]
     else
-	return arr[2]
+        return arr[2]
 }
 
 function get_fee(arr) {
@@ -49,11 +57,10 @@ function get_university(arr) {
 function sort_on_column(col, desc_or_asc) {
     $("#ranking").find("tbody").html("")
 
-    data.sort(function(a, b) {
+    data.sort(function (a, b) {
         // desc
-        if(desc_or_asc == true)
-        {
-            switch(col){
+        if (desc_or_asc == true) {
+            switch (col) {
                 case "stipend":
                     return get_stipend(b) - get_stipend(a)
                 case "fees":
@@ -66,8 +73,8 @@ function sort_on_column(col, desc_or_asc) {
             }
         }
         // asc
-        else{
-            switch(col){
+        else {
+            switch (col) {
                 case "stipend":
                     return get_stipend(a) - get_stipend(b)
                 case "fees":
@@ -88,24 +95,29 @@ function sort_on_column(col, desc_or_asc) {
     console.log(data)
 
     for (i = 0; i < data.length; i++) {
-	style = ""
-	if (get_stipend(data[i]) - get_fee(data[i]) < get_living_cost(data[i]))
-	    style = "color:red"
-	namefix = ""
-	if (i == 0)
-	    namefix = " &#129351;"
-	else if (i == 1)
-	    namefix = " &#129352;"
-	else if (i == 2)
-	    namefix = " &#129353;"
+        style = ""
+        if (get_stipend(data[i]) - get_fee(data[i]) < get_living_cost(data[i]))
+            style = "color:red"
+        namefix = ""
+        if (i == 0)
+            namefix = " &#129351;"
+        else if (i == 1)
+            namefix = " &#129352;"
+        else if (i == 2)
+            namefix = " &#129353;"
+        summer_funding = get_summer_funding(data[i])
+        summer_funding_style = ""
+        if (summer_funding == "N" || summer_funding == "No")
+            summer_funding_style = "color:red"
         $("#ranking").find("tbody").append(
             $("<tr>")
-                .append($("<td>").text(i+1))
+                .append($("<td>").text(i + 1))
                 .append($("<td>").text(get_university(data[i])).append(namefix))
                 .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
                 .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
                 .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right").attr("style", style))
+                .append($("<td>").text((get_stipend(data[i]) - get_fee(data[i]) - get_living_cost(data[i])).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right").attr("style", style))
+                .append($("<td>").text(summer_funding).attr("align", "right").attr("style", summer_funding_style))
         )
     }
 }
@@ -116,7 +128,7 @@ $("#overlay-loading").hide()
 sort_on_column("after-fee-wage", true)
 
 function do_sort() {
-  sort_on_column(get_sort_by(), is_low_to_high());
+    sort_on_column(get_sort_by(), is_low_to_high());
 }
 $(".sort-trigger").on("click", do_sort)
 

@@ -80,6 +80,7 @@
     }
 
     th
+
     /* CSS for sort indicator */
     .sort-indicator::before {
       content: "▼";
@@ -87,12 +88,15 @@
       padding-right: 5px;
       color: #999;
     }
+
     .sort-indicator.asc::before {
       content: "▲";
     }
+
     .sort-indicator.desc::before {
       content: "▼";
     }
+
     .sort-indicator.clicked::before {
       color: #333;
     }
@@ -201,7 +205,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-TMFP7XV9R8');
   </script>
@@ -233,14 +237,16 @@
               For a real academic ranking, please refer to <a href="https://csrankings.org/">CSRankings</a>.
             </p>
             <p>
-              <ul>
-                <li>Stipend is the annual, <b>12-month, pre-tax</b> allowance graciously granted by the institution.
-                    <br>Note that some departments do not have guaranteed summer funding, and we are currently 
-                    working to collect such data</li>
-                <li>Fees are annual non-reimbursible tariffs reclaimed by said institution</li>
-                <li>Living cost is calculated based on the <a href="https://livingwage.mit.edu/">MIT Living Wage Calculator </a> for the institution's city</li>
-              </ul>
-              <b>We hope you find CSStipendRankings useful towards getting your institution to pay a living wage.</b>
+            <ul>
+              <li>Stipend is the annual, <b>12-month, pre-tax</b> allowance graciously granted by the institution.
+                <br>Note that some departments do not have guaranteed summer funding, and we are currently
+                working to collect such data
+              </li>
+              <li>Fees are annual non-reimbursible tariffs reclaimed by said institution</li>
+              <li>Living cost is calculated based on the <a href="https://livingwage.mit.edu/">MIT Living Wage
+                  Calculator </a> for the institution's city</li>
+            </ul>
+            <b>We hope you find CSStipendRankings useful towards getting your institution to pay a living wage.</b>
             </p>
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -251,22 +257,22 @@
                     <option value="us" selected="selected">USA</option>
                   </optgroup>
                 </select>
-		<br>
+                <br>
                 <!-- <input type="checkbox" id="living-wage" checked>
                 <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br> -->
-		<div>
-		  Sort by &nbsp;
-		    <input type="radio" id="stipend" name="sortby" value="stipend" class="sort-trigger"></input>
-                    <label for="html">Stipend &nbsp;</label>
-                    <input type="radio" id="fees" name="sortby" value="fees" class="sort-trigger"></input>
-                    <label for="html">Fees &nbsp;</label>
-                    <input type="radio" id="living-cost" name="sortby" value="living-cost" class="sort-trigger"></input>
-                    <label for="css">Living Cost &nbsp;</label>
-                    <input type="radio" id="after" name="sortby" value="after" class="sort-trigger" checked></input>
-                    <label for="css">After Fees &amp; Living &nbsp;&nbsp;</label>
-                    <input type="checkbox" id="low-to-high" class="sort-trigger">
-                    <label for="low-to-high">Low to High</label><br>
-		</div>
+                <div>
+                  Sort by &nbsp;
+                  <input type="radio" id="stipend" name="sortby" value="stipend" class="sort-trigger"></input>
+                  <label for="html">Stipend &nbsp;</label>
+                  <input type="radio" id="fees" name="sortby" value="fees" class="sort-trigger"></input>
+                  <label for="html">Fees &nbsp;</label>
+                  <input type="radio" id="living-cost" name="sortby" value="living-cost" class="sort-trigger"></input>
+                  <label for="css">Living Cost &nbsp;</label>
+                  <input type="radio" id="after" name="sortby" value="after" class="sort-trigger" checked></input>
+                  <label for="css">After Fees &amp; Living &nbsp;&nbsp;</label>
+                  <input type="checkbox" id="low-to-high" class="sort-trigger">
+                  <label for="low-to-high">Low to High</label><br>
+                </div>
                 <div>
                   <input type="radio" id="pre-qual" name="qual" value="pre-qual" class="sort-trigger" checked></input>
                   <label for="html">Pre-Qualification &nbsp;</label>
@@ -297,16 +303,30 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
                     <th data-column="stipend" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			    <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
+                      <abbr title="The total amount of stipend that PhD students will get in a year.">
+                        <font color="#777">Stipend ($)</font>
+                      </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="fees" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			    <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
+                      <abbr title="Non-reimbursable fees (including insurrance) charged by the university.">
+                        <font color="#777">Fees ($)</font>
+                      </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="living-cost" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			    <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
+                      <abbr
+                        title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator.">
+                        <font color="#777">Living Cost ($)</font>
+                      </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="after-fee-wage" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			    <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
+                      <abbr title="The annual stipend minus the fees and the local living wage.">
+                        <font color="#777">After Fees &amp; Living ($)</font>
+                      </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
+                    </th>
+                    <th data-column="12-month-funding" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <abbr title="Whether summer funding is guaranteed by the department.">
+                        <font color="#777">Summer Funding</font>
+                      </abbr>
                     </th>
                   </tr>
                 </thead>
@@ -325,31 +345,40 @@
         <div class="page-footer">
           <p>
             <br />
-            This ranking is part informational and part satire, designed to democratize information on how PhD students in
+            This ranking is part informational and part satire, designed to democratize information on how PhD students
+            in
             computer science and related areas are paid for their labor &ndash; <i>insufficiently</i>, in most cases.
           </p>
           <p>
-            Most of the frontend code of this website is from <a href="https://csrankings.org/" style="color:inherit; text-decoration: underline;">CSRankings</a>,
+            Most of the frontend code of this website is from <a href="https://csrankings.org/"
+              style="color:inherit; text-decoration: underline;">CSRankings</a>,
             and we intentionally used the same template. The code of this website can be found at
-	        <a href="https://github.com/CSStipendRankings/CSStipendRankings">https://github.com/CSStipendRankings/CSStipendRankings</a>,
-	        and the data presented can be found as a CSV file <a href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv">here</a>.
+            <a
+              href="https://github.com/CSStipendRankings/CSStipendRankings">https://github.com/CSStipendRankings/CSStipendRankings</a>,
+            and the data presented can be found as a CSV file <a
+              href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv">here</a>.
           </p>
           <p>
-            <b>Contributing:</b> Everyone is welcomed to submit patches or report the stipend via <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull requests</a>.
-            Another option to submit valuable datapoints is through <a href="https://forms.gle/fmF3EjiWxMQdoqhR9">this Google Form</a>.
-            Also, feel free to submit <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issues on GitHub</a>.
+            <b>Contributing:</b> Everyone is welcomed to submit patches or report the stipend via <a
+              href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull requests</a>.
+            Another option to submit valuable datapoints is through <a href="https://forms.gle/fmF3EjiWxMQdoqhR9">this
+              Google Form</a>.
+            Also, feel free to submit <a
+              href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issues on GitHub</a>.
           </p>
 
           <p class="text-muted">
             <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
               property="dct:title">CSStipendRankings</span> is licensed under a <a rel="license"
-              href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:inherit; text-decoration: underline;">Creative Commons
+              href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+              style="color:inherit; text-decoration: underline;">Creative Commons
               Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
             The frontend (i.e., CSS and HTML) of this website is based on CSRankings, a work at <a
               xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
-              href="https://github.com/emeryberger/CSrankings"
-              rel="dct:source" style="color:inherit; text-decoration: underline;">https://github.com/emeryberger/CSrankings</a>.
-            The copyright of CSRankings is owned by <a href="https://emeryberger.com/" style="color:inherit; text-decoration: underline;">Emery Berger</a>.<br />
+              href="https://github.com/emeryberger/CSrankings" rel="dct:source"
+              style="color:inherit; text-decoration: underline;">https://github.com/emeryberger/CSrankings</a>.
+            The copyright of CSRankings is owned by <a href="https://emeryberger.com/"
+              style="color:inherit; text-decoration: underline;">Emery Berger</a>.<br />
           </p>
         </div>
       </div>
