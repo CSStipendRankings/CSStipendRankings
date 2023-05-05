@@ -7,3 +7,5 @@
   > Note: Please use The number in `Typical Expenses -> Required annual income before taxes -> 1 Adult & 0 Children` as the annual local living wage.
 
 - **Additional Comments (Optional)**: 
+
+- **Notify**: @mjc0608 @jiong-zhu @pyjhzwh @eltsai
