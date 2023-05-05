@@ -12,13 +12,13 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai
 
 * [ ] This updates an existing institution. 
 
-- **Annual Stipend Amount (USD)**: 
+- **Annual Stipend Amount (USD, both Pre-Qualification and Post-Qualification if different)**: 
 
 - **Annual Local Living Wage (USD)**:
 
-- **Link to the [MIT Living Wage Calculator](http://livingwage.mit.edu/)**: 
+  - **Link to the [MIT Living Wage Calculator](http://livingwage.mit.edu/)**: 
 
-  > Note: Please use The number in `Typical Expenses -> Required annual income before taxes -> 1 Adult & 0 Children` as the annual local living wage.
+    > Note: Please use The number in `Typical Expenses -> Required annual income before taxes -> 1 Adult & 0 Children` as the annual local living wage.
 
 - **Annual Out-of-pocket Fees Charged by University (USD)**:
 

@@ -18,7 +18,7 @@
   <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
     type="text/javascript">
 
-  <meta name="description" content="Computer Science Rankings">
+  <meta name="description" content="Computer Science PhD Stipend Rankings">
   <meta name="keywords"
     content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -172,18 +172,6 @@
     }
   </style>
   <script defer>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-78147305-1', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-  <script defer>
     var trackOutboundLink = function (url, new_window) {
       /* Setting a default value for backward compatibility */
       if (new_window === undefined) {
@@ -203,42 +191,24 @@
       }
     }
   </script>
-  <!-- Facebook Pixel Code -->
-  <script defer>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1437880419634625');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1437880419634625&ev=PageView&noscript=1" /></noscript>
-  <!-- End Facebook Pixel Code -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js" type="text/javascript"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
     type="text/javascript"></script>
   <script defer src="js/csstipendrankings.js" type="text/javascript"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TMFP7XV9R8');
+  </script>
+
 </head>
 
 <body>
-  <div id="fb-root"></div>
-  <script async>(function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id; js.async = true;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));    </script>
   <div class="overlay" id="overlay-loading">
     <div class="centerscreen overlaytext">
       <center>
@@ -258,10 +228,19 @@
         <div class="panel panel-info">
           <div class="panel-heading">
             <p>
-              CSStipendRankings is a stipend-based ranking of top computer science institutions in US.
-              (We may implement support for other countries and you are welcomed to contribute!)
+              CSStipendRankings is a stipend-based ranking of top-paying computer science departments in US.
+              We may implement support for other countries and you are welcomed to contribute!
               For a real academic ranking, please refer to <a href="https://csrankings.org/">CSRankings</a>.
-              <b>We hope you find CSStipendRankings useless.</b>
+            </p>
+            <p>
+              <ul>
+                <li>Stipend is the annual, <b>12-month</b> allowance graciously granted by the institution.
+                    <br>Note that some departments do not have guaranteed summer funding, and we are currently 
+                    working to collect such data</li>
+                <li>Fees are annual non-reimbursible tariffs reclaimed by said institution</li>
+                <li>Living cost is calculated based on the <a href="https://livingwage.mit.edu/">MIT Living Wage Calculator </a> for the institution's city</li>
+              </ul>
+              <b>We hope you find CSStipendRankings useful towards getting your institution to pay a living wage.</b>
             </p>
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -272,9 +251,16 @@
                     <option value="us" selected="selected">USA</option>
                   </optgroup>
                 </select>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="checkbox" id="living-wage">
-                <label for="living-wage"> Substract non-reimbursable fees and local living cost</label><br>
+		<br>
+                <input type="checkbox" id="living-wage" checked>
+                <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br>
+                <form>
+                  <input type="radio" id="pre-qual" name="qual" value="pre-qual" checked>
+                  <label for="html">Pre-Qualification</label>
+                  <input type="radio" id="post-qual" name="qual" value="post-qual">
+                  <label for="css">Post-Qualification</label>
+                </form>
+                <br>
               </div>
             </div>
           </div>
@@ -298,16 +284,16 @@
                       <font color="#777">Institution</font>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <th data-column="stipend" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		      <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <th data-column="fees" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		      <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <th data-column="living-cost" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		      <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <th data-column="after-fee-wage" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		      <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
                   </tr>
@@ -327,26 +313,31 @@
         <div class="page-footer">
           <p>
             <br />
-            This ranking is designed for fun and to identify how PhD students in
-            computer science related areas are paid for their work.
-            Most frontend code of this website is from <a href="https://csrankings.org/">CSRankings</a>,
+            This ranking is part informational and part satire, designed to democratize information on how PhD students in
+            computer science and related areas are paid for their labor &ndash; <i>insufficiently</i>, in most cases.
+          </p>
+          <p>
+            Most of the frontend code of this website is from <a href="https://csrankings.org/" style="color:inherit; text-decoration: underline;">CSRankings</a>,
             and we intentionally used the same template. The code of this website can be found at
-	    <a href="https://github.com/CSStipendRankings/CSStipendRankings">https://github.com/CSStipendRankings/CSStipendRankings</a>
-	    and the database we use can be found as a CSV file <a href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv">here</a>.
-            Everyone is welcomed to submit patches and report the stipend via pull requests.
-            Please use <a href="https://livingwage.mit.edu/">this website</a> to calculate the local living wage.
+	        <a href="https://github.com/CSStipendRankings/CSStipendRankings">https://github.com/CSStipendRankings/CSStipendRankings</a>,
+	        and the data presented can be found as a CSV file <a href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv">here</a>.
+          </p>
+          <p>
+            <b>Contributing:</b> Everyone is welcomed to submit patches or report the stipend via <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull requests</a>.
+            Another option to submit valuable datapoints is through <a href="https://forms.gle/fmF3EjiWxMQdoqhR9">this Google Form</a>.
+            Also, feel free to submit <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issues on GitHub</a>.
           </p>
 
           <p class="text-muted">
             <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
               property="dct:title">CSStipendRankings</span> is licensed under a <a rel="license"
-              href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
+              href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color:inherit; text-decoration: underline;">Creative Commons
               Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
             The frontend (i.e., CSS and HTML) of this website is based on CSRankings, a work at <a
               xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
               href="https://github.com/emeryberger/CSrankings"
-              rel="dct:source">https://github.com/emeryberger/CSrankings</a>.
-            The copyright of CSRankings is owned by <a href="https://emeryberger.com/">Emery Berger</a>.<br />
+              rel="dct:source" style="color:inherit; text-decoration: underline;">https://github.com/emeryberger/CSrankings</a>.
+            The copyright of CSRankings is owned by <a href="https://emeryberger.com/" style="color:inherit; text-decoration: underline;">Emery Berger</a>.<br />
           </p>
         </div>
       </div>
