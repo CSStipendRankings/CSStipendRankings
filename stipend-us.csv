@@ -11,7 +11,7 @@
 "Stony Brook University", 33500, 33500, 35886, 0
 "University of Rochester", 37668, 37668, 32995, 0
 "University of Utah", 32600, 34800, 37038, 1800
-"Purdue University (CSE)", 25852, 25852, 33646, 1482
+"Purdue University (CS)", 25852, 25852, 33646, 1482
 "Purdue University (ECE)", 26400, 26400, 33646, 1482
 "Yale University", 38600, 38600, 36353, 0
 "University of Chicago", 39539, 43600, 38937, 0
@@ -27,3 +27,4 @@
 "The University of Texas at Austin", 31599, 31599, 31007, 0
 "Boston University", 44290, 44290, 46993, 0
 "University of Southern California", 42000, 42000, 44142, 0
+"University of North Carolina, Chapel Hill", 42931, 42931, 36024, 0

@@ -79,6 +79,24 @@
       padding-bottom: 2px;
     }
 
+    th
+    /* CSS for sort indicator */
+    .sort-indicator::before {
+      content: "▼";
+      font-size: 0.8em;
+      padding-right: 5px;
+      color: #999;
+    }
+    .sort-indicator.asc::before {
+      content: "▲";
+    }
+    .sort-indicator.desc::before {
+      content: "▼";
+    }
+    .sort-indicator.clicked::before {
+      color: #333;
+    }
+
     a {
       color: blue;
     }
@@ -234,8 +252,8 @@
                   </optgroup>
                 </select>
 		<br>
-                <input type="checkbox" id="living-wage" checked>
-                <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br>
+                <!-- <input type="checkbox" id="living-wage" checked>
+                <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br> -->
                 <form>
                   <input type="radio" id="pre-qual" name="qual" value="pre-qual" checked>
                   <label for="html">Pre-Qualification</label>
@@ -266,17 +284,17 @@
                       <font color="#777">Institution</font>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font></abbr>
+                    <th data-column="stipend" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="Non-reimbursable fees (including insurance) charged by the university."><font color="#777">Fees ($)</font></abbr>
+                    <th data-column="fees" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font></abbr>
+                    <th data-column="living-cost" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
                     </th>
-                    <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The annual stipend minus the fees and the local living cost."><font color="#777">After Fees &amp; Living ($)</font></abbr>
+                    <th data-column="after-fee-wage" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		      <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
                     </th>
                   </tr>
                 </thead>
