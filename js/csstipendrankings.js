@@ -101,7 +101,7 @@ function sort_on_column(col, desc_or_asc) {
 $("#overlay-loading").hide()
 
 // sort on stipend by default
-sort_on_column("stipend", true)
+sort_on_column("after-fee-wage", true)
 
 var $sortable = $('.sort-indicator');
 
