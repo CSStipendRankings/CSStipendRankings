@@ -100,11 +100,8 @@ function sort_on_column(col, desc_or_asc) {
 
 $("#overlay-loading").hide()
 
-// Find the second th element in the table header
-// var firstHeader = $('table th:second');
-// // Trigger a click event on the second header
-// firstHeader.trigger('click');
-sort_on_column(1, true)
+// sort on stipend by default
+sort_on_column("stipend", true)
 
 var $sortable = $('.sort-indicator');
 
