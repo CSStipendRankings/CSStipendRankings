@@ -18,12 +18,16 @@ function sort_and_display(subtract_living) {
     console.log(data)
 
     for (i = 0; i < data.length; i++) {
+	style = ""
+	if (data[i][1] < data[i][2])
+	    style = "color:red"
         $("#ranking").find("tbody").append(
             $("<tr>")
                 .append($("<td>").text(i+1))
                 .append($("<td>").text(data[i][0]))
                 .append($("<td>").text(data[i][1]).attr("align", "right"))
                 .append($("<td>").text(data[i][2]).attr("align", "right"))
+                .append($("<td>").text(data[i][1] - data[i][2]).attr("align", "right").attr("style", style))
         )
     }
 }
