@@ -257,7 +257,16 @@
                     <option value="us" selected="selected">USA</option>
                   </optgroup>
                 </select>
-                <br>
+                <label for="institute_types">Institution type:</label>
+                <select id="institute_types" name="institute_types" class="sort-trigger">
+                  <optgroup label="by public/private">
+                    <option value="all_public_private">all</option>
+                    <option value="private">private</option>
+                    <option value="public">public</option>
+                  </optgroup>
+                </select>
+                Private schools in 🟪. Public schools in 🟩.
+		<br>
                 <!-- <input type="checkbox" id="living-wage" checked>
                 <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br> -->
                 <div>
@@ -295,8 +304,8 @@
                 <thead>
                   <tr>
                     <th align="left">
-                      <font color="#777">#</font>
-                      &nbsp;&nbsp;
+                      <font color="#777"># (overll ranking)</font>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
                     <th align="left">
                       <font color="#777">Institution</font>
