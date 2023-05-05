@@ -16,7 +16,7 @@
 "Yale University", 38600, 38600, 36353, 0
 "University of Chicago", 39539, 43600, 38937, 0
 "Northeastern University", 50000, 50000, 46993, 869
-"University of California, Santa Barbara", 31200, 37200, 51681, 0
+"University of California, Santa Barbara", 40000, 40000, 51681, 0
 "Brown University", 43712, 43712, 36228, 0
 "New York University - Tandon", 40800, 40800, 46826, 0
 "Cornell University", 43326, 43326, 37986, 0
@@ -32,3 +32,6 @@
 "Carnegie Mellon Univerisity (ECE)",38400,38400,33387,475
 "Carnegie Mellon Univerisity (CSE)",38400,38400,33387,475
 "North Carolina State Univerisity",30482,30482,38084,4078
+"Lehigh University (ECE)",29400,29400,34815,0
+"Pennsylvania State University", 30928,30928,37545,0
+Massachusetts Institute of Technology,46548,50016,46993,396

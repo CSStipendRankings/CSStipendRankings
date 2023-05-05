@@ -15,6 +15,18 @@ function use_pre_qual() {
     return $("#pre-qual").is(":checked")
 }
 
+function is_low_to_high() {
+    return !$("#low-to-high").is(":checked")
+}
+
+function get_sort_by() {
+    if ($("#stipend").is(":checked")) return "stipend";
+    else if ($("#fees").is(":checked")) return "fees";
+    else if ($("#living-cost").is(":checked")) return "living-cost";
+    else if ($("#after").is(":checked")) return "after-fee-wage";
+    else return "error";
+}
+
 function get_stipend(arr) {
     if (use_pre_qual())
 	return arr[1]
@@ -90,9 +102,9 @@ function sort_on_column(col, desc_or_asc) {
             $("<tr>")
                 .append($("<td>").text(i+1))
                 .append($("<td>").text(get_university(data[i])).append(namefix))
-                .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right"))
-                .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right"))
-                .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right"))
+                .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
                 .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right").attr("style", style))
         )
     }
@@ -103,35 +115,10 @@ $("#overlay-loading").hide()
 // sort on stipend by default
 sort_on_column("after-fee-wage", true)
 
-var $sortable = $('.sort-indicator');
-
 function do_sort() {
-  
-  var $this = $(this);
-  var col = $this.closest('th').data('column');
-  var asc = $this.hasClass('asc');
-  var desc = $this.hasClass('desc');
-  $sortable.removeClass('asc').removeClass('desc');
-  if (desc || (!asc && !desc)) {
-    $this.addClass('asc');
-    sort_on_column(col, false);
-  } else {
-    $this.addClass('desc');
-    sort_on_column(col, true);
-  }
-  // remove 'clicked' class from other elements
-  $sortable.not($this).removeClass('clicked');
-  // change color
-  $this.addClass('clicked');
-  
+  sort_on_column(get_sort_by(), is_low_to_high());
 }
-// $("#living-wage").on("click", function() {
-//     sort_and_display()
-// })
-
-$sortable.on('click', do_sort);
-$("#pre-qual").on("click", do_sort);
-$("#post-qual").on("click", do_sort);
+$(".sort-trigger").on("click", do_sort)
 
 // $("#pre-qual").on("click", function() {
 //     sort_and_display()
