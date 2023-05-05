@@ -2,10 +2,10 @@
 "University of Illinois Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266
 "University of Illinois Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081
-"Harvard University", 42588, 42588, 46993, 0
+"Harvard University", 42588, 42588, 46993, 0, Yes
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903
 "Rice University", 35400, 35400, 35487, 900
-"Stanford University", 52560, 52560, 55396, 0
+"Stanford University", 52560, 52560, 55396, 0, Yes
 "University of Virginia", 33000, 35000, 38688, 0
 "University of California, Santa Cruz", 34500, 39200, 54095, 0
 "Stony Brook University", 33500, 33500, 35886, 0
@@ -40,3 +40,4 @@
 "The College of William & Mary", 29000, 29000, 38209, 0
 "University of California, San Diego", 41172, 44340, 47021, 0
 "University of Pennsylvania", 40500, 40500, 36455, 0, Yes
+"University of Massachusetts - Amherst", 37533, 37533, 33866, 0, No

@@ -5,6 +5,9 @@ for (i = 0; i < data.length; i++) {
     data[i][2] = Number(data[i][2]) // after_qual stipend
     data[i][3] = Number(data[i][3]) // fee
     data[i][4] = Number(data[i][4]) // living cost
+    if (data[i].length == 6) {
+        data[i][5] = data[i][5].trimStart()
+    }
 }
 
 function is_subtract_living() {
@@ -91,8 +94,6 @@ function sort_on_column(col, desc_or_asc) {
             //     return (get_stipend(a) - get_fee(a) - get_living_cost(a)) - (get_stipend(b) - get_fee(b) - get_living_cost(b))
         }
     })
-
-    console.log(data)
 
     for (i = 0; i < data.length; i++) {
         style = ""
