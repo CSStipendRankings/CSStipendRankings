@@ -10,7 +10,7 @@ function sort_and_display(subtract_living) {
 
     data.sort(function(a, b) {
         if (subtract_living)
-            return (b[1] - b[2]) - (a[1] - a[2])
+            return (b[1] - b[2] - b[3]) - (a[1] - a[2] - a[3])
         else
             return b[1] - a[1]
     })
@@ -26,8 +26,9 @@ function sort_and_display(subtract_living) {
                 .append($("<td>").text(i+1))
                 .append($("<td>").text(data[i][0]))
                 .append($("<td>").text(data[i][1]).attr("align", "right"))
+                .append($("<td>").text(data[i][3]).attr("align", "right"))
                 .append($("<td>").text(data[i][2]).attr("align", "right"))
-                .append($("<td>").text(data[i][1] - data[i][2]).attr("align", "right").attr("style", style))
+                .append($("<td>").text(data[i][1] - data[i][2] - data[i][3]).attr("align", "right").attr("style", style))
         )
     }
 }
