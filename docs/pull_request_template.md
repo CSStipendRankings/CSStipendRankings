@@ -1,7 +1,6 @@
 - **Institution name(s)**: 
-* [ ] This pull request updates one or more existing institutions. 
 
-- **Source of the stipend data (e.g., your own data point, a link to an official website, etc.)**: 
+- **Source of the stipend and fee data (e.g., your own data point, a link to an official website, etc.)**: 
 
 - **Link to the [MIT Living Wage Calculator](http://livingwage.mit.edu/)**: 
   
