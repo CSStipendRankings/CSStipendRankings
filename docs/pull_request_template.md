@@ -4,4 +4,6 @@
 
 - **Link to the [MIT Living Wage Calculator](http://livingwage.mit.edu/)**: 
   
-  Note: Please use The number in `Typical Expenses -> Required annual income before taxes -> 1 Adult & 0 Children` as the annual local living wage.
+  > Note: Please use The number in `Typical Expenses -> Required annual income before taxes -> 1 Adult & 0 Children` as the annual local living wage.
+
+- **Additional Comments (Optional)**: 
