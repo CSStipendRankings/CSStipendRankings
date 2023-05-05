@@ -7,7 +7,7 @@
 ## How to contribute
 
 ### Add stipend for a new institution
-The stipend data are stored as rows in `stipend-us.csv` in the format of 
+**The fastest way to add or update the data is to submit a pull request.** The stipend data are stored as rows in `stipend-us.csv` in the format of 
 ```csv
 <Institution Name (Department Name, Optional)>, <Annual Stipend Amount>, <Annual Local Living Wage>
 ```
@@ -18,6 +18,8 @@ The stipend data are stored as rows in `stipend-us.csv` in the format of
 
 - **Submit a pull request with you updates.** In the pull request, please mention the source of the stipend data (e.g., your own data point, a link to an official website, etc.) and add a link to the 
 MIT Living Wage Calculator. We will review your pull request and merge it if everything looks good.
+
+**Alternatively, you can also create an issue with the above information and we will add the data for you.**
 
 ## License
 The code and data in this repository is licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `COPYING` for details.
