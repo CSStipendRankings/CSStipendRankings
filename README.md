@@ -9,7 +9,7 @@
 **First of all, thank you for your interest in contributing to CSStipendRankings! We welcome contributions from everyone.** Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
 ### Add stipend for a new institution
-**The fastest way to add or update the data is through [pull requests](https://github.com/CSStipendRankings/CSStipendRankings/pulls).** The stipend data are stored as rows in `stipend-us.csv` in the format of 
+**The fastest way to add or update the data is by [editing `stipend-us.csv`](https://github.com/CSStipendRankings/CSStipendRankings/edit/main/stipend-us.csv) and submit a [pull request](https://github.com/CSStipendRankings/CSStipendRankings/pulls).** The stipend data are stored as rows in `stipend-us.csv` in the format of 
 
 > ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount ($)>, <Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees Charged by University ($)>```
 
