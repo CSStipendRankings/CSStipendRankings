@@ -1,27 +1,16 @@
+---
 name: Update Stipend Data
-description: Update stipend data
+about: Update stipend data
 title: "[Data Update]: "
-labels: ["data-update"]
-body:
-  - type: markdown
-    attributes:
-      value: |
-        Thank you for your contribution!
-  - type: textarea
-    id: institution-name
-    attributes:
-      label: Institution name(s)
-  - type: textarea
-    id: annual-stipend
-    attributes:
-      label: Annual Stipend Amount
-  - type: textarea
-    id: annual-local-living-wage
-    attributes:
-      label: Annual Local Living Wage
-      description: please refer to the [MIT Living Wage Calculator](http://livingwage.mit.edu/) and use `2080 * <living wage for 1 adult>` as the annual local living wage.
-  - type: textarea
-    id: comments
-    attributes: 
-      label: Additional Comments
-  
+labels: data-update, needs-triage
+--- 
+
+- **Institution name(s)**: 
+
+* [ ] This pull request updates one or more existing institutions. 
+
+- **Source of the stipend data (e.g., your own data point, a link to an official website, etc.)**: 
+
+- **Link to the [MIT Living Wage Calculator](http://livingwage.mit.edu/)**: 
+
+  Note: Please use `2080 * <living wage for 1 adult>` as the annual local living wage.
