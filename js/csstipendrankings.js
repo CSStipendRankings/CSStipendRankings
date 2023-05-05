@@ -5,6 +5,7 @@ for (i = 0; i < data.length; i++) {
     data[i][2] = Number(data[i][2]) // after_qual stipend
     data[i][3] = Number(data[i][3]) // fee
     data[i][4] = Number(data[i][4]) // living cost
+    data[i][5] = data[i][5].trimStart()
     if (data[i].length == 7) {
         data[i][6] = data[i][6].trimStart()
     }
