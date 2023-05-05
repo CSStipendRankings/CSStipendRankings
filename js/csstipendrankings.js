@@ -6,21 +6,48 @@ for (i = 0; i < data.length; i++) {
     data[i][3] = Number(data[i][3])
 }
 
-function sort_and_display(subtract_living) {
+function is_subtract_living() {
+    return $("#living-wage").is(":checked")
+}
+
+function use_pre_qual() {
+    return $("#pre-qual").is(":checked")
+}
+
+function get_stipend(arr) {
+    if (use_pre_qual())
+	return arr[1]
+    else
+	return arr[2]
+}
+
+function get_fee(arr) {
+    return arr[4]
+}
+
+function get_living_cost(arr) {
+    return arr[3]
+}
+
+function get_university(arr) {
+    return arr[0]
+}
+
+function sort_and_display() {
     $("#ranking").find("tbody").html("")
 
     data.sort(function(a, b) {
-        if (subtract_living)
-            return (b[1] - b[2] - b[3]) - (a[1] - a[2] - a[3])
+        if (is_subtract_living())
+            return (get_stipend(b) - get_fee(b) - get_living_cost(b)) - (get_stipend(a) - get_fee(a) - get_living_cost(a))
         else
-            return b[1] - a[1]
+            return get_stipend(b) - get_stipend(a)
     })
 
     console.log(data)
 
     for (i = 0; i < data.length; i++) {
 	style = ""
-	if (data[i][1] < data[i][2])
+	if (get_stipend(data[i]) - get_fee(data[i]) < get_living_cost(data[i]))
 	    style = "color:red"
 	namefix = ""
 	if (i == 0)
@@ -32,11 +59,11 @@ function sort_and_display(subtract_living) {
         $("#ranking").find("tbody").append(
             $("<tr>")
                 .append($("<td>").text(i+1))
-                .append($("<td>").text(data[i][0]).append(namefix))
-                .append($("<td>").text(data[i][1].toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text(data[i][3].toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text(data[i][2].toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text((data[i][1] - data[i][2] - data[i][3]).toLocaleString("en-US")).attr("align", "right").attr("style", style))
+                .append($("<td>").text(get_university(data[i])).append(namefix))
+                .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
         )
     }
 }
@@ -46,5 +73,12 @@ $("#overlay-loading").hide()
 sort_and_display(false)
 
 $("#living-wage").on("click", function() {
-    sort_and_display($("#living-wage").is(":checked"))
+    sort_and_display()
+})
+
+$("#pre-qual").on("click", function() {
+    sort_and_display()
+})
+$("#post-qual").on("click", function() {
+    sort_and_display()
 })
