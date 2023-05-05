@@ -12,7 +12,7 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai
 
 * [ ] This updates an existing institution. 
 
-- **Annual Stipend Amount (USD)**: 
+- **Annual Stipend Amount (USD, both Pre-Qualification and Post-Qualification if different)**: 
 
 - **Annual Local Living Wage (USD)**:
 

@@ -1,8 +1,8 @@
 # CSStipendRankings: PhD Stipend Rankings
 
-[`CSStipendRankings` (https://csstipendrankings.org)](https://csstipendrankings.org) is a stipend-based ranking of top computer science institutions in US, inspired by [`CSRankings`](https://csrankings.org). (We are interested in implementing support for other countries and you are welcomed to contribute!) 
+[`CSStipendRankings` (https://csstipendrankings.org)](https://csstipendrankings.org) is a stipend-based ranking of top computer science institutions in the United States, inspired by [`CSRankings`](https://csrankings.org). We may expand to include other countries in the future, and we welcome your contributions!
 
-**We hope you find CSStipendRankings useless.**
+**We hope you find CSStipendRankings useful towards getting your institution to pay a living wage.**
 
 ## How to contribute
 
