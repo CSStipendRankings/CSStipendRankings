@@ -1,9 +1,11 @@
 ---
 name: Stipend Data Update
-about: Update stipend data
+about: Use this template to add or update stipend data for institutions.
 title: "[Data Update]: "
 labels: data-update, needs-triage
 --- 
+
+> Please duplicate the block below for each institution you want to add or update.
 
 ## Institution name: 
 
