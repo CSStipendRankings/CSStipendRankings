@@ -30,7 +30,7 @@ function get_sort_by() {
     else return "error";
 }
 function get_institue_type_selected() {
-    retStr =  jQuery("#institute_types").find(":selected").val();
+    retStr = jQuery("#institute_types").find(":selected").val();
 
     return retStr
 }
@@ -63,7 +63,7 @@ function get_university(arr) {
     return arr[0]
 }
 
-function get_university_type(arr){
+function get_university_type(arr) {
     return arr[5]
 }
 
@@ -114,9 +114,9 @@ function sort_on_column(col, desc_or_asc) {
         namefix = ""
         private_public_style = ""
 
-        if(get_university_type(data[i]) == "public")
+        if (get_university_type(data[i]) == "public")
             private_public_style = "color:green"
-        else if(get_university_type(data[i]) == "private")
+        else if (get_university_type(data[i]) == "private")
             private_public_style = "color:purple"
         if (i == 0)
             namefix = " &#129351;"
@@ -133,21 +133,21 @@ function sort_on_column(col, desc_or_asc) {
         if (summer_funding == "Y" || summer_funding == "Yes")
             namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area")
 
-        if(get_institue_type_selected() == "all_public_private" || 
-             (get_institue_type_selected() == get_university_type(data[i]) )
-            ){
+        if (get_institue_type_selected() == "all_public_private" ||
+            (get_institue_type_selected() == get_university_type(data[i]))
+        ) {
             global_ranking_postfix = ""
-            if(get_institue_type_selected() != "all_public_private")
-                global_ranking_postfix = " ("+(i+1).toString()+")"
+            if (get_institue_type_selected() != "all_public_private")
+                global_ranking_postfix = " (" + (i + 1).toString() + ")"
             $("#ranking").find("tbody").append(
                 $("<tr>")
-                    .append($("<td>").text(local_rank+1))
-                    .append($("<td>").text(get_university(data[i])).append(namefix).append(namefix2).attr("style",private_public_style))
+                    .append($("<td>").text(local_rank + 1))
+                    .append($("<td>").text(get_university(data[i])).append(namefix).append(namefix2).attr("style", private_public_style))
                     .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                    .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
-                    )
+                    .append($("<td>").text((get_stipend(data[i]) - get_fee(data[i]) - get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
+            )
             local_rank = local_rank + 1
         }
     }
