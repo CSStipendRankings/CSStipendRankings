@@ -27,7 +27,7 @@ MIT Living Wage Calculator. We will review your pull request and merge it if eve
 
 ### Update Website Content
 
-This website is purely static. Before submitting any pull requests, please first test your changes locally by running `python3 -m http.server` in the root directory of this repository and then open `http://localhost:8000` in your browser.
+This website is purely static. Before submitting any pull requests, **please first preview your changes locally** by running `python3 -m http.server` in the root directory of this repository and then open `http://localhost:8000` in your browser.
 
 ## License
 The code and data in this repository is licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `COPYING` for details.
