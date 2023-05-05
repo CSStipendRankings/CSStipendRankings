@@ -1,6 +1,6 @@
 "University of Michigan, Ann Arbor", 36072, 36072, 38838, 0
-"University of Illinois Urbana-Champaign (CSE)", 38850, 40854, 36657, 633
-"University of Illinois Urbana-Champaign (ECE)", 33456, 35760, 36657, 633
+"University of Illinois Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266
+"University of Illinois Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081
 "Harvard University", 42588, 42588, 46993, 0
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903
@@ -33,4 +33,9 @@
 "North Carolina State Univerisity",30482,30482,38084,4078
 "Lehigh University (ECE)",29400,29400,34815,0
 "Pennsylvania State University", 30928,30928,37545,0
-Massachusetts Institute of Technology,46548,50016,46993,396
+"Massachusetts Institute of Technology",46548,50016,46993,396
+"University of Notre Dame", 37000, 37000, 33571, 0
+"University of Maryland, College Park", 28370, 28950, 46403, 0 
+"University of Washington", 40152, 41664, 44686, 789
+"The College of William & Mary", 29000, 29000, 38209, 0
+"University of California, San Diego", 41172, 44340, 47021, 0
