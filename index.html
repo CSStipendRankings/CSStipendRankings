@@ -79,6 +79,24 @@
       padding-bottom: 2px;
     }
 
+    th
+    /* CSS for sort indicator */
+    .sort-indicator::before {
+      content: "▼";
+      font-size: 0.8em;
+      padding-right: 5px;
+      color: #999;
+    }
+    .sort-indicator.asc::before {
+      content: "▲";
+    }
+    .sort-indicator.desc::before {
+      content: "▼";
+    }
+    .sort-indicator.clicked::before {
+      color: #333;
+    }
+
     a {
       color: blue;
     }
@@ -281,16 +299,16 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
                     <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font></abbr>
+		      <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
                     <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font></abbr>
+		      <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
                     <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font></abbr>
+		      <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
                     <th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font></abbr>
+		      <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font><span class="sort-indicator"></span></abbr>
                     </th>
                   </tr>
                 </thead>
