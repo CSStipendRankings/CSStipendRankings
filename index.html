@@ -254,13 +254,25 @@
 		<br>
                 <!-- <input type="checkbox" id="living-wage" checked>
                 <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br> -->
-                <form>
-                  <input type="radio" id="pre-qual" name="qual" value="pre-qual" checked>
-                  <label for="html">Pre-Qualification</label>
-                  <input type="radio" id="post-qual" name="qual" value="post-qual">
+		<div>
+		  Sort by &nbsp;
+		    <input type="radio" id="stipend" name="sortby" value="stipend" class="sort-trigger"></input>
+                    <label for="html">Stipend &nbsp;</label>
+                    <input type="radio" id="fees" name="sortby" value="fees" class="sort-trigger"></input>
+                    <label for="html">Fees &nbsp;</label>
+                    <input type="radio" id="living-cost" name="sortby" value="living-cost" class="sort-trigger"></input>
+                    <label for="css">Living Cost &nbsp;</label>
+                    <input type="radio" id="after" name="sortby" value="after" class="sort-trigger" checked></input>
+                    <label for="css">After Fees &amp; Living &nbsp;&nbsp;</label>
+                    <input type="checkbox" id="low-to-high" class="sort-trigger">
+                    <label for="low-to-high">Low to High</label><br>
+		</div>
+                <div>
+                  <input type="radio" id="pre-qual" name="qual" value="pre-qual" class="sort-trigger" checked></input>
+                  <label for="html">Pre-Qualification &nbsp;</label>
+                  <input type="radio" id="post-qual" name="qual" value="post-qual" class="sort-trigger"></input>
                   <label for="css">Post-Qualification</label>
-                </form>
-                <br>
+                </div>
               </div>
             </div>
           </div>
@@ -285,16 +297,16 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
                     <th data-column="stipend" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
+			    <abbr title="The total amount of stipend that PhD students will get in a year."><font color="#777">Stipend ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="fees" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
+			    <abbr title="Non-reimbursable fees (including insurrance) charged by the university."><font color="#777">Fees ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="living-cost" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
+			    <abbr title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."><font color="#777">Living Cost ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="after-fee-wage" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font></abbr>&nbsp;<span class="sort-indicator"></span>
+			    <abbr title="The annual stipend minus the fees and the local living wage."><font color="#777">After Fees &amp; Living ($)</font></abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                   </tr>
                 </thead>
