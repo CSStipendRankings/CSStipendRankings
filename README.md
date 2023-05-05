@@ -8,9 +8,9 @@
 
 ### Add stipend for a new institution
 **The fastest way to add or update the data is to submit a pull request.** The stipend data are stored as rows in `stipend-us.csv` in the format of 
-```csv
-<Institution Name (Department Name, Optional)>, <Annual Stipend Amount>, <Annual Local Living Wage>
-```
+
+> ```<Institution Name (Optional Notes)>, <Annual Stipend Amount ($)>, <Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees Charged by University ($)>```
+
 
 - **To add a new institution**, please add a new row to the `stipend-us.csv`; **to update the an existing institution**, please update the corresponding row in the `stipend-us.csv` accordingly. 
 
