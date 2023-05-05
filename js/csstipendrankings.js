@@ -90,10 +90,10 @@ function sort_on_column(col, desc_or_asc) {
             $("<tr>")
                 .append($("<td>").text(i+1))
                 .append($("<td>").text(get_university(data[i])).append(namefix))
-                .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
+                .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right"))
+                .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right"))
+                .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right"))
+                .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right").attr("style", style))
         )
     }
 }
@@ -101,11 +101,11 @@ function sort_on_column(col, desc_or_asc) {
 $("#overlay-loading").hide()
 
 // sort on stipend by default
-sort_on_column("stipend", true)
+sort_on_column("after-fee-wage", true)
 
 var $sortable = $('.sort-indicator');
 
-$sortable.on('click', function(){
+function do_sort() {
   
   var $this = $(this);
   var col = $this.closest('th').data('column');
@@ -124,10 +124,14 @@ $sortable.on('click', function(){
   // change color
   $this.addClass('clicked');
   
-});
+}
 // $("#living-wage").on("click", function() {
 //     sort_and_display()
 // })
+
+$sortable.on('click', do_sort);
+$("#pre-qual").on("click", do_sort);
+$("#post-qual").on("click", do_sort);
 
 // $("#pre-qual").on("click", function() {
 //     sort_and_display()
