@@ -240,7 +240,8 @@
             <ul>
               <li>Stipend is the annual, <b>12-month, pre-tax</b> allowance graciously granted by the institution.
                 <br>Note that some departments do not have guaranteed summer funding, and we are currently
-                working to collect such data.
+                working to collect such data. <br>Departments with summer funding guarentee are tagged with a
+                <span class="areaname systems-area">summer</span> label. For now, the list is not complete.
               </li>
               <li>Fees are annual non-reimbursible tariffs reclaimed by said institution.</li>
               <li>Living cost is calculated based on the <a href="https://livingwage.mit.edu/">MIT Living Wage
@@ -260,9 +261,9 @@
                 <label for="institute_types">Institution type:</label>
                 <select id="institute_types" name="institute_types" class="sort-trigger">
                   <optgroup label="by public/private">
-                    <option value="all_public_private">all</option>
-                    <option value="private">private</option>
-                    <option value="public">public</option>
+                    <option value="all_public_private">All</option>
+                    <option value="private">Private</option>
+                    <option value="public">Public</option>
                   </optgroup>
                 </select>
                 Private schools in 🟪. Public schools in 🟩.
@@ -304,8 +305,8 @@
                 <thead>
                   <tr>
                     <th align="left">
-                      <font color="#777"># (overall rank)</font>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <font color="#777">#</font>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </th>
                     <th align="left">
                       <font color="#777">Institution</font>
@@ -331,11 +332,6 @@
                       <abbr title="The annual stipend minus the fees and the local living wage.">
                         <font color="#777">After Fees &amp; Living ($)</font>
                       </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
-                    </th>
-                    <th data-column="12-month-funding" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <abbr title="Whether summer funding is guaranteed by the department.">
-                        <font color="#777">Summer Funding Guarantee</font>
-                      </abbr>
                     </th>
                   </tr>
                 </thead>

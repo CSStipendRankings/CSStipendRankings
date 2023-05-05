@@ -5,8 +5,8 @@ for (i = 0; i < data.length; i++) {
     data[i][2] = Number(data[i][2]) // after_qual stipend
     data[i][3] = Number(data[i][3]) // fee
     data[i][4] = Number(data[i][4]) // living cost
-    if (data[i].length == 6) {
-        data[i][5] = data[i][5].trimStart()
+    if (data[i].length == 7) {
+        data[i][6] = data[i][6].trimStart()
     }
 }
 
@@ -113,7 +113,7 @@ function sort_on_column(col, desc_or_asc) {
             style = "color:red"
         namefix = ""
         private_public_style = ""
-        console.log("returned type:"+get_university_type(data[i]))
+
         if(get_university_type(data[i]) == "public")
             private_public_style = "color:green"
         else if(get_university_type(data[i]) == "private")
@@ -124,10 +124,14 @@ function sort_on_column(col, desc_or_asc) {
             namefix = " &#129352;"
         else if (i == 2)
             namefix = " &#129353;"
+
+        namefix2 = ""
         summer_funding = get_summer_funding(data[i])
         summer_funding_style = ""
         if (summer_funding == "N" || summer_funding == "No")
             summer_funding_style = "color:red"
+        if (summer_funding == "Y" || summer_funding == "Yes")
+            namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area")
 
         if(get_institue_type_selected() == "all_public_private" || 
              (get_institue_type_selected() == get_university_type(data[i]) )
@@ -137,13 +141,12 @@ function sort_on_column(col, desc_or_asc) {
                 global_ranking_postfix = " ("+(i+1).toString()+")"
             $("#ranking").find("tbody").append(
                 $("<tr>")
-                    .append($("<td>").text(local_rank+1).append(global_ranking_postfix) )
-                    .append($("<td>").text(get_university(data[i])).append(namefix).attr("style",private_public_style))
+                    .append($("<td>").text(local_rank+1))
+                    .append($("<td>").text(get_university(data[i])).append(namefix).append(namefix2).attr("style",private_public_style))
                     .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                    .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).append("&nbsp;&nbsp;").attr("align", "right").attr("style", style))
-                    .append($("<td>").text(summer_funding).attr("align", "right").attr("style", summer_funding_style))
+                    .append($("<td>").text((get_stipend(data[i])-get_fee(data[i])-get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
                     )
             local_rank = local_rank + 1
         }
