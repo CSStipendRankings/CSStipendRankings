@@ -15,7 +15,7 @@ The fastest way to add or update the data is by [editing `stipend-us.csv`](https
 
 > ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>,<Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees Charged by University ($)>```
 
-Please quote the institution name with `"` if the name contains `,` in it (e.g., `"University of Michigan, Ann Arbor"`). **All stipend and cost listed should be for 12 months. Annual stipend amount should be guaranteed minimal amount for most students (including international students)**, without considering additional income source (e.g., from internship).
+Please quote the institution name with `"` if the name contains `,` in it (e.g., `"University of Michigan, Ann Arbor"`). **All stipend and cost listed should be for 12 months. Annual stipend amount is the guaranteed minimal amount, pre-tax, for most students (including international students)**, without considering additional income source (e.g., from internship).
 
 
 - **To add a new institution**, please add a new row to the `stipend-us.csv`; **to update the an existing institution**, please update the corresponding row in the `stipend-us.csv` accordingly. 
