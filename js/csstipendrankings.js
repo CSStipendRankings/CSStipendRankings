@@ -4,6 +4,7 @@ for (i = 0; i < data.length; i++) {
     data[i][1] = Number(data[i][1])
     data[i][2] = Number(data[i][2])
     data[i][3] = Number(data[i][3])
+    data[i][4] = Number(data[i][4])
 }
 
 function is_subtract_living() {
