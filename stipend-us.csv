@@ -3,7 +3,7 @@
 "University of Illinois Urbana-Champaign (ECE)", 33456, 35760, 36657, 633
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081
 "Harvard University", 42588, 42588, 46993, 0
-"University of Wisconsin - Madison (CS)", 30969, 30969, 36371, 2204
+"University of Wisconsin - Madison *", 34073, 34073, 36371, 1903
 "Rice University", 35400, 35400, 35487, 900
 "Stanford University", 52560, 52560, 55396, 0
 "University of Virginia", 33000, 35000, 38688, 0
@@ -11,6 +11,14 @@
 "Stony Brook University", 33500, 33500, 35886, 0
 "University of Rochester", 37668, 37668, 32995, 0
 "University of Utah", 32600, 34800, 37038, 1800
-"Purdue University", 24000, 24000, 33646, 0
+"Purdue University (CSE)", 25852, 25852, 33646, 1482
+"Purdue University (ECE)", 26400, 26400, 33646, 1482
 "Yale University", 38600, 38600, 36353, 0
 "University of Chicago", 39539, 43600, 38937, 0
+"Northeastern University", 50000, 50000, 46993, 869
+"University of California, Santa Barbara", 31200, 37200, 51681, 0
+"Brown University", 43712, 43712, 36228, 0
+"New York University - Tandon", 40800, 40800, 46826, 0
+"Cornell University", 43326, 43326, 37986, 0
+"Princeton University", 40000, 40000, 33575, 0
+"Northwestern University", 35196, 35196, 39900, 0
