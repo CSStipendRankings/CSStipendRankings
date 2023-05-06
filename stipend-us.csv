@@ -29,7 +29,7 @@
 "University of Southern California", 42000, 42000, 44142, 0, private
 "University of North Carolina, Chapel Hill", 42931, 42931, 36024, 0, public
 "The Ohio State University",28373,30000,33579,1052, public, No
-"Carnegie Mellon Univerisity",38400,38400,33387,475, private
+"Carnegie Mellon Univerisity",38400,38400,33387,1605, private
 "North Carolina State Univerisity",30482,30482,38084,4078, public
 "Lehigh University (ECE)",29400,29400,34815,0, private
 "Pennsylvania State University", 30928,30928,37545,0, public
@@ -46,3 +46,4 @@
 "Columbia University",50120,50120,46826,50, private, Yes
 "University of Illinois at Chicago", 30120, 30120, 38929, 0, public
 "Texas A&M University", 27000, 27000, 32972, 15, public, Yes
+"University of California, Los Angeles", 42600, 42600, 44783, 180, public
