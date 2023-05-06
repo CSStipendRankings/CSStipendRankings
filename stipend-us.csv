@@ -6,7 +6,7 @@
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903, public, No
 "Rice University", 40333, 40333, 35487, 0, private
 "Stanford University", 52560, 52560, 55396, 0, private, Yes
-"University of Virginia", 33000, 35000, 38688, 0, public
+"University of Virginia", 33000, 36000, 38688, 0, public, Yes
 "University of California - Santa Cruz", 40675, 46817, 54095, 0, public
 "Stony Brook University - SUNY", 33500, 33500, 35886, 0, public
 "University of Rochester", 37668, 37668, 32995, 0, private
@@ -14,7 +14,7 @@
 "Purdue University - West Lafayette (CS)", 25852, 25852, 33646, 1482, public
 "Purdue University - West Lafayette (ECE)", 26400, 26400, 33646, 1482, public
 "Yale University", 38600, 38600, 36353, 0, private
-"University of Chicago", 39539, 43600, 38937, 0, private
+"University of Chicago", 39539, 43600, 38937, 0, private, Yes
 "Northeastern University", 50000, 50000, 46993, 869, private
 "University of California - Santa Barbara", 40000, 40000, 51681, 0, public
 "Brown University", 43712, 43712, 36228, 0, private
@@ -32,7 +32,7 @@
 "Ohio State University - Columbus", 28373, 30000, 33579, 1052, public, No
 "Carnegie Mellon University", 38400, 38400, 33387, 1605, private
 "North Carolina State University", 30482, 30482, 38084, 4078, public
-"Lehigh University (ECE)", 29400, 29400, 34815, 0, private
+"Lehigh University", 29400, 29400, 34815, 0, private
 "Pennsylvania State University - University Park", 30928, 30928, 37545, 0, public
 "Massachusetts Institute of Technology", 46548, 50016, 46993, 396, private
 "University of Notre Dame", 37000, 37000, 33571, 0, private
@@ -43,7 +43,7 @@
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes
 "University of Massachusetts - Amherst", 37533, 37533, 33866, 0, public, No
 "University of Texas at Dallas",23400,25800,36973,50, public
-"Arizona State University", 21000, 25800, 38043, 0, public, No
+"Arizona State University *", 21000, 25800, 38043, 0, public, No
 "Columbia University",50120,50120,53342,50, private, Yes
 "University of Illinois at Chicago", 30120, 30120, 38929, 0, public
 "Texas A&M University", 27000, 27000, 32972, 15, public, Yes
