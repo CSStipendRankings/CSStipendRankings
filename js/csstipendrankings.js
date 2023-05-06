@@ -71,11 +71,7 @@ function get_institue_type_selected() {
 
 
 function get_summer_funding(arr) {
-    if (arr.length == 7) {
-        return arr[6]
-    } else {
-        return "Unknown"
-    }
+    return arr[6]
 }
 
 function get_stipend(arr) {
