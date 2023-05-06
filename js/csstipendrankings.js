@@ -11,6 +11,25 @@ for (i = 0; i < data.length; i++) {
     }
 }
 
+fellowship_csv = $.ajax({ type: "GET", url: "fellowship-us.csv", async: false }).responseText
+fellowship_data = $.csv.toArrays(fellowship_csv)
+for (i = 0; i < fellowship_data.length; i++) {
+    fellowship_data[i][1] = Number(fellowship_data[i][1]) // pre_qual stipend
+    fellowship_data[i][2] = Number(fellowship_data[i][2]) // after_qual stipend
+    // fellowship_data[i][3] = Number(fellowship_data[i][3]) // fee
+    // fellowship_data[i][4] = Number(fellowship_data[i][4]) // living cost
+    fellowship_data[i][5] = fellowship_data[i][5].trimStart()
+    if (fellowship_data[i].length == 7) {
+        fellowship_data[i][6] = fellowship_data[i][6].trimStart()
+    }
+}
+
+data.push.apply(data, fellowship_data)
+
+function use_fellowship() {
+    return $("#fellowship").is(":checked")
+}
+
 function is_subtract_living() {
     return $("#living-wage").is(":checked")
 }
@@ -113,12 +132,14 @@ function sort_on_column(col, desc_or_asc) {
         if (get_stipend(data[i]) - get_fee(data[i]) < get_living_cost(data[i]))
             style = "color:red"
         namefix = ""
-        private_public_style = ""
+        institution_style = ""
 
         if (get_university_type(data[i]) == "public")
-            private_public_style = "color:green"
+            institution_style = "color:green"
         else if (get_university_type(data[i]) == "private")
-            private_public_style = "color:purple"
+            institution_style = "color:purple"
+        else if (get_university_type(data[i]) == "fellowship")
+            institution_style = "color:orange"
         if (i == 0)
             namefix = " &#129351;"
         else if (i == 1)
@@ -134,8 +155,24 @@ function sort_on_column(col, desc_or_asc) {
         if (summer_funding == "Y" || summer_funding == "Yes")
             namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area")
 
-        if (get_institue_type_selected() == "all_public_private" ||
-            (get_institue_type_selected() == get_university_type(data[i]))
+        if (use_fellowship() && get_university_type(data[i]) == "fellowship") {
+            global_ranking_postfix = ""
+            if (get_institue_type_selected() != "all_public_private")
+                global_ranking_postfix = " (" + (i + 1).toString() + ")"
+            $("#ranking").find("tbody").append(
+                $("<tr>")
+                    .append($("<td>").text(local_rank + 1))
+                    .append($("<td>").text(get_university(data[i])).append(namefix).append(namefix2).attr("style", institution_style))
+                    .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").text(("N/A").toLocaleString("en-US")).attr("align", "right").attr("style", style))
+            )
+            local_rank = local_rank + 1
+        }
+
+        if (get_university_type(data[i]) != "fellowship" && (get_institue_type_selected() == "all_public_private" ||
+            (get_institue_type_selected() == get_university_type(data[i])))
         ) {
             global_ranking_postfix = ""
             if (get_institue_type_selected() != "all_public_private")
@@ -143,7 +180,7 @@ function sort_on_column(col, desc_or_asc) {
             $("#ranking").find("tbody").append(
                 $("<tr>")
                     .append($("<td>").text(local_rank + 1))
-                    .append($("<td>").text(get_university(data[i])).append(namefix).append(namefix2).attr("style", private_public_style))
+                    .append($("<td>").text(get_university(data[i])).append(namefix).append(namefix2).attr("style", institution_style))
                     .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
