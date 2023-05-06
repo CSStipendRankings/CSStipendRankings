@@ -20,7 +20,7 @@ Please quote the institution name with `"` and use the following standards for w
 - If a university (or university system) has multiple campuses, refer to campus location using either `at` or `-`, whichever is official. If no official usage, default to `-`. (e.g., `University of Illinois at Chicago` or `University of Michigan - Ann Arbor`)
 - Drop "The" if it appears at the start of the name. (e.g., `The Ohio State University - Columbus ==> Ohio State University - Columbus`)
 - Special case: for the SUNY or CUNY system, use it after the `-`. (e.g., `Stony Brook University ==> Stony Brook University - SUNY`)
-- If distinguishing between various programs at the same university, refer to the program using `()`. (e.g., `Purdue University - West Lafayette (CS)` vs. `Purdue University - West Lafayette (ECE)`)
+- If distinguishing between various programs at the same university, refer to the program using `()`. If all programs at the same university have the same stipend information, do not distinguish separate programs. (e.g., `Purdue University - West Lafayette (CS)` vs. `Purdue University - West Lafayette (ECE)`)
 
 **All stipend and cost listed should be for 12 months. Annual stipend amount is the guaranteed minimal amount, pre-tax, for most students (including international students)**, without considering additional income source (e.g., from internship).
 
