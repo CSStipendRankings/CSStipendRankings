@@ -1,15 +1,18 @@
 csv = $.ajax({ type: "GET", url: "stipend-us.csv", async: false }).responseText
 data = $.csv.toArrays(csv)
+console.log(data)
 uni_and_cost_of_living = [];
 for (i = 0; i < data.length; i++) {
     data[i][1] = Number(data[i][1]) // pre_qual stipend
     data[i][2] = Number(data[i][2]) // after_qual stipend
     data[i][3] = Number(data[i][3]) // living cost
     data[i][4] = Number(data[i][4]) // fee
-    data[i][5] = data[i][5].trimStart()
-    if (data[i].length == 7) {
-        data[i][6] = data[i][6].trimStart()
-    }
+    data[i][5] = data[i][5].trimStart() // public/private
+    data[i][6] = data[i][6].trimStart() // summer funding guarantee
+    data[i][7] = Number(data[i][7]) // pre_qual stipend
+    data[i][8] = Number(data[i][8]) // after_qual stipend
+    data[i][9] = data[i][9].trimStart() // pre_qual verified
+    data[i][10] = data[i][10].trimStart() // post_qual verified
 
     uni_and_cost_of_living.push([data[i][0], data[i][3]])
 }
@@ -30,9 +33,11 @@ for (i = 0; i < fellowship_data.length; i++) {
     fellowship_data[i][3] = data[0][3] // living cost
     fellowship_data[i][4] = 0 // fee
     fellowship_data[i][5] = fellowship_data[i][5].trimStart()
-    if (fellowship_data[i].length == 7) {
-        fellowship_data[i][6] = fellowship_data[i][6].trimStart()
-    }
+    fellowship_data[i][6] = fellowship_data[i][6].trimStart()
+    fellowship_data[i][7] = Number(fellowship_data[i][7]) // pre_qual summer
+    fellowship_data[i][8] = Number(fellowship_data[i][8]) // after_qual summer
+    fellowship_data[i][9] = fellowship_data[i][9].trimStart() // pre_qual verified
+    fellowship_data[i][10] = fellowship_data[i][10].trimStart() // post_qual verified
 }
 
 function use_fellowship() {
@@ -94,6 +99,13 @@ function get_university(arr) {
 
 function get_university_type(arr) {
     return arr[5]
+}
+
+function is_verified(arr) {
+    if (use_pre_qual())
+        return arr[9];
+    else
+        return arr[10];
 }
 
 function sort_on_column(col, desc_or_asc) {
@@ -174,6 +186,10 @@ function sort_on_column(col, desc_or_asc) {
         else if (summer_funding == "X2")
             namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area").append($("<small>").text("x2"))
 
+        stipendfix = ""
+        if (is_verified(temp_data[i]) == "Yes")
+            stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #0197f6;")
+
         if (use_fellowship() && get_university_type(temp_data[i]) == "fellowship") {
             global_ranking_postfix = ""
             if (get_institue_type_selected() != "all_public_private")
@@ -182,7 +198,7 @@ function sort_on_column(col, desc_or_asc) {
                 $("<tr>")
                     .append($("<td>").text(local_rank + 1))
                     .append($("<td>").text(get_university(temp_data[i])).append(namefix).append(namefix2).attr("style", institution_style))
-                    .append($("<td>").text(get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").append(stipendfix).append("&nbsp;"+get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text((get_stipend(temp_data[i]) - get_fee(temp_data[i]) - get_living_cost(temp_data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
@@ -200,7 +216,7 @@ function sort_on_column(col, desc_or_asc) {
                 $("<tr>")
                     .append($("<td>").text(local_rank + 1))
                     .append($("<td>").text(get_university(temp_data[i])).append(namefix).append(namefix2).attr("style", institution_style))
-                    .append($("<td>").text(get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").append(stipendfix).append("&nbsp;"+get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text((get_stipend(temp_data[i]) - get_fee(temp_data[i]) - get_living_cost(temp_data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
