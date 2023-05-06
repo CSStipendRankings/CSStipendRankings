@@ -28,6 +28,7 @@ function get_sort_by() {
     else if ($("#fees").is(":checked")) return "fees";
     else if ($("#living-cost").is(":checked")) return "living-cost";
     else if ($("#after").is(":checked")) return "after-fee-wage";
+    else if ($("#relative").is(":checked")) return "relative-wage";
     else return "error";
 }
 function get_institue_type_selected() {
@@ -83,6 +84,8 @@ function sort_on_column(col, desc_or_asc) {
                     return get_living_cost(b) - get_living_cost(a)
                 case "after-fee-wage":
                     return (get_stipend(b) - get_fee(b) - get_living_cost(b)) - (get_stipend(a) - get_fee(a) - get_living_cost(a))
+                case "relative-wage":
+                    return (get_stipend(b) - get_fee(b))/get_living_cost(b) - (get_stipend(a) - get_fee(a)) / get_living_cost(a)
 
             }
         }
@@ -97,6 +100,8 @@ function sort_on_column(col, desc_or_asc) {
                     return get_living_cost(a) - get_living_cost(b)
                 case "after-fee-wage":
                     return (get_stipend(a) - get_fee(a) - get_living_cost(a)) - (get_stipend(b) - get_fee(b) - get_living_cost(b))
+                case "relative-wage":
+                    return (get_stipend(a) - get_fee(a))/get_living_cost(a) - (get_stipend(b) - get_fee(b)) / get_living_cost(b)
 
             }
             // if (col !=5)
@@ -140,6 +145,8 @@ function sort_on_column(col, desc_or_asc) {
             global_ranking_postfix = ""
             if (get_institue_type_selected() != "all_public_private")
                 global_ranking_postfix = " (" + (i + 1).toString() + ")"
+            relative_wage = ((get_stipend(data[i]) - get_fee(data[i])) / get_living_cost(data[i]) * 100 - 100).toFixed(2)
+            relative_wage = (relative_wage <= 0? "":"+") + relative_wage
             $("#ranking").find("tbody").append(
                 $("<tr>")
                     .append($("<td>").text(local_rank + 1))
@@ -147,7 +154,8 @@ function sort_on_column(col, desc_or_asc) {
                     .append($("<td>").text(get_stipend(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(data[i]).toLocaleString("en-US")).attr("align", "right"))
-                    .append($("<td>").text((get_stipend(data[i]) - get_fee(data[i]) - get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
+                    .append($("<td>").text((get_stipend(data[i]) - get_fee(data[i]) - get_living_cost(data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style)) // after fee and living
+                    .append($("<td>").text((relative_wage + '%').toLocaleString("en-US")).attr("align", "right").attr("style", style))
             )
             local_rank = local_rank + 1
         }

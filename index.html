@@ -286,6 +286,8 @@
                   <label for="css">Living Cost &nbsp;</label>
                   <input type="radio" id="after" name="sortby" value="after" class="sort-trigger" checked></input>
                   <label for="css">After Fees &amp; Living &nbsp;&nbsp;</label>
+                  <input type="radio" id="relative" name="sortby" value="relative" class="sort-trigger" checked></input>
+                  <label for="css">Relative to Living &nbsp;&nbsp;</label>
                   <input type="checkbox" id="low-to-high" class="sort-trigger">
                   <label for="low-to-high">Low to High</label><br>
                 </div>
@@ -337,6 +339,11 @@
                     <th data-column="after-fee-wage" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <abbr title="The annual stipend minus the fees and the local living wage.">
                         <font color="#777">After Fees &amp; Living ($)</font>
+                      </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
+                    </th>
+                    <th data-column="relative-wage" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <abbr title="The annual stipend minus the fees devided by the local living wage.">
+                        <font color="#777">Relative to Living ($)</font>
                       </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                   </tr>
