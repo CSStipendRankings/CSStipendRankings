@@ -4,7 +4,7 @@
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081, public
 "Harvard University", 42588, 42588, 46993, 0, private, Yes
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903, public, No
-"Rice University", 35400, 35400, 35487, 900, private
+"Rice University", 40333, 40333, 35487, 0, private
 "Stanford University", 52560, 52560, 55396, 0, private, Yes
 "University of Virginia", 33000, 35000, 38688, 0, public
 "University of California, Santa Cruz", 34500, 39200, 54095, 0, public
@@ -24,8 +24,8 @@
 "Northwestern University", 35196, 35196, 39900, 0, private
 "New York University - Courant", 48036, 48036, 46826, 0, private
 "Johns Hopkins University", 43000, 43000, 37422, 0, private
-"The University of Texas at Austin (CS)", 38400, 38400, 37754, 0, public
-"The University of Texas at Austin (ECE)", 31600, 31600, 37754, 0, public
+"The University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public
+"The University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public
 "Boston University", 44290, 44290, 46993, 0, private
 "University of Southern California", 42000, 42000, 44142, 0, private
 "University of North Carolina, Chapel Hill", 42931, 42931, 36024, 0, public
@@ -37,7 +37,7 @@
 "Massachusetts Institute of Technology",46548,50016,46993,396, private
 "University of Notre Dame", 37000, 37000, 33571, 0, private
 "University of Maryland, College Park", 28370, 28950, 46403, 0, public
-"University of Washington", 40152, 41664, 44686, 789, public, Yes
+"University of Washington", 48015, 52080, 44686, 789, public, Yes
 "The College of William & Mary", 29000, 29000, 38209, 0, public
 "University of California, San Diego", 41172, 44340, 47021,0, public
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes
