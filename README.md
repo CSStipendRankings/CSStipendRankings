@@ -13,7 +13,7 @@
 #### Option 1
 The fastest way to add or update the data is by [editing `stipend-us.csv`](https://github.com/CSStipendRankings/CSStipendRankings/edit/main/stipend-us.csv) and submit a [pull request](https://github.com/CSStipendRankings/CSStipendRankings/pulls). The stipend data are stored as rows in `stipend-us.csv` in the format of 
 
-> ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>,<Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees Charged by University ($)>, <Public or Private>, <Summer Funding Guarantee>```
+> ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>,<Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees (and Health Insurance) Charged by University ($)>, <Public or Private>, <Summer Funding Guarantee>```
 
 Please quote the institution name with `"` if the name contains `,` in it (e.g., `"University of Michigan, Ann Arbor"`). **All stipend and cost listed should be for 12 months. Annual stipend amount is the guaranteed minimal amount, pre-tax, for most students (including international students)**, without considering additional income source (e.g., from internship).
 
