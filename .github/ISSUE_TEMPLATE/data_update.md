@@ -3,7 +3,7 @@ name: Stipend Data Update
 about: Use this template to add or update stipend data for institutions.
 title: "[Data Update]: "
 labels: data-update, needs-triage
-assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai
+# assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai
 --- 
 
 > Please duplicate the block below for each institution you want to add or update.
