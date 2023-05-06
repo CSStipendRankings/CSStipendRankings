@@ -18,11 +18,11 @@
 "Northeastern University", 50000, 50000, 46993, 869, private
 "University of California - Santa Barbara", 40000, 40000, 51681, 0, public
 "Brown University", 43712, 43712, 36228, 0, private
-"New York University - Tandon", 40800, 40800, 46826, 0, private
+"New York University - Tandon", 40800, 40800, 53342, 0, private
 "Cornell University", 43326, 43326, 37986, 0, private
 "Princeton University", 48000, 48000, 38001, 0, private
 "Northwestern University", 35196, 35196, 39900, 0, private
-"New York University - Courant", 48036, 48036, 46826, 0, private
+"New York University - Courant", 48036, 48036, 53342, 0, private
 "Johns Hopkins University", 43000, 43000, 37422, 0, private
 "University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public
 "University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public
@@ -41,10 +41,11 @@
 "College of William & Mary", 29000, 29000, 38209, 0, public
 "University of California - San Diego", 41172, 44340, 47021,0, public
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes
-"University of Massachusetts Amherst", 37533, 37533, 33866, 0, public, No
-"University of Texas at Dallas",23400,25800,36973,50, public
+"University of Massachusetts - Amherst", 37533, 37533, 33866, 0, public, No
+"The University of Texas at Dallas",23400,25800,36973,50, public
 "Arizona State University", 21000, 25800, 38043, 0, public, No
-"Columbia University", 50120, 50120, 46826, 50, private, Yes
+"Columbia University",50120,50120,53342,50, private, Yes
 "University of Illinois at Chicago", 30120, 30120, 38929, 0, public
 "Texas A&M University", 27000, 27000, 32972, 15, public, Yes
 "University of California - Los Angeles", 42600, 42600, 44783, 180, public
+"Duke University", 38600, 38600, 36024, 0, private, Yes
