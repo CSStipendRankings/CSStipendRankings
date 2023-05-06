@@ -169,8 +169,10 @@ function sort_on_column(col, desc_or_asc) {
         summer_funding_style = ""
         if (summer_funding == "N" || summer_funding == "No")
             summer_funding_style = "color:red"
-        if (summer_funding == "Y" || summer_funding == "Yes")
+        else if (summer_funding == "Y" || summer_funding == "Yes")
             namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area")
+        else if (summer_funding == "X2")
+            namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area").append($("<small>").text("x2"))
 
         if (use_fellowship() && get_university_type(temp_data[i]) == "fellowship") {
             global_ranking_postfix = ""
