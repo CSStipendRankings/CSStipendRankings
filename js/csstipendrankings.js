@@ -19,6 +19,7 @@ for (i = 0; i < data.length; i++) {
 }
 
 var sel = document.getElementById('university_locations');
+uni_and_cost_of_living.sort();
 for(var i = 0; i < uni_and_cost_of_living.length; i++) {
     var opt = document.createElement('option');
     opt.innerHTML = uni_and_cost_of_living[i][0];
@@ -32,7 +33,7 @@ fellowship_data = fellowship_data.slice(1) // Remove header
 for (i = 0; i < fellowship_data.length; i++) {
     fellowship_data[i][1] = Number(fellowship_data[i][1]) // pre_qual stipend
     fellowship_data[i][2] = Number(fellowship_data[i][2]) // after_qual stipend
-    fellowship_data[i][3] = data[0][3] // living cost
+    fellowship_data[i][3] = uni_and_cost_of_living[0][1] // living cost
     fellowship_data[i][4] = 0 // fee
     fellowship_data[i][5] = fellowship_data[i][5].trimStart()
     fellowship_data[i][6] = fellowship_data[i][6].trimStart()
