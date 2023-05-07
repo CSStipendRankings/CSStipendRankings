@@ -37,7 +37,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Pennsylvania State University - University Park", 30928, 30928, 37545, 0, public, Unknown, Unknown, Unknown, No, No
 "Massachusetts Institute of Technology", 46548, 50016, 46993, 396, private, Unknown, Unknown, Unknown, No, No
 "University of Notre Dame", 37000, 37000, 33571, 0, private, Unknown, Unknown, Unknown, No, No
-"University of Maryland - College Park", 28370, 28950, 46403, 0, public, Unknown, Unknown, Unknown, No, No
+"University of Maryland - College Park", 29061, 31213, 46403, 2559, public, No, 0, 0, No, No
 "University of Washington", 48015, 52080, 44686, 789, public, X2, Unknown, Unknown, No, No
 "College of William & Mary", 29000, 29000, 38209, 0, public, Unknown, Unknown, Unknown, No, No
 "University of California - San Diego", 41172, 44340, 47021,0, public, Unknown, Unknown, Unknown, No, No
