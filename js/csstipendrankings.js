@@ -1,5 +1,6 @@
 csv = $.ajax({ type: "GET", url: "stipend-us.csv", async: false }).responseText
 data = $.csv.toArrays(csv)
+data = data.slice(1) // Remove header
 console.log(data)
 uni_and_cost_of_living = [];
 for (i = 0; i < data.length; i++) {
@@ -114,6 +115,7 @@ function sort_on_column(col, desc_or_asc) {
     for (var i = 0; i < fellowship_data.length; i++) {
         temp_data.push(fellowship_data[i]);
     }
+    console.log(temp_data)
 
     temp_data.sort(function (a, b) {
         // desc
