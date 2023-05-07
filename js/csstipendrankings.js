@@ -28,6 +28,7 @@ for(var i = 0; i < uni_and_cost_of_living.length; i++) {
 
 fellowship_csv = $.ajax({ type: "GET", url: "fellowship-us.csv", async: false }).responseText
 fellowship_data = $.csv.toArrays(fellowship_csv)
+fellowship_data = fellowship_data.slice(1) // Remove header
 for (i = 0; i < fellowship_data.length; i++) {
     fellowship_data[i][1] = Number(fellowship_data[i][1]) // pre_qual stipend
     fellowship_data[i][2] = Number(fellowship_data[i][2]) // after_qual stipend
