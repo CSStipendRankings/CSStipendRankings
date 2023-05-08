@@ -169,11 +169,11 @@ function sort_on_column(col, desc_or_asc) {
             institution_style = "color:purple"
         else if (get_university_type(temp_data[i]) == "fellowship")
             institution_style = "color:orange"
-        if (i == 0)
+        if (local_rank == 0)
             namefix = " &#129351;"
-        else if (i == 1)
+        else if (local_rank == 1)
             namefix = " &#129352;"
-        else if (i == 2)
+        else if (local_rank == 2)
             namefix = " &#129353;"
 
         namefix2 = ""
