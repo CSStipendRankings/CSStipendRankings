@@ -1,53 +1,53 @@
 institution, pre_qual stipend, after_qual stipend, living cost, fee, public/private, summer funding guarantee, pre_qual stipend, after_qual stipend, pre_qual verified, post_qual verified
-"University of Michigan - Ann Arbor", 36072, 36072, 38838, 0, public, Yes, Unknown, Unknown, Yes, Yes
-"University of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266, public, Unknown, Unknown, Unknown, Yes, Yes
-"University of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266, public, Unknown, Unknown, Unknown, No, No
+"University of Michigan", 36072, 36072, 38838, 0, public, Yes, Unknown, Unknown, Yes, Yes
+"Univ. of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266, public, Unknown, Unknown, Unknown, Yes, Yes
+"Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266, public, Unknown, Unknown, Unknown, No, No
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081, public, Unknown, Unknown, Unknown, No, No
 "Harvard University", 42588, 42588, 46993, 0, private, Yes, Unknown, Unknown, No, No
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903, public, No, Unknown, Unknown, No, No
 "Rice University", 40333, 40333, 35487, 0, private, Unknown, Unknown, Unknown, No, No
 "Stanford University", 52560, 52560, 55396, 0, private, Yes, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 38688, 0, public, Yes, 11024, 11778, Yes, Yes
-"University of California - Santa Cruz", 40675, 46817, 54095, 0, public, Unknown, Unknown, Unknown, No, No
-"Stony Brook University - SUNY", 33500, 33500, 35886, 0, public, Unknown, Unknown, Unknown, No, No
+"Univ. of California - Santa Cruz", 40675, 46817, 54095, 0, public, Unknown, Unknown, Unknown, No, No
+"Stony Brook University", 33500, 33500, 35886, 0, public, Unknown, Unknown, Unknown, No, No
 "University of Rochester", 37668, 37668, 32995, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Utah", 32600, 34800, 37038, 1800, public, Unknown, Unknown, Unknown, No, No
-"Purdue University - West Lafayette (CS)", 25852, 25852, 33646, 1482, public, Unknown, Unknown, Unknown, No, No
-"Purdue University - West Lafayette (ECE)", 26400, 26400, 33646, 1482, public, Unknown, Unknown, Unknown, No, No
+"Purdue University (CS)", 25852, 25852, 33646, 1482, public, Unknown, Unknown, Unknown, No, No
+"Purdue University (ECE)", 26400, 26400, 33646, 1482, public, Unknown, Unknown, Unknown, No, No
 "Yale University", 38600, 38600, 36353, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Chicago", 39539, 43600, 38937, 0, private, Yes, Unknown, Unknown, No, No
 "Northeastern University", 50000, 50000, 46993, 869, private, Unknown, Unknown, Unknown, No, No
-"University of California - Santa Barbara", 40000, 40000, 51681, 0, public, Unknown, Unknown, Unknown, No, No
+"Univ. of California - Santa Barbara", 40000, 40000, 51681, 0, public, Unknown, Unknown, Unknown, No, No
 "Brown University", 43712, 43712, 36228, 0, private, Unknown, Unknown, Unknown, No, No
-"New York University - Tandon", 40800, 40800, 53342, 0, private, Unknown, Unknown, Unknown, No, No
+"New York University (Tandon)", 40800, 40800, 53342, 0, private, Unknown, Unknown, Unknown, No, No
 "Cornell University", 43326, 43326, 37986, 0, private, Unknown, Unknown, Unknown, No, No
 "Princeton University", 48000, 48000, 38001, 0, private, Unknown, Unknown, Unknown, No, No
 "Northwestern University", 35196, 35196, 39900, 0, private, Unknown, Unknown, Unknown, No, No
-"New York University - Courant", 48036, 48036, 53342, 0, private, Unknown, Unknown, Unknown, No, No
+"New York University (Courant)", 48036, 48036, 53342, 0, private, Unknown, Unknown, Unknown, No, No
 "Johns Hopkins University", 43000, 43000, 37422, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public, Unknown, Unknown, Unknown, No, No
 "University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public, Unknown, Unknown, Unknown, No, No
 "Boston University", 44290, 44290, 46993, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Southern California", 42000, 42000, 44142, 0, private, Unknown, Unknown, Unknown, No, No
-"University of North Carolina - Chapel Hill", 42931, 42931, 36024, 0, public, X2, Unknown, Unknown, Yes, Yes
-"Ohio State University - Columbus", 28373, 30000, 33579, 1052, public, No, Unknown, Unknown, No, No
+"University of North Carolina", 42931, 42931, 36024, 0, public, X2, Unknown, Unknown, Yes, Yes
+"Ohio State University", 28373, 30000, 33579, 1052, public, No, Unknown, Unknown, No, No
 "Carnegie Mellon University", 39960, 39960, 33387, 0, private, yes, Unknown, Unknown, Yes, No
 "North Carolina State University", 30482, 30482, 38084, 4078, public, Unknown, Unknown, Unknown, No, No
 "Lehigh University", 29400, 29400, 34815, 0, private, Unknown, Unknown, Unknown, No, No
-"Pennsylvania State University - University Park", 30928, 30928, 37545, 0, public, Unknown, Unknown, Unknown, No, No
+"Pennsylvania State University", 30928, 30928, 37545, 0, public, Unknown, Unknown, Unknown, No, No
 "Massachusetts Institute of Technology", 46548, 50016, 46993, 396, private, Unknown, Unknown, Unknown, No, No
 "University of Notre Dame", 37000, 37000, 33571, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Maryland - College Park", 29061, 31213, 46403, 2559, public, No, 0, 0, No, No
 "University of Washington", 48015, 52080, 44686, 789, public, X2, Unknown, Unknown, No, No
-"College of William & Mary", 29000, 29000, 38209, 0, public, Unknown, Unknown, Unknown, No, No
-"University of California - San Diego", 41172, 44340, 47021,0, public, Unknown, Unknown, Unknown, No, No
+"College of William and Mary", 29000, 29000, 38209, 0, public, Unknown, Unknown, Unknown, No, No
+"Univ. of California - San Diego", 41172, 44340, 47021,0, public, Unknown, Unknown, Unknown, No, No
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes, Unknown, Unknown, No, No
-"University of Massachusetts - Amherst", 37533, 37533, 33866, 0, public, No, Unknown, Unknown, No, No
-"University of Texas at Dallas",23400,25800,36973,50, public, Unknown, Unknown, Unknown, No, No
+"University of Massachusetts Amherst", 37533, 37533, 33866, 0, public, No, Unknown, Unknown, No, No
+"University of Texas at Dallas", 23400, 25800, 36973, 50, public, Unknown, Unknown, Unknown, No, No
 "Arizona State University *", 21000, 25800, 38043, 0, public, No, Unknown, Unknown, No, No
-"Columbia University",50120,50120,53342,50, private, Yes, Unknown, Unknown, No, No
+"Columbia University", 50120, 50120, 53342, 50, private, Yes, Unknown, Unknown, No, No
 "University of Illinois at Chicago", 30120, 30120, 38929, 0, public, Unknown, Unknown, Unknown, No, No
 "Texas A&M University", 27000, 27000, 32972, 15, public, Yes, Unknown, Unknown, No, No
-"University of California - Los Angeles", 42600, 42600, 44783, 180, public, Unknown, Unknown, Unknown, No, No
+"Univ. of California - Los Angeles", 42600, 42600, 44783, 180, public, Unknown, Unknown, Unknown, No, No
 "Duke University", 38600, 38600, 36024, 0, private, Yes, Unknown, Unknown, No, No
 "Stevens Institute of Technology", 27392, 30586, 39453, 2204, private, No, 0, 0, Yes, Yes
