@@ -18,7 +18,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Chicago", 39539, 43600, 38937, 0, private, Yes, Unknown, Unknown, No, No
 "Northeastern University", 50000, 50000, 46993, 869, private, Unknown, Unknown, Unknown, No, No
 "Univ. of California - Santa Barbara", 40000, 40000, 51681, 0, public, Unknown, Unknown, Unknown, No, No
-"Brown University", 43712, 43712, 36228, 0, private, Unknown, Unknown, Unknown, No, No
+"Brown University", 43791, 43791, 36228, 0, private, Yes, 10947, 10947, Yes, Yes
 "New York University (Tandon)", 40800, 40800, 53342, 0, private, Unknown, Unknown, Unknown, No, No
 "Cornell University", 43326, 43326, 37986, 0, private, Unknown, Unknown, Unknown, No, No
 "Princeton University", 48000, 48000, 38001, 0, private, Unknown, Unknown, Unknown, No, No
@@ -49,5 +49,6 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Illinois at Chicago", 30120, 30120, 38929, 0, public, Unknown, Unknown, Unknown, No, No
 "Texas A&M University", 27000, 27000, 32972, 15, public, Yes, Unknown, Unknown, No, No
 "Univ. of California - Los Angeles", 42600, 42600, 44783, 180, public, Unknown, Unknown, Unknown, No, No
-"Duke University", 38600, 38600, 36024, 0, private, Yes, Unknown, Unknown, No, No
-"Stevens Institute of Technology", 27392, 30586, 39453, 2204, private, No, 0, 0, Yes, Yes
+"Duke University", 38600, 38600, 38282, 0, private, Yes, 9650, 9650, No, No
+"Stevens Institute of Technology", 27392, 34586, 39453, 2204, private, No, 0, 4000, Yes, No
+"Michigan State University", 30030, 30030, 32798, 0, public, No, 0, 0, No, No
