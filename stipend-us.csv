@@ -29,7 +29,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public, Unknown, Unknown, Unknown, No, No
 "Boston University", 44290, 44290, 46993, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Southern California", 42000, 42000, 44142, 0, private, Unknown, Unknown, Unknown, No, No
-"University of North Carolina", 42931, 42931, 36024, 0, public, X2, Unknown, Unknown, Yes, Yes
+"University of North Carolina", 42931, 42931, 36024, 0, public, Yes, Unknown, Unknown, Yes, Yes
 "Ohio State University", 28373, 30000, 33579, 1052, public, No, Unknown, Unknown, No, No
 "Carnegie Mellon University", 39960, 39960, 33387, 0, private, yes, Unknown, Unknown, Yes, No
 "North Carolina State University", 33600, 33600, 38084, 4078, public, No, 0, 0, No, No
@@ -38,7 +38,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Massachusetts Institute of Technology", 46548, 50016, 46993, 396, private, Unknown, Unknown, Unknown, No, No
 "University of Notre Dame", 37000, 37000, 33571, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Maryland - College Park", 36705, 39424, 46403, 1603, public, No, 15286, 16419, Yes, Yes
-"University of Washington", 48015, 52080, 44686, 789, public, X2, Unknown, Unknown, No, No
+"University of Washington *", 48015, 52080, 44686, 789, public, Yes, Unknown, Unknown, No, No
 "College of William and Mary", 29000, 29000, 38209, 0, public, Unknown, Unknown, Unknown, No, No
 "Univ. of California - San Diego", 41172, 44340, 47021,0, public, Unknown, Unknown, Unknown, No, No
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes, 10125, 10125, Yes, Yes
