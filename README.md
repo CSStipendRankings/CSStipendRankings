@@ -22,7 +22,7 @@ Please quote the institution name with `"` and use the following standards for w
 - Special case: for the SUNY or CUNY system, use it after the `-`. (e.g., `Stony Brook University ==> Stony Brook University - SUNY`)
 - If distinguishing between various programs at the same university, refer to the program using `()`. If all programs at the same university have the same stipend information, do not distinguish separate programs. (e.g., `Purdue University - West Lafayette (CS)` vs. `Purdue University - West Lafayette (ECE)`)
 
-**All stipend and cost listed should be for 12 months. Annual stipend amount is the guaranteed minimal amount, pre-tax, for most students (including international students)**, without considering additional income source (e.g., from internship).
+**All stipend and cost listed should be for 12 months. Annual stipend amount is the minimal amount, pre-tax, for at least 75% of students (including international students)**, without considering additional income source (e.g., from internship).
 
 
 - **To add a new institution**, please add a new row to the `stipend-us.csv`; **to update the an existing institution**, please update the corresponding row in the `stipend-us.csv` accordingly. 
