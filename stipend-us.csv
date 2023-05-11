@@ -41,7 +41,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Washington", 48015, 52080, 44686, 789, public, X2, Unknown, Unknown, No, No
 "College of William and Mary", 29000, 29000, 38209, 0, public, Unknown, Unknown, Unknown, No, No
 "Univ. of California - San Diego", 41172, 44340, 47021,0, public, Unknown, Unknown, Unknown, No, No
-"University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes, Unknown, Unknown, Yes, Yes
+"University of Pennsylvania", 40500, 40500, 36455, 0, private, Yes, 10125, 10125, Yes, Yes
 "University of Massachusetts Amherst", 37534, 37534, 33866, 1322, public, No, Unknown, Unknown, Yes, Yes
 "University of Texas at Dallas", 23400, 25800, 36973, 50, public, Unknown, Unknown, Unknown, No, No
 "Arizona State University *", 21000, 25800, 38043, 0, public, No, Unknown, Unknown, No, No
