@@ -9,7 +9,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Stanford University", 52560, 52560, 55396, 0, private, Yes, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 38688, 0, public, Yes, 11024, 11778, Yes, Yes
 "Univ. of California - Santa Cruz", 40675, 46817, 54095, 0, public, Unknown, Unknown, Unknown, No, No
-"Stony Brook University", 33500, 33500, 35886, 0, public, Unknown, Unknown, Unknown, No, No
+"Stony Brook University", 33500, 33500, 43345, 0, public, Unknown, Unknown, Unknown, No, No
 "University of Rochester", 37668, 37668, 32995, 0, private, Unknown, Unknown, Unknown, No, No
 "University of Utah", 32600, 34800, 37038, 1800, public, Unknown, Unknown, Unknown, No, No
 "Purdue University (CS)", 25852, 25852, 33646, 1482, public, Unknown, Unknown, Unknown, No, No
