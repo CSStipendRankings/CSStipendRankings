@@ -15,12 +15,7 @@ The fastest way to add or update the data is by [editing `stipend-us.csv`](https
 
 > ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>,<Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees (and Health Insurance) Charged by University ($)>, <Public or Private>, <Summer Funding Guarantee>```
 
-Please quote the institution name with `"` and use the following standards for writing the institution name:
-- Start with using official name at it would appear on the diploma. (e.g., `MIT ==> Massachusetts Institute of Technology`)
-- If a university (or university system) has multiple campuses, refer to campus location using either `at` or `-`, whichever is official. If no official usage, default to `-`. (e.g., `University of Illinois at Chicago` or `University of Michigan - Ann Arbor`)
-- Drop "The" if it appears at the start of the name. (e.g., `The Ohio State University - Columbus ==> Ohio State University - Columbus`)
-- Special case: for the SUNY or CUNY system, use it after the `-`. (e.g., `Stony Brook University ==> Stony Brook University - SUNY`)
-- If distinguishing between various programs at the same university, refer to the program using `()`. If all programs at the same university have the same stipend information, do not distinguish separate programs. (e.g., `Purdue University - West Lafayette (CS)` vs. `Purdue University - West Lafayette (ECE)`)
+Please place the institution name within `"`'s. Use the name however it appears on [CSRankings.org](https://csrankings.org/).
 
 **All stipend and cost listed should be for 12 months. Annual stipend amount is the minimal amount, pre-tax, for at least 75% of students (including international students)**, without considering additional income source (e.g., from internship).
 
