@@ -1,5 +1,5 @@
 institution, pre_qual stipend, after_qual stipend, living cost, fee, public/private, summer funding guarantee, pre_qual stipend, after_qual stipend, pre_qual verified, post_qual verified
-"University of Michigan", 36072, 36072, 38838, 0, public, No, Unknown, Unknown, Yes, Yes
+"University of Michigan", 36072, 36072, 38838, 0, public, Yes, Unknown, Unknown, Yes, Yes
 "Univ. of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266, public, Unknown, Unknown, Unknown, Yes, Yes
 "Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266, public, Unknown, Unknown, Unknown, No, No
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081, public, Unknown, Unknown, Unknown, No, No
