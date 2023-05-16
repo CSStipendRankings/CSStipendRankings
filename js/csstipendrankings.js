@@ -188,7 +188,8 @@ function sort_on_column(col, desc_or_asc) {
 
         stipendfix = ""
         if (is_verified(temp_data[i]) == "Yes")
-            stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #0197f6;")
+            stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #a9a9a9;")
+        // blue color: #0197f6
 
         if (use_fellowship() && get_university_type(temp_data[i]) == "fellowship") {
             global_ranking_postfix = ""
