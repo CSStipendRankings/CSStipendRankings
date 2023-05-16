@@ -40,6 +40,14 @@ python3 -m http.server
 
 in the root directory of this repository and then open `http://localhost:8000` in your browser.
 
+### To Raise Issues or Comments
+
+We believe issues and comments should be discussed and resolved publicly on GitHub for transparency. 
+**If you believe any data is inaccurate or have additional comments,
+please open an [issue](https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose) or a [pull request](https://github.com/CSStipendRankings/CSStipendRankings/pulls).**
+
+**The maintainers will <i>not</i> respond to private messages sent to their personal accounts regarding this website.**
+
 ## License
 Frontend (i.e., CSS and HTML) of this website is based on code licensed from [CSRankings](https://github.com/emeryberger/CSrankings) by [Emery Berger](https://emeryberger.com/). 
 Data and non-CSRankings code in this repository is owned by its [contributors](https://github.com/CSStipendRankings/CSStipendRankings/contributors), and licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `LICENSE` for details.
