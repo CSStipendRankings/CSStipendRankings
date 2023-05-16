@@ -31,7 +31,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Southern California", 42000, 42000, 44142, 0, private, Unknown, Unknown, Unknown, No, No
 "University of North Carolina", 42931, 42931, 36024, 0, public, Yes, Unknown, Unknown, Yes, Yes
 "Ohio State University", 28373, 30000, 33579, 1052, public, No, Unknown, Unknown, No, No
-"Carnegie Mellon University", 39960, 39960, 33387, 0, private, yes, Unknown, Unknown, Yes, No
+"Carnegie Mellon University", 39960, 39960, 33387, 0, private, Yes, Unknown, Unknown, Yes, No
 "North Carolina State University", 33600, 33600, 38084, 4078, public, No, 0, 0, No, No
 "Lehigh University", 29400, 29400, 34815, 0, private, Unknown, Unknown, Unknown, No, No
 "Pennsylvania State University", 30928, 30928, 37545, 0, public, Unknown, Unknown, Unknown, No, No
