@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+    <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="preconnect" href="https://dblp.org">
+
+
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"
+        type="text/javascript">
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript">
+
+    <meta name="description" content="FAQs">
+    <meta name="keywords"
+        content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="citation_title" content="CSRankings">
+    <meta name="citation_author" content="Berger, Emery D.">
+    <meta name="citation_publication_date" content="2020">
+    <meta name="citation_fulltext_html_url" content="https://csrankings.org">
+    <meta name="citation_publisher" content="">
+    <meta name="citation_fulltext_world_readable" content="">
+
+    <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
+
+    <title>CSStipendRankings: FAQs</title>
+
+    <script defer>
+        var trackOutboundLink = function (url, new_window) {
+            /* Setting a default value for backward compatibility */
+            if (new_window === undefined) {
+                new_window = false;
+            }
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon',
+                'hitCallback':
+                    function () {
+                        if (!new_window) {
+                            document.location = url;
+                        }
+                    }
+            });
+            if (new_window) {
+                window.open(url);
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        type="text/javascript"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <script defer src="js/csstipendrankings.js" type="text/javascript"></script>
+    <!-- verified icon -->
+    <!--<iconify-icon icon="material-symbols:verified-rounded" style="color: #0197f6;" width="24"></iconify-icon>-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TMFP7XV9R8');
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page-header">
+
+            <h1>CSStipendRankings: Frequent-Asked Questions</h1>
+            <br>
+
+            <div class="page-footer">
+                <h2>Where is the data from? Is it accurate?</h2>
+                <p>
+                    The ranking is based on user-submitted or estimated information, which (like other rankings) may
+                    be subjective, inaccurate, or out-of-date, despite best efforts from its volunteers to ensure
+                    accuracy. Depending on your personal situation, your actual income and/or living cost will be
+                    different from the reference values shown here.
+                </p>
+                <h2>Why MIT Living Cost Calculator?</h2>
+                <p>
+                    We have received a lot of comments that the living cost calculated by the MIT Living Cost
+                    Calculator does not really reflect the real living cost in multiple areas. We are considering
+                    alternative metrics and data sources. If you are aware of something we can use, please feel free
+                    to submit <a
+                        href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issues</a> or <a
+                        href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">pull
+                        requests</a> on GitHub.
+                    We are also aware that while the MIT Living Wage Calculator is
+                    useful for comparing costs of living across the country, it has its limitations. There are two
+                    issues flagged by our users:
+                <ul>
+                    <li>
+                        Data is often unavailable for the precise district in which the university is located. In such
+                        cases, we use data for the county or wider metro area.
+                        This often makes places look more affordable than they actually are. For instance, UC San Diego
+                        is located in La Jolla, one of the most expensive districts in the US, but we resort
+                        to using figures for the wider San Diego county. Same goes for Westwood (UCLA) vs. LA County,
+                        Princeton vs. Mercer County, etc.
+                    </li>
+                    <li>
+                        The Calculator states that the estimates are what is required "to cover the costs of their
+                        family's basic needs where they live".
+                        However, how much one needs to sustain onself is subjective, and users have reported that they
+                        can live on much less.
+                    </li>
+                </ul>
+                </p>
+                <h2>Why is health insurance included in fees?</h2>
+                <p>
+                    Because most universities provide department-paid health insurance, and we need to make a fair comparison.
+                </p>
+                <h2>What's the definition of <em>majority</em>?</h2>
+                <p>
+                    Our current definition of majority is <em>at least 80% of enrolled PhD students</em>.
+                </p>
+                <h2>I'm paying my students 40h/week during the summer, but the number on the website does not reflect
+                    that.</h2>
+                <p>
+                    The number is based on (1) <em>funding guarantees</em> and (2) <em>what the majority of students
+                        get</em>. The 40h/week summer funding is either not guaranteed, or not the most common case in
+                    your department.
+                </p>
+                <h2>The number is wrong because it does not show the stipends for the majority. What should I do?</h2>
+                <p>
+                    Please open an issue. We will create a questionnaire to collect data, and you will be asked to
+                    forward it to students in your department.
+                    We will update the number after we collect enough responses and make the redacted raw data
+                    available.
+                </p>
+                <h2>Can I contribute? How?</h2>
+                <p>
+                    Everyone is welcomed to submit patches or report the stipend via <a
+                        href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull requests</a>.
+                    Another option to submit valuable datapoints is through <a
+                        href="https://forms.gle/fmF3EjiWxMQdoqhR9">this
+                        Google Form</a>.
+                    Also, feel free to submit <a
+                        href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issues on
+                        GitHub</a>.
+                </p>
+                <h2>What's your plan for the future? Will X, Y, and Z be added?</h2>
+                <p>
+                    We have a list of items that we plan to prioritize in our efforts to
+                    improve this website.
+                    All contributions are welcomed. Please leave us a message if you want to implement one of these
+                    features.
+                    The following is the ranked order of importance:
+                <ul>
+                    <li>Gathering data for summer funding guarantees. We plan to incorporate a feature that allows
+                        users to exclude non-guaranteed funds when calculating the stipends.</li>
+                    <li>Add alternative sources of living cost. In the future, users should have the ability to
+                        choose between different sources of living cost while ranking.</li>
+                </ul>
+                Other functionalities will not be added.
+
+                </p>
+                <h2>Why don't the maintainers respond to my email?</h2>
+                <p>
+                    We believe issues and comments should be discussed and resolved publicly on GitHub for transparency.
+                    If you believe any data is inaccurate or have additional comments,
+                        please open an <a
+                            href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issue</a> or
+                        a <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull request</a>.
+                        The maintainers will <i>not</i> respond to private messages sent to their personal or university accounts
+                        regarding this website.
+                </p>
+                <h2>How to verify the stipend? Which formats are you accepting?</h2>
+                <p>
+                    You may <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">create an
+                        issue</a> or fill <a href="https://forms.gle/fmF3EjiWxMQdoqhR9">this
+                        Google Form</a> with a redacted document showing the stipend. We currently accept the following
+                    documents:
+                <ul>
+                    <li>Official letters with department header and signed by department staff or faculty in charge,
+                        showing the exact amount
+                        of stipends that at least 80% of students get, and the exact percentage of students getting at
+                        least that amount of stipends.</li>
+                    <li>An offer letter from the department, showing the amount of stipends. If the offer letter does
+                        not mention summer funding, only the non-summer part will be verified.</li>
+                    <li>A payroll record or a W2 for the previous year.</li>
+                </ul>
+                </p>
+                <h2>Why does my department have a gray checkmark instead of a blue one?</h2>
+                <p>
+                    In most cases, this is because only the semester stipends are verified, and summer stipends are not guaranteed. You will need to verify the summer stipend seperately.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
