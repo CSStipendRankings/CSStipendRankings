@@ -17,7 +17,7 @@ The fastest way to add or update the data is by [editing `stipend-us.csv`](https
 
 Please place the institution name within `"`'s. Use the name however it appears on [CSRankings.org](https://csrankings.org/).
 
-**All stipend and cost listed should be for 12 months. Annual stipend amount is the minimal amount, pre-tax, for at least 75% of students (including international students)**, without considering additional income source (e.g., from internship).
+**All stipend and cost listed should be for 12 months. Annual stipend amount is the minimal amount, pre-tax, for at least 80% of students (including international students)**, without considering additional income source (e.g., from internship).
 
 
 - **To add a new institution**, please add a new row to the `stipend-us.csv`; **to update the an existing institution**, please update the corresponding row in the `stipend-us.csv` accordingly. 
