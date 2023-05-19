@@ -228,7 +228,7 @@
   </div>
 
   <div class="container">
-    <form id="rankform" name="rankform" action="" method="get" target="_blank">
+    <form id="rankform" name="rankform">
       <div class="page-header">
 
         <h1>CSStipendRankings: PhD Stipend Rankings</h1>
@@ -286,7 +286,7 @@
                   <input type="radio" id="guaranteed-only" name="stipend-type" value="guaranteed-only" class="sort-trigger"></input>
                   <label for="html">Guaranteed Only &nbsp;</label>
                   <input type="radio" id="exclude-summer" name="stipend-type" value="exclude-summer" class="sort-trigger"></input>
-                  <label for="css">Exclude Summer &nbsp;</label><br>
+                  <label for="html">Exclude Summer,&nbsp;</label>and set summer income as $<input type="number" id="extra-summer-income" name="extra-summer-income" style="line-height:normal;width:100px" value="42" class="sort-trigger"><br>
                 </div>
                 <div>
                   Sort by &nbsp;
@@ -295,9 +295,9 @@
                   <input type="radio" id="fees" name="sortby" value="fees" class="sort-trigger"></input>
                   <label for="html">Fees &nbsp;</label>
                   <input type="radio" id="living-cost" name="sortby" value="living-cost" class="sort-trigger"></input>
-                  <label for="css">Living Cost &nbsp;</label>
+                  <label for="html">Living Cost &nbsp;</label>
                   <input type="radio" id="after" name="sortby" value="after" class="sort-trigger" checked></input>
-                  <label for="css">After Fees &amp; Living &nbsp;&nbsp;</label>
+                  <label for="html">After Fees &amp; Living &nbsp;&nbsp;</label>
                   <input type="checkbox" id="low-to-high" class="sort-trigger">
                   <label for="low-to-high">Low to High</label><br>
                 </div>
@@ -305,7 +305,7 @@
                   <input type="radio" id="pre-qual" name="qual" value="pre-qual" class="sort-trigger" checked></input>
                   <label for="html">Pre-Qualification &nbsp;</label>
                   <input type="radio" id="post-qual" name="qual" value="post-qual" class="sort-trigger"></input>
-                  <label for="css">Post-Qualification</label>
+                  <label for="html">Post-Qualification</label>
                 </div>
                 <div>
                   <input type="checkbox" id="fellowship" name="fellowship" value="fellowship" class="sort-trigger"></input>

@@ -108,7 +108,7 @@ function get_stipend(arr) {
         else if (get_summer_funding(arr) == "No") return get_stipend_raw(arr) - get_summer_raw(arr)
         else return NaN
     } else if (type == "exclude-summer") {
-        return get_stipend_raw(arr) - get_summer_raw(arr)
+        return get_stipend_raw(arr) - get_summer_raw(arr) + Number($("#extra-summer-income").val())
     } else {
         return NaN
     }
@@ -295,3 +295,8 @@ function do_change_CoL(val){
 
     do_sort();
 }
+
+$("#rankform").on("submit", function(event) {
+    do_sort();
+    event.preventDefault();
+})
