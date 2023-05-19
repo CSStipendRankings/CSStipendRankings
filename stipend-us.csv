@@ -51,3 +51,4 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Duke University", 38600, 38600, 38282, 0, private, Yes, 9650, 9650, No, No
 "Stevens Institute of Technology", 27392, 34586, 39453, 2204, private, No, 0, 4000, Yes, No
 "Michigan State University", 30030, 30030, 32798, 0, public, No, 6930, 6930, No, No
+"University of Maryland - College Park", 40527, 43528, 46403, 1603, public, No, 11465, 12314, Y12, Y12
