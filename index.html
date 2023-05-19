@@ -242,7 +242,9 @@
             </p>
             <p>
             <ul>
-                <li>Stipend is the minimal amount of annual, <b>12-month, pre-tax</b> allowance graciously granted by the institution to <a href="/faq.html#:~:text=What's the definition of majority?"><b>the majority</b></a> of its PhD students.
+                <li>Stipend is the minimal amount of <b>pre-tax</b> allowance graciously granted by the institution to its PhD students. 
+                  Currently, we support displaying (1) <em>the stipend received by <a href="/faq.html#:~:text=What's the definition of majority?"><b>the majority</b></a> of students</em>,
+                  (2) <em>the minimal guaranteed stipend</em>, and (3) <em>the stipend that students receive during the semester only</em>.
                 <br>Note that <b>some departments do not have guaranteed summer funding</b>, and we are currently
                 working to collect such data. Departments with summer funding guarantee are tagged with a
 		<span class="areaname systems-area">summer</span> label. For now, the list is not complete.
@@ -280,16 +282,16 @@
                 <!-- <input type="checkbox" id="living-wage" checked>
                 <label for="living-wage"> Rank after subtracting non-reimbursable fees and local living cost</label><br> -->
                 <div>
-                  Stipend type &nbsp;
+                  Stipend type: &nbsp;
                   <input type="radio" id="majority" name="stipend-type" value="majority" class="sort-trigger" checked></input>
                   <label for="html">Majority &nbsp;</label>
                   <input type="radio" id="guaranteed-only" name="stipend-type" value="guaranteed-only" class="sort-trigger"></input>
-                  <label for="html">Guaranteed Only &nbsp;</label>
+                  <label for="html">Guaranteed stipend only &nbsp;</label>
                   <input type="radio" id="exclude-summer" name="stipend-type" value="exclude-summer" class="sort-trigger"></input>
-                  <label for="html">Exclude Summer,&nbsp;</label>and set summer income as $<input type="number" id="extra-summer-income" name="extra-summer-income" style="line-height:normal;width:100px" value="42" class="sort-trigger"><br>
+                  <label for="html">Exclude summer stipend,&nbsp;</label>and set summer income as $<input type="number" id="extra-summer-income" name="extra-summer-income" style="line-height:normal;width:100px" value="0" class="sort-trigger"><br>
                 </div>
                 <div>
-                  Sort by &nbsp;
+                  Sort by: &nbsp;
                   <input type="radio" id="stipend" name="sortby" value="stipend" class="sort-trigger"></input>
                   <label for="html">Stipend &nbsp;</label>
                   <input type="radio" id="fees" name="sortby" value="fees" class="sort-trigger"></input>
@@ -302,6 +304,7 @@
                   <label for="low-to-high">Low to High</label><br>
                 </div>
                 <div>
+                  PhD stage: &nbsp;
                   <input type="radio" id="pre-qual" name="qual" value="pre-qual" class="sort-trigger" checked></input>
                   <label for="html">Pre-Qualification &nbsp;</label>
                   <input type="radio" id="post-qual" name="qual" value="post-qual" class="sort-trigger"></input>
