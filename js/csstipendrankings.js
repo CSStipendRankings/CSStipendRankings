@@ -66,6 +66,14 @@ function get_sort_by() {
     else if ($("#after").is(":checked")) return "after-fee-wage";
     else return "error";
 }
+
+function get_stipend_type() {
+    if ($("#majority").is(":checked")) return "majority";
+    else if ($("#guaranteed-only").is(":checked")) return "guaranteed-only";
+    else if ($("#exclude-summer").is(":checked")) return "exclude-summer";
+    else return "error";
+}
+
 function get_institue_type_selected() {
     retStr = jQuery("#institute_types").find(":selected").val();
 
@@ -77,11 +85,33 @@ function get_summer_funding(arr) {
     return arr[6]
 }
 
-function get_stipend(arr) {
+function get_stipend_raw(arr) {
     if (use_pre_qual())
         return arr[1]
     else
         return arr[2]
+}
+
+function get_summer_raw(arr) {
+    if (use_pre_qual())
+        return arr[7]
+    else
+        return arr[8]
+}
+
+function get_stipend(arr) {
+    type = get_stipend_type()
+    if (type == "majority") {
+        return get_stipend_raw(arr)
+    } else if (type == "guaranteed-only") {
+        if (get_summer_funding(arr) == "Yes") return get_stipend_raw(arr)
+        else if (get_summer_funding(arr) == "No") return get_stipend_raw(arr) - get_summer_raw(arr)
+        else return NaN
+    } else if (type == "exclude-summer") {
+        return get_stipend_raw(arr) - get_summer_raw(arr)
+    } else {
+        return NaN
+    }
 }
 
 function get_fee(arr) {
@@ -107,17 +137,37 @@ function is_verified(arr) {
         return arr[10];
 }
 
+function get_col(arr, col) {
+    switch (col) {
+        case "stipend":
+            return get_stipend(arr)
+        case "fees":
+            return get_fee(arr)
+        case "living-cost":
+            return get_living_cost(arr)
+        case "after-fee-wage":
+            return (get_stipend(arr) - get_fee(arr) - get_living_cost(arr))
+    }
+}
+
 function sort_on_column(col, desc_or_asc) {
     $("#ranking").find("tbody").html("")
 
-    temp_data = [];
+    temp_data_pre_filter = [];
     for (var i = 0; i < data.length; i++) {
-        temp_data.push(data[i]);
+        temp_data_pre_filter.push(data[i]);
     }
     for (var i = 0; i < fellowship_data.length; i++) {
-        temp_data.push(fellowship_data[i]);
+        temp_data_pre_filter.push(fellowship_data[i]);
     }
-    console.log(temp_data)
+    console.log(temp_data_pre_filter)
+
+    temp_data = []
+    for (var i = 0; i < temp_data_pre_filter.length; i++) {
+        if (!isNaN(get_col(temp_data_pre_filter[i], col))) {
+            temp_data.push(temp_data_pre_filter[i]);
+        }
+    }
 
     temp_data.sort(function (a, b) {
         // desc
@@ -189,7 +239,8 @@ function sort_on_column(col, desc_or_asc) {
         stipendfix = ""
         if (is_verified(temp_data[i]) == "Yes")
             stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #a9a9a9;")
-        // blue color: #0197f6
+        else if (is_verified(temp_data[i]) == "Y12")
+            stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #0197f6;")
 
         if (use_fellowship() && get_university_type(temp_data[i]) == "fellowship") {
             global_ranking_postfix = ""
@@ -244,11 +295,3 @@ function do_change_CoL(val){
 
     do_sort();
 }
-// $(".select-university-trigger").on("change", do_change_CoL(this.value))
-
-// $("#pre-qual").on("click", function() {
-//     sort_and_display()
-// })
-// $("#post-qual").on("click", function() {
-//     sort_and_display()
-// })
