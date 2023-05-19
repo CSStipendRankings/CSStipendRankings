@@ -80,9 +80,13 @@ function get_institue_type_selected() {
     return retStr
 }
 
+function get_labels(arr) {
+    return arr[6].split(" ")
+}
 
 function get_summer_funding(arr) {
-    return arr[6]
+    if (arr[6].includes("summer-gtd")) return "Yes"
+    else return "No"
 }
 
 function get_stipend_raw(arr) {
@@ -132,9 +136,9 @@ function get_university_type(arr) {
 
 function is_verified(arr) {
     if (use_pre_qual())
-        return arr[9];
+        return arr[9].split(" ");
     else
-        return arr[10];
+        return arr[10].split(" ");
 }
 
 function get_col(arr, col) {
@@ -218,7 +222,7 @@ function sort_on_column(col, desc_or_asc) {
         else if (get_university_type(temp_data[i]) == "private")
             institution_style = "color:purple"
         else if (get_university_type(temp_data[i]) == "fellowship")
-            institution_style = "color:orange"
+            institution_style = "color:blue"
         if (local_rank == 0)
             namefix = " &#129351;"
         else if (local_rank == 1)
@@ -233,14 +237,36 @@ function sort_on_column(col, desc_or_asc) {
             summer_funding_style = "color:red"
         else if (summer_funding == "Y" || summer_funding == "Yes")
             namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area")
-        else if (summer_funding == "X2")
-            namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area").append($("<small>").text("x2"))
+
+        labels = get_labels(temp_data[i])
+        namefix2 = $("<span>").append("&nbsp;&nbsp;")
+        for (k = 0; k < labels.length; k++) {
+            if (k != 0) namefix2.append(",")
+            if (labels[k] == "summer-gtd") namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area"))
+            else if (labels[k] == "varies") namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area"))
+            else if (labels[k] == "no-guarantee") namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
+        }
+        
 
         stipendfix = ""
-        if (is_verified(temp_data[i]) == "Yes")
-            stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #a9a9a9;")
-        else if (is_verified(temp_data[i]) == "Y12")
-            stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #0197f6;")
+        verified_status = is_verified(temp_data[i])
+        if (verified_status.length == 1) {
+            if (verified_status[0] == "Yes") {
+                stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #a9a9a9;")
+            } else if (verified_status[0] == "Y12") {
+                stipendfix = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #0197f6;")
+            }
+        } else if (verified_status.length == 2) {
+            if (verified_status[0] == "Yes") {
+                checkmark = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #a9a9a9;")
+                stipendfix = $("<a>").attr("href", verified_status[1]).attr("target", "_blank").append(checkmark)
+            } else if (verified_status[0] == "Y12") {
+                checkmark = $("<span>").attr("class", "iconify").attr("data-icon", "material-symbols:verified-rounded").attr("style", "color: #0197f6;")
+                stipendfix = $("<a>").attr("href", verified_status[1]).attr("target", "_blank").append(checkmark)
+            }
+        } else {
+            console.log("This is a bug. Please report it to the maintainers.")
+        }
 
         if (use_fellowship() && get_university_type(temp_data[i]) == "fellowship") {
             global_ranking_postfix = ""

@@ -1,6 +1,6 @@
 Fellowship, pre_qual stipend, after_qual stipend, living cost, fee, public/private, summer funding guarantee, pre_qual stipend, after_qual stipend, pre_qual verified, post_qual verified
-"NSF Graduate Research Fellowship", 37000, 37000, N/A, N/A, fellowship, Yes, Unknown, Unknown, Yes, Yes
-"DOE Computational Science Graduate Fellowship", 45000, 45000, N/A, N/A, fellowship, Yes, Unknown, Unknown, Yes, Yes
-"NDSEG Fellowship Program", 40800, 40800, N/A, N/A, fellowship, Yes, Unknown, Unknown, Yes, Yes
-"Hertz Fellowship", 38000, 38000, N/A, N/A, fellowship, No, Unknown, Unknown, Yes, Yes
-"Meta Research PhD Fellowship", 42000, 42000, N/A, N/A, fellowship, Yes, Unknown, Unknown, Yes, Yes
+"NSF Graduate Research Fellowship", 37000, 37000, N/A, N/A, fellowship, summer-gtd, Unknown, Unknown, Y12, Y12
+"DOE Computational Science Graduate Fellowship", 45000, 45000, N/A, N/A, fellowship, summer-gtd, Unknown, Unknown, Y12, Y12
+"NDSEG Fellowship Program", 40800, 40800, N/A, N/A, fellowship, summer-gtd, Unknown, Unknown, Y12, Y12
+"Hertz Fellowship", 38000, 38000, N/A, N/A, fellowship, , Unknown, Unknown, Y12, Y12
+"Meta Research PhD Fellowship", 42000, 42000, N/A, N/A, fellowship, summer-gtd, Unknown, Unknown, Y12, Y12
