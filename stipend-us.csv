@@ -19,7 +19,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Northeastern University", 50000, 50000, 46993, 869, private, , Unknown, Unknown, No, No
 "Univ. of California - Santa Barbara", 40000, 40000, 51681, 0, public, , Unknown, Unknown, No, No
 "Brown University", 43791, 43791, 36228, 0, public, summer-gtd, 10947, 10947, Yes, Yes
-"New York University (Tandon)", 40800, 40800, 53342, 0, private, , Unknown, Unknown, No, No
+"New York University (Tandon)", 40800, 40800, 53342, 0, private, varies, Unknown, Unknown, No, No
 "Cornell University", 43326, 43326, 37986, 0, private, , Unknown, Unknown, No, No
 "Princeton University", 48000, 48000, 38001, 0, private, , Unknown, Unknown, No, No
 "Northwestern University", 35196, 35196, 39900, 0, private, , Unknown, Unknown, No, No
