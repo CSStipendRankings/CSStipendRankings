@@ -40,7 +40,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Washington *", 48015, 52080, 44686, 789, public, summer-no-gtd varies, 19206, 20832, No, No
 "College of William and Mary", 29000, 29000, 38209, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Univ. of California - San Diego", 41172, 44340, 47021,0, public, summer-unknown, Unknown, Unknown, No, No
-"University of Pennsylvania", 40500, 40500, 36455, 0, public, summer-gtd, 10125, 10125, Y12, Y12
+"University of Pennsylvania", 40500, 40500, 36455, 0, public, summer-gtd, 10125, 10125, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62
 "University of Massachusetts Amherst", 37534, 37534, 33866, 1322, public, summer-no-gtd, Unknown, Unknown, Yes, Yes
 "University of Texas at Dallas", 23400, 25800, 36973, 50, public, summer-unknown, Unknown, Unknown, No, No
 "Arizona State University *", 21000, 25800, 38043, 0, public, summer-no-gtd, Unknown, Unknown, No, No
