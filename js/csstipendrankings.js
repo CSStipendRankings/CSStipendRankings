@@ -247,6 +247,14 @@ function sort_on_column(col, desc_or_asc) {
                 namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
                 first = false;
             }
+
+            if (labels[k].includes("survey")) {
+                namefix2.prepend("&nbsp;&nbsp;")
+                survey_link = labels[k].split("=")[1]
+                survey_icon = $("<span>").attr("class", "iconify").attr("data-icon", "icon-park-solid:file-question").attr("style", "color: #960018;")
+                namefix2.prepend($("<a>").attr("href", survey_link).attr("target", "_blank").append(survey_icon))
+                namefix2.prepend("&nbsp;")
+            }
         }
         
 
