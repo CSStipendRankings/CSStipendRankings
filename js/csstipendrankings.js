@@ -86,8 +86,24 @@ function get_labels(arr) {
 
 function get_summer_funding(arr) {
     if (arr[6].includes("summer-gtd")) return "Yes"
+    else if (arr[6].includes("summer-partial-gtd")) return "Partial"
     else if (arr[6].includes("summer-no-gtd")) return "No"
     else return "Unknown"
+}
+
+function get_summer_guaranteed_partial(arr) {
+    labels = arr[6].split(" ")
+    for (i = 0; i < labels.length; i++) {
+        if (labels[i].includes("summer-partial-gtd")) {
+            return Number(labels[i].split("=")[1])
+        }
+    }
+    return NaN
+}
+
+function is_no_guarantee(arr) {
+    if (arr[6].includes("no-guarantee")) return true
+    else return false
 }
 
 function get_stipend_raw(arr) {
@@ -109,9 +125,18 @@ function get_stipend(arr) {
     if (type == "majority") {
         return get_stipend_raw(arr)
     } else if (type == "guaranteed-only") {
-        if (get_summer_funding(arr) == "Yes") return get_stipend_raw(arr)
-        else if (get_summer_funding(arr) == "No") return get_stipend_raw(arr) - get_summer_raw(arr)
-        else return NaN
+        summer_funding_status = get_summer_funding(arr)
+        if (is_no_guarantee(arr)) {
+            return 0 
+        } else if (summer_funding_status == "Yes") {
+            return get_stipend_raw(arr)
+        } else if (summer_funding_status == "Partial") {
+            return get_stipend_raw(arr) - get_summer_raw(arr) + get_summer_guaranteed_partial(arr)
+        } else if (get_summer_funding(arr) == "No") {
+            return get_stipend_raw(arr) - get_summer_raw(arr)
+        } else {
+            return NaN
+        }
     } else if (type == "exclude-summer") {
         return get_stipend_raw(arr) - get_summer_raw(arr) + Number($("#extra-summer-income").val())
     } else {
@@ -233,13 +258,13 @@ function sort_on_column(col, desc_or_asc) {
 
         labels = get_labels(temp_data[i])
         namefix2 = $("<span>").append("&nbsp;&nbsp;")
-	first = true
+	    first = true
         for (k = 0; k < labels.length; k++) {
-            if (labels[k] == "summer-gtd") {
+            if (labels[k] == "summer-gtd" || labels[k].includes("summer-partial-gtd")) {
                 if (!first) namefix2.append(",")
                 namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area"))
                 first = false;
-	    } else if (labels[k] == "varies") {
+	        } else if (labels[k] == "varies") {
                 if (!first) namefix2.append(",")
                 namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area"))
                 first = false;
