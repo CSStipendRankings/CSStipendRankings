@@ -86,7 +86,8 @@ function get_labels(arr) {
 
 function get_summer_funding(arr) {
     if (arr[6].includes("summer-gtd")) return "Yes"
-    else return "No"
+    else if (arr[6].includes("summer-no-gtd")) return "No"
+    else return "Unknown"
 }
 
 function get_stipend_raw(arr) {
@@ -230,21 +231,22 @@ function sort_on_column(col, desc_or_asc) {
         else if (local_rank == 2)
             namefix = " &#129353;"
 
-        namefix2 = ""
-        summer_funding = get_summer_funding(temp_data[i])
-        summer_funding_style = ""
-        if (summer_funding == "N" || summer_funding == "No")
-            summer_funding_style = "color:red"
-        else if (summer_funding == "Y" || summer_funding == "Yes")
-            namefix2 = $("<span>").text(" summer").attr("class", "areaname systems-area")
-
         labels = get_labels(temp_data[i])
         namefix2 = $("<span>").append("&nbsp;&nbsp;")
+	first = true
         for (k = 0; k < labels.length; k++) {
-            if (k != 0) namefix2.append(",")
-            if (labels[k] == "summer-gtd") namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area"))
-            else if (labels[k] == "varies") namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area"))
-            else if (labels[k] == "no-guarantee") namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
+            if (!first) namefix2.append(",")
+
+            if (labels[k] == "summer-gtd") {
+                namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area"))
+                first = false;
+	    } else if (labels[k] == "varies") {
+                namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area"))
+                first = false;
+            } else if (labels[k] == "no-guarantee") {
+                namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
+                first = false;
+            }
         }
         
 
