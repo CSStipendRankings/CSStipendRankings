@@ -235,21 +235,21 @@ function sort_on_column(col, desc_or_asc) {
         namefix2 = $("<span>").append("&nbsp;&nbsp;")
 	first = true
         for (k = 0; k < labels.length; k++) {
-            if (!first) namefix2.append(",")
-
             if (labels[k] == "summer-gtd") {
+                if (!first) namefix2.append(",")
                 namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area"))
                 first = false;
 	    } else if (labels[k] == "varies") {
+                if (!first) namefix2.append(",")
                 namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area"))
                 first = false;
             } else if (labels[k] == "no-guarantee") {
+                if (!first) namefix2.append(",")
                 namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
                 first = false;
             }
 
             if (labels[k].includes("survey")) {
-                namefix2.prepend("&nbsp;&nbsp;")
                 survey_link = labels[k].split("=")[1]
                 survey_icon = $("<span>").attr("class", "iconify").attr("data-icon", "icon-park-solid:file-question").attr("style", "color: #960018;")
                 namefix2.prepend($("<a>").attr("href", survey_link).attr("target", "_blank").append(survey_icon))
