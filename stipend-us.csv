@@ -37,8 +37,8 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Pennsylvania State University", 30928, 30928, 37545, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Massachusetts Institute of Technology", 46548, 50016, 46993, 396, private, summer-unknown, Unknown, Unknown, No, No
 "University of Notre Dame", 37000, 37000, 33571, 0, private, summer-unknown, Unknown, Unknown, No, No
-"University of Washington (CSE) *", 46844, 48608, 44686, 789, public, summer-no-gtd varies, 16730, 17360, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
-"University of Washington (ECE) *", 35489, 36834, 44686, 789, public, summer-no-gtd, 7715, 8007, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
+"University of Washington (CSE)", 46844, 48608, 44686, 789, public, summer-no-gtd varies, 16730, 17360, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
+"University of Washington (ECE)", 35489, 36834, 44686, 789, public, summer-no-gtd, 7715, 8007, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
 "College of William and Mary", 29000, 29000, 38209, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Univ. of California - San Diego", 41172, 44340, 47021,0, public, summer-unknown, Unknown, Unknown, No, No
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, summer-gtd, 10125, 10125, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62
