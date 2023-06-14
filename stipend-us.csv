@@ -6,7 +6,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Harvard University", 42588, 42588, 46993, 0, public, summer-gtd, Unknown, Unknown, No, No
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903, public, summer-no-gtd no-guarantee, Unknown, Unknown, No, No
 "Rice University", 40333, 40333, 35487, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Stanford University", 52560, 52560, 55396, 0, public, summer-gtd, Unknown, Unknown, No, No
+"Stanford University", 52560, 52560, 55396, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 38688, 0, public, summer-gtd, 11024, 11778, Yes, Yes
 "Univ. of California - Santa Cruz", 40675, 46817, 54095, 0, public, summer-unknown varies, Unknown, Unknown, No, No
 "Stony Brook University", 33500, 33500, 43345, 0, public, summer-unknown, Unknown, Unknown, No, No
