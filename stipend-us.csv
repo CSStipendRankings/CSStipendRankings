@@ -3,7 +3,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Univ. of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266, public, summer-unknown, Unknown, Unknown, Yes, Yes
 "Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266, public, summer-unknown, Unknown, Unknown, No, No
 "Georgia Institute of Technology", 31320, 34800, 39375, 3081, public, summer-unknown, Unknown, Unknown, No, No
-"Harvard University", 42588, 42588, 46993, 0, public, summer-gtd, Unknown, Unknown, No, No
+"Harvard University", 42588, 42588, 46993, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Wisconsin - Madison", 30969, 34073, 36371, 1903, public, summer-no-gtd no-guarantee, Unknown, Unknown, No, No
 "Rice University", 40333, 40333, 35487, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Stanford University", 52560, 52560, 55396, 0, private, summer-gtd, Unknown, Unknown, No, No
