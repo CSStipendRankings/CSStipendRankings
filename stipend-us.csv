@@ -30,7 +30,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Boston University", 44290, 44290, 46993, 0, private, summer-unknown, Unknown, Unknown, No, No
 "University of Southern California", 42000, 42000, 44142, 0, private, summer-unknown, Unknown, Unknown, No, No
 "University of North Carolina", 42931, 42931, 36024, 0, public, summer-gtd, Unknown, Unknown, Yes, Yes
-"Ohio State University", 28373, 30000, 33579, 1052, public, summer-no-gtd, Unknown, Unknown, No, No
+"Ohio State University", 31800, 32400, 33937, 1054, public, summer-no-gtd, 7725, 8100, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/84, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/84
 "Carnegie Mellon University", 39960, 39960, 33387, 0, private, summer-gtd, Unknown, Unknown, Yes, No
 "North Carolina State University", 33600, 33600, 38084, 4078, public, summer-no-gtd, Unknown, Unknown, No, No
 "Lehigh University", 29400, 29400, 34815, 0, private, summer-unknown, Unknown, Unknown, No, No
