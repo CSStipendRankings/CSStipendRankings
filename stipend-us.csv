@@ -9,7 +9,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Stanford University", 52560, 52560, 55396, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 38688, 0, public, summer-gtd, 11024, 11778, Yes, Yes
 "Univ. of California - Santa Cruz", 40675, 46817, 54095, 0, public, summer-unknown varies, Unknown, Unknown, No, No
-"Stony Brook University", 39000, 39000, 43345, 0, public, summer-unknown, Unknown, Unknown, No, No
+"Stony Brook University", 39000, 39000, 43345, 0, public, summer-unknown, 13000, 13000, No, No
 "University of Rochester (CS)", 41011, 41011, 32995, 0, private, summer-gtd, 9192, 9192, No, No
 "University of Utah", 34248, 35448, 37038, 300, public, summer-no-gtd varies, 8562, 8862, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74
 "Purdue University (CS)", 25852, 25852, 33646, 1482, public, summer-unknown, Unknown, Unknown, No, No
@@ -56,5 +56,5 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Univ. of California - Berkeley", 55537, 55537, 46448, 0, public, summer-unknown, 22360, 22360, Yes, Yes
 "Toyota Technological Institute at Chicago", 44500, 44500, 39900, 0, private, summer-gtd, 11124, 11124, Y12, Y12
 "New Jersey Institute of Technology", 28500, 28500, 46826, 0, public, summer-no-gtd, 3000, 3000, No, No
-"Rochester Institute of Technology", 21000, 28000, 32995, 880, summer-no-gtd varies, Unknown, 7000, No, No
-"Washington University in St Louis", 37000, 37000, 33566, 500, summer-gtd, 9000, 9000, No, No
+"Rochester Institute of Technology", 21000, 28000, 32995, 880, private, summer-no-gtd varies, Unknown, 7000, No, No
+"Washington University in St Louis", 37000, 37000, 33566, 500, private, summer-gtd, 9000, 9000, No, No
