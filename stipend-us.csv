@@ -24,7 +24,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Princeton University", 48000, 48000, 38001, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Northwestern University", 36960, 36960, 39900, 42, private, summer-gtd, 9240, 9240, No, No
 "New York University (Courant)", 48036, 48036, 53342, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Johns Hopkins University", 43000, 43000, 37422, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Johns Hopkins University", 44300, 45500, 37422, 0, private, summer-unknown, Unknown, Unknown, Yes, No
 "University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
 "University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Boston University", 44290, 44290, 46993, 0, private, summer-unknown, Unknown, Unknown, No, No
@@ -55,3 +55,6 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Maryland - College Park", 40527, 43528, 46403, 1603, public, summer-no-gtd varies, 11465, 12314, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69
 "Univ. of California - Berkeley", 55537, 55537, 46448, 0, public, summer-unknown, 22360, 22360, Yes, Yes
 "Toyota Technological Institute at Chicago", 44500, 44500, 39900, 0, private, summer-gtd, 11124, 11124, Y12, Y12
+"New Jersey Institute of Technology", 28500, 28500, 46826, 0, public, summer-no-gtd, 3000, 3000, No, No
+"Rochester Institute of Technology", 21000, 28000, 32995, 880, summer-no-gtd varies, Unknown, 7000, No, No
+"Washington University in St Louis", 37000, 37000, 33566, 500, summer-gtd, 9000, 9000, No, No
