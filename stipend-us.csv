@@ -46,7 +46,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Texas at Dallas", 23400, 25800, 36973, 50, public, summer-unknown, Unknown, Unknown, No, No
 "Arizona State University *", 21000, 25800, 38043, 0, public, summer-no-gtd, Unknown, Unknown, No, No
 "Columbia University", 50120, 50120, 53342, 50, private, summer-gtd, Unknown, Unknown, No, No
-"University of Illinois at Chicago", 30120, 30120, 38929, 0, public, summer-unknown, Unknown, Unknown, No, No
+"University of Illinois at Chicago", 28714, 28714, 39990, 2433, public, summer-no-gtd, 5220.8, 5220.8, No, No
 "Texas A&M University", 27000, 27000, 32972, 15, public, summer-gtd, Unknown, Unknown, No, No
 "Univ. of California - Los Angeles", 42600, 42600, 44783, 180, public, summer-unknown, Unknown, Unknown, No, No
 "Duke University", 38600, 38600, 38282, 0, private, summer-gtd, 9650, 9650, No, No
