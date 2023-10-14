@@ -276,7 +276,11 @@ function sort_on_column(col, desc_or_asc) {
                 if (!first) namefix2.append(",")
                 namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
                 first = false;
-            }
+            } else if (labels[k] == "cpt-fee") {
+                if (!first) namefix2.append(",")
+                namefix2.append($("<span>").text("cpt-fee").attr("class", "areaname").attr("style", "color:red"))
+                first = false;
+	    }
 
             if (labels[k].includes("survey")) {
                 survey_link = labels[k].split("=")[1]
