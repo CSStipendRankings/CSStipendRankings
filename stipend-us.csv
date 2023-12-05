@@ -53,7 +53,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Stevens Institute of Technology", 27392, 34586, 39453, 2204, private, summer-no-gtd varies, 0, 4000, Yes, No
 "Michigan State University", 30030, 30030, 32798, 0, public, summer-no-gtd, 6930, 6930, No, No
 "University of Maryland - College Park", 40527, 43528, 46403, 1603, public, summer-no-gtd varies, 11465, 12314, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69
-"Univ. of California - Berkeley", 55537, 55537, 46448, 0, public, summer-unknown, 22360, 22360, Yes, Yes
+"Univ. of California - Berkeley", 52016, 52016, 46448, 0, public, summer-partial-gtd=4456, 22280, 22280, No, No
 "Toyota Technological Institute at Chicago", 44500, 44500, 39900, 0, private, summer-gtd, 11124, 11124, Y12, Y12
 "New Jersey Institute of Technology", 28500, 28500, 46826, 0, public, summer-no-gtd, 3000, 3000, No, No
 "Rochester Institute of Technology", 21000, 28000, 32995, 880, private, summer-no-gtd varies, Unknown, 7000, No, No
