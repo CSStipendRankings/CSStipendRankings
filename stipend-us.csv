@@ -15,14 +15,14 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Purdue University (CS)", 25852, 25852, 33646, 1482, public, summer-unknown, Unknown, Unknown, No, No
 "Purdue University (ECE)", 26400, 26400, 33646, 1482, public, summer-unknown, Unknown, Unknown, No, No
 "Yale University", 48330, 48330, 36753, 0, private, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95
-"University of Chicago", 43600, 43600, 38929, 0, private, summer-gtd, Unknown, Unknown, No, No
+"University of Chicago", 43600, 43600, 50260, 0, private, summer-gtd, Unknown, Unknown, No, No
 "Northeastern University", 50000, 50000, 46993, 869, private, summer-unknown, Unknown, Unknown, No, No
 "Univ. of California - Santa Barbara", 40000, 40000, 51681, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Brown University", 43791, 43791, 36228, 0, private, summer-gtd, 10947, 10947, Yes, Yes
 "New York University (Tandon)", 40800, 40800, 53342, 0, private, summer-unknown varies, Unknown, Unknown, No, No
 "Cornell University", 43326, 43326, 37986, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Princeton University", 48000, 48000, 38001, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Northwestern University", 45000, 45000, 39900, 42, private, summer-gtd, 11250, 11250, No, No
+"Northwestern University", 45000, 45000, 50260, 42, private, summer-gtd, 11250, 11250, No, No
 "New York University (Courant)", 48036, 48036, 53342, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Johns Hopkins University", 44300, 45500, 37422, 0, private, summer-unknown, Unknown, Unknown, Yes, No
 "University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
@@ -46,7 +46,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Texas at Dallas", 23400, 25800, 47381, 50, public, summer-unknown, Unknown, Unknown, No, No
 "Arizona State University *", 21000, 25800, 38043, 0, public, summer-no-gtd, Unknown, Unknown, No, No
 "Columbia University", 50120, 50120, 53342, 50, private, summer-gtd, Unknown, Unknown, No, No
-"University of Illinois at Chicago", 28714, 28714, 39990, 2433, public, summer-no-gtd, 5221, 5221, No, No
+"University of Illinois at Chicago", 28714, 28714, 50260, 2433, public, summer-no-gtd, 5221, 5221, No, No
 "Texas A&M University", 27000, 27000, 32972, 15, public, summer-gtd, Unknown, Unknown, No, No
 "Univ. of California - Los Angeles", 42600, 42600, 44783, 180, public, summer-unknown, Unknown, Unknown, No, No
 "Duke University", 38600, 38600, 38282, 0, private, summer-gtd, 9650, 9650, No, No
@@ -54,7 +54,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Michigan State University", 30030, 30030, 32798, 0, public, summer-no-gtd, 6930, 6930, No, No
 "University of Maryland - College Park", 40527, 43528, 46403, 1603, public, summer-no-gtd varies, 11465, 12314, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69
 "Univ. of California - Berkeley", 52016, 52016, 46448, 0, public, summer-partial-gtd=4456, 22280, 22280, No, No
-"Toyota Technological Institute at Chicago", 44500, 44500, 39900, 0, private, summer-gtd, 11124, 11124, Y12, Y12
+"Toyota Technological Institute at Chicago", 44500, 44500, 50260, 0, private, summer-gtd, 11124, 11124, Y12, Y12
 "New Jersey Institute of Technology", 28500, 28500, 46826, 0, public, summer-no-gtd, 3000, 3000, No, No
 "Rochester Institute of Technology", 21000, 28000, 32995, 880, private, summer-no-gtd varies, Unknown, 7000, No, No
 "Washington University in St Louis", 38500, 38500, 33244, 0, private, summer-gtd, 9625, 9625, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97
