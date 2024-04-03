@@ -43,7 +43,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Univ. of California - San Diego", 41172, 44340, 47021,0, public, summer-unknown, Unknown, Unknown, No, No
 "University of Pennsylvania", 40500, 40500, 36455, 0, private, summer-gtd, 10125, 10125, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62
 "University of Massachusetts Amherst", 37534, 37534, 33866, 1322, public, summer-no-gtd, 10105, 10105, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82
-"University of Texas at Dallas", 23400, 25800, 36973, 50, public, summer-unknown, Unknown, Unknown, No, No
+"University of Texas at Dallas", 23400, 25800, 47381, 50, public, summer-unknown, Unknown, Unknown, No, No
 "Arizona State University *", 21000, 25800, 38043, 0, public, summer-no-gtd, Unknown, Unknown, No, No
 "Columbia University", 50120, 50120, 53342, 50, private, summer-gtd, Unknown, Unknown, No, No
 "University of Illinois at Chicago", 28714, 28714, 39990, 2433, public, summer-no-gtd, 5221, 5221, No, No
