@@ -24,7 +24,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Princeton University", 48000, 48000, 38001, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Northwestern University", 45000, 45000, 50260, 42, private, summer-gtd, 11250, 11250, No, No
 "New York University (Courant)", 48036, 48036, 53342, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Johns Hopkins University", 44300, 45500, 37422, 0, private, summer-unknown, Unknown, Unknown, Yes, No
+"Johns Hopkins University", 47000, 45500, 37422, 0, private, summer-unknown, Unknown, Unknown, Yes, No
 "University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
 "University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Boston University", 44290, 44290, 46993, 0, private, summer-unknown, Unknown, Unknown, No, No
