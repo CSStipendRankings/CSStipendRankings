@@ -55,7 +55,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Maryland - College Park", 40527, 43528, 46403, 1603, public, summer-no-gtd varies, 11465, 12314, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69
 "Univ. of California - Berkeley", 52016, 52016, 46448, 0, public, summer-partial-gtd=4456, 22280, 22280, No, No
 "Toyota Technological Institute at Chicago", 44500, 44500, 50260, 0, private, summer-gtd, 11124, 11124, Y12, Y12
-"New Jersey Institute of Technology", 28500, 28500, 46826, 0, public, summer-no-gtd, 3000, 3000, No, No
+"New Jersey Institute of Technology", 39342, 39342, 47834, 0, public, summer-gtd, 13114, 13114, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/117, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/117
 "Rochester Institute of Technology", 21000, 28000, 32995, 880, private, summer-no-gtd varies, Unknown, 7000, No, No
 "Washington University in St Louis", 38500, 38500, 33244, 0, private, summer-gtd, 9625, 9625, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97
 "University of Pittsburg", 30000, 30000, 33387, 50, public, summer-gtd, 10000, 10000, No, No
