@@ -1,63 +1,63 @@
 institution, pre_qual stipend, after_qual stipend, living cost, fee, public/private, labels, pre_qual stipend, after_qual stipend, pre_qual verified, post_qual verified
-"University of Michigan", 36072, 36072, 38838, 0, public, summer-gtd varies, 12024, 12024, Y12, Y12
-"Univ. of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 36657, 1266, public, summer-unknown, Unknown, Unknown, Yes, Yes
-"Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 36657, 1266, public, summer-unknown, Unknown, Unknown, No, No
+"University of Michigan", 36072, 36072, 47334, 0, public, summer-gtd varies, 12024, 12024, Y12, Y12
+"Univ. of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 41500, 1266, public, summer-unknown, Unknown, Unknown, Yes, Yes
+"Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 41500, 1266, public, summer-unknown, Unknown, Unknown, No, No
 "Georgia Institute of Technology", 38400, 38400, 54296, 3081, public, summer-unknown, Unknown, Unknown, No, No
-"Harvard University", 42588, 42588, 46993, 0, private, summer-gtd, Unknown, Unknown, No, No
+"Harvard University", 42588, 42588, 62487, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Wisconsin - Madison", 34067, 36074, 44480, 2980, public, summer-no-gtd no-guarantee survey=https://forms.gle/heDnnVJrmvZHtFPx7, 8512, 9019, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88
-"Rice University", 40333, 40333, 35487, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Stanford University", 52560, 52560, 55396, 0, private, summer-gtd, Unknown, Unknown, No, No
-"University of Virginia", 33072, 35334, 38688, 0, public, summer-gtd, 11024, 11778, Yes, Yes
-"Univ. of California - Santa Cruz", 40675, 46817, 54095, 0, public, summer-unknown varies, Unknown, Unknown, No, No
-"Stony Brook University", 39000, 39000, 43345, 0, public, summer-no-gtd, 13000, 13000, No, No
-"University of Rochester (CS)", 41011, 41011, 32995, 0, private, summer-gtd, 9192, 9192, No, No
-"University of Utah", 34248, 35448, 37038, 300, public, summer-no-gtd varies, 8562, 8862, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74
-"Purdue University (CS)", 25852, 25852, 33646, 1482, public, summer-unknown, Unknown, Unknown, No, No
-"Purdue University (ECE)", 26400, 26400, 33646, 1482, public, summer-unknown, Unknown, Unknown, No, No
-"Yale University", 48330, 48330, 36753, 0, private, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95
+"Rice University", 40333, 40333, 43327, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Stanford University", 52560, 52560, 68624, 0, private, summer-gtd, Unknown, Unknown, No, No
+"University of Virginia", 33072, 35334, 50523, 0, public, summer-gtd, 11024, 11778, Yes, Yes
+"Univ. of California - Santa Cruz", 40675, 46817, 76215, 0, public, summer-unknown varies, Unknown, Unknown, No, No
+"Stony Brook University", 39000, 39000, 59557, 0, public, summer-no-gtd, 13000, 13000, No, No
+"University of Rochester (CS)", 41011, 41011, 44874, 0, private, summer-gtd, 9192, 9192, No, No
+"University of Utah", 34248, 35448, 47160, 300, public, summer-no-gtd varies, 8562, 8862, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74
+"Purdue University (CS)", 25852, 25852, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
+"Purdue University (ECE)", 26400, 26400, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
+"Yale University", 48330, 48330, 48247, 0, private, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95
 "University of Chicago", 43600, 43600, 50260, 0, private, summer-gtd, Unknown, Unknown, No, No
-"Northeastern University", 50000, 50000, 46993, 869, private, summer-unknown, Unknown, Unknown, No, No
-"Univ. of California - Santa Barbara", 40000, 40000, 51681, 0, public, summer-unknown, Unknown, Unknown, No, No
-"Brown University", 43791, 43791, 36228, 0, private, summer-gtd, 10947, 10947, Yes, Yes
-"New York University (Tandon)", 40800, 40800, 53342, 0, private, summer-unknown varies, Unknown, Unknown, No, No
-"Cornell University", 43326, 43326, 37986, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Princeton University", 48000, 48000, 38001, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Northwestern University", 45000, 45000, 50260, 42, private, summer-gtd, 11250, 11250, No, No
-"New York University (Courant)", 48036, 48036, 53342, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Johns Hopkins University", 47000, 45500, 37422, 0, private, summer-unknown, Unknown, Unknown, Yes, No
-"University of Texas at Austin (ECE)", 31600, 31600, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
-"University of Texas at Austin (CS)", 38400, 38400, 38171, 0, public, summer-unknown, Unknown, Unknown, No, No
-"Boston University", 44290, 44290, 46993, 0, private, summer-unknown, Unknown, Unknown, No, No
-"University of Southern California", 42000, 42000, 44142, 0, private, summer-unknown, Unknown, Unknown, No, No
-"University of North Carolina", 42931, 42931, 36024, 0, public, summer-gtd, Unknown, Unknown, Yes, Yes
-"Ohio State University", 31800, 32400, 33937, 1054, public, summer-no-gtd, 7725, 8100, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/84, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/84
+"Northeastern University", 50000, 50000, 62487, 869, private, summer-unknown, Unknown, Unknown, No, No
+"Univ. of California - Santa Barbara", 40000, 40000, 66793, 0, public, summer-unknown, Unknown, Unknown, No, No
+"Brown University", 43791, 43791, 48310, 0, private, summer-gtd, 10947, 10947, Yes, Yes
+"New York University (Tandon)", 40800, 40800, 61817, 0, private, summer-unknown varies, Unknown, Unknown, No, No
+"Cornell University", 43326, 43326, 51249, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Princeton University", 48000, 48000, 51451, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Northwestern University", 45000, 45000, 49273, 42, private, summer-gtd, 11250, 11250, No, No
+"New York University (Courant)", 48036, 48036, 58320, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Johns Hopkins University", 47000, 45500, 49946, 0, private, summer-unknown, Unknown, Unknown, Yes, No
+"University of Texas at Austin (ECE)", 31600, 31600, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
+"University of Texas at Austin (CS)", 38400, 38400, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
+"Boston University", 44290, 44290, 62487, 0, private, summer-unknown, Unknown, Unknown, No, No
+"University of Southern California", 42000, 42000, 55385, 0, private, summer-unknown, Unknown, Unknown, No, No
+"University of North Carolina", 42931, 42931, 48596, 0, public, summer-gtd, Unknown, Unknown, Yes, Yes
+"The Ohio State University", 31800, 32400, 43593, 1054, public, summer-no-gtd, 7725, 8100, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/84, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/84
 "Carnegie Mellon University", 41460, 41460, 43957, 0, private, summer-no-gtd, Unknown, Unknown, No, No
-"North Carolina State University", 31200, 31200, 38084, 4106, public, summer-no-gtd, 7800, 7800, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90
-"Lehigh University", 29400, 29400, 34815, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Pennsylvania State University", 30928, 30928, 37545, 0, public, summer-unknown, Unknown, Unknown, No, No
-"Massachusetts Institute of Technology", 46548, 50016, 46993, 396, private, summer-unknown, Unknown, Unknown, No, No
-"University of Notre Dame", 40000, 40000, 33571, 0, private, summer-gtd, 13332, 13332, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104
-"University of Washington (CSE)", 46844, 48608, 44686, 789, public, summer-no-gtd varies, 16730, 17360, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
-"University of Washington (ECE)", 35489, 36834, 44686, 789, public, summer-no-gtd, 7715, 8007, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
-"College of William and Mary", 29000, 29000, 38209, 0, public, summer-unknown, Unknown, Unknown, No, No
-"Univ. of California - San Diego", 41172, 44340, 47021,0, public, summer-unknown, Unknown, Unknown, No, No
-"University of Pennsylvania", 40500, 40500, 36455, 0, private, summer-gtd, 10125, 10125, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62
-"University of Massachusetts Amherst", 37534, 37534, 33866, 1322, public, summer-no-gtd, 10105, 10105, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82
+"North Carolina State University", 31200, 31200, 48596, 4106, public, summer-no-gtd, 7800, 7800, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90
+"Lehigh University", 29400, 29400, 45878, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Pennsylvania State University", 30928, 30928, 48155, 0, public, summer-unknown, Unknown, Unknown, No, No
+"Massachusetts Institute of Technology", 46548, 50016, 62487, 396, private, summer-unknown, Unknown, Unknown, No, No
+"University of Notre Dame", 40000, 40000, 39773, 0, private, summer-gtd, 13332, 13332, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104
+"University of Washington (CSE)", 46844, 48608, 59695, 789, public, summer-no-gtd varies, 16730, 17360, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
+"University of Washington (ECE)", 35489, 36834, 59695, 789, public, summer-no-gtd, 7715, 8007, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
+"College of William and Mary", 29000, 29000, 49916, 0, public, summer-unknown, Unknown, Unknown, No, No
+"Univ. of California - San Diego", 41172, 44340, 61393,0, public, summer-unknown, Unknown, Unknown, No, No
+"University of Pennsylvania", 40500, 40500, 50173, 0, private, summer-gtd, 10125, 10125, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62
+"University of Massachusetts Amherst", 37534, 37534, 47681, 1322, public, summer-no-gtd, 10105, 10105, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82
 "University of Texas at Dallas", 23400, 25800, 47381, 3267, public, summer-no-gtd no-guarantee cpt-fee, Unknown, Unknown, No, No
-"Arizona State University *", 21000, 25800, 38043, 0, public, summer-no-gtd, Unknown, Unknown, No, No
-"Columbia University", 50120, 50120, 53342, 50, private, summer-gtd, Unknown, Unknown, No, No
+"Arizona State University *", 21000, 25800, 41849, 0, public, summer-no-gtd, Unknown, Unknown, No, No
+"Columbia University", 50120, 50120, 58320, 50, private, summer-gtd, Unknown, Unknown, No, No
 "University of Illinois at Chicago", 28714, 28714, 50260, 2433, public, summer-no-gtd, 5221, 5221, No, No
-"Texas A&M University", 27000, 27000, 32972, 15, public, summer-gtd, Unknown, Unknown, No, No
-"Univ. of California - Los Angeles", 42600, 42600, 44783, 180, public, summer-unknown, Unknown, Unknown, No, No
-"Duke University", 38600, 38600, 38282, 0, private, summer-gtd, 9650, 9650, No, No
+"Texas A&M University", 27000, 27000, 40172, 15, public, summer-gtd, Unknown, Unknown, No, No
+"Univ. of California - Los Angeles", 42600, 42600, 57346, 180, public, summer-unknown, Unknown, Unknown, No, No
+"Duke University", 38600, 38600, 48596, 0, private, summer-gtd, 9650, 9650, No, No
 "Stevens Institute of Technology", 27392, 34586, 55862, 2204, private, summer-no-gtd varies, 0, 4000, Yes, No
-"Michigan State University", 30030, 30030, 32798, 0, public, summer-no-gtd, 6930, 6930, No, No
-"University of Maryland - College Park", 40527, 43528, 46403, 1603, public, summer-no-gtd varies, 11465, 12314, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69
-"Univ. of California - Berkeley", 52016, 52016, 46448, 0, public, summer-partial-gtd=4456, 22280, 22280, No, No
+"Michigan State University", 30030, 30030, 41123, 0, public, summer-no-gtd, 6930, 6930, No, No
+"University of Maryland - College Park", 40527, 43528, 54391, 1603, public, summer-no-gtd varies, 11465, 12314, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/69
+"Univ. of California - Berkeley", 52016, 52016, 62122, 0, public, summer-partial-gtd=4456, 22280, 22280, No, No
 "Toyota Technological Institute at Chicago", 44500, 44500, 50260, 0, private, summer-gtd, 11124, 11124, Y12, Y12
-"New Jersey Institute of Technology", 39342, 39342, 47834, 0, public, summer-gtd, 8196, 8196, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/117, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/117
-"Rochester Institute of Technology", 21000, 28000, 32995, 880, private, summer-no-gtd varies, Unknown, 7000, No, No
-"Washington University in St Louis", 38500, 38500, 33244, 0, private, summer-gtd, 9625, 9625, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97
-"University of Pittsburgh", 30000, 30000, 33387, 50, public, summer-gtd, 10000, 10000, No, No
-"University of Colorado - Boulder", 37200, 39996, 42341, 416, public, summer-no-gtd varies, 9300, 9999, No, No
-"University at Buffalo", 29900, 29900, 43963, 3300, public, summer-no-gtd, 6900, 6900, No, No
+"New Jersey Institute of Technology", 39342, 39342, 48877, 0, public, summer-gtd, 8196, 8196, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/117, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/117
+"Rochester Institute of Technology", 21000, 28000, 44933, 880, private, summer-no-gtd varies, Unknown, 7000, No, No
+"Washington University in St Louis", 38500, 38500, 43898, 0, private, summer-gtd, 9625, 9625, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97
+"University of Pittsburgh", 30000, 30000, 43957, 50, public, summer-gtd, 10000, 10000, No, No
+"University of Colorado - Boulder", 37200, 39996, 54822, 416, public, summer-no-gtd varies, 9300, 9999, No, No
+"University at Buffalo", 29900, 29900, 43669, 3300, public, summer-no-gtd, 6900, 6900, No, No
