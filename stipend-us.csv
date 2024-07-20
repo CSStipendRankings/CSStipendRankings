@@ -2,7 +2,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Michigan", 36072, 36072, 47334, 0, public, summer-gtd varies, 12024, 12024, Y12, Y12
 "Univ. of Illinois at Urbana-Champaign (CSE)", 38850, 40854, 41500, 1266, public, summer-unknown, Unknown, Unknown, Yes, Yes
 "Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 41500, 1266, public, summer-unknown, Unknown, Unknown, No, No
-"Georgia Institute of Technology", 38400, 38400, 54296, 3081, public, summer-unknown, Unknown, Unknown, No, No
+"Georgia Institute of Technology", 39600, 39600, 54296, 3081, public, summer-unknown, Unknown, Unknown, No, No
 "Harvard University", 42588, 42588, 62487, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Wisconsin - Madison", 34067, 36074, 44480, 2980, public, summer-no-gtd no-guarantee, 8512, 9019, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88
 "Rice University", 40333, 40333, 43327, 0, private, summer-unknown, Unknown, Unknown, No, No
