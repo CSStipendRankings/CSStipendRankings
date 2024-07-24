@@ -28,7 +28,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Texas at Austin (ECE)", 31600, 31600, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
 "University of Texas at Austin (CS)", 38400, 38400, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Boston University", 44290, 44290, 62487, 0, private, summer-unknown, Unknown, Unknown, No, No
-"University of Southern California", 42000, 42000, 55385, 0, private, summer-unknown, Unknown, Unknown, No, No
+"University of Southern California", 45000, 45000, 55385, 0, private, summer-unknown, Unknown, Unknown, No, No
 "University of North Carolina", 42931, 42931, 48596, 0, public, summer-gtd, Unknown, Unknown, Yes, Yes
 "Ohio State University", 31800, 32400, 43593, 1054, public, summer-no-gtd, 7725, 8100, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/84, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/84
 "Carnegie Mellon University", 41460, 41460, 43957, 0, private, summer-no-gtd, Unknown, Unknown, No, No
