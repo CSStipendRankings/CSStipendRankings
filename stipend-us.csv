@@ -9,7 +9,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Stanford University", 52560, 52560, 68624, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 50523, 0, public, summer-gtd, 11024, 11778, Yes, Yes
 "Univ. of California - Santa Cruz", 40675, 46817, 76215, 0, public, summer-unknown varies, Unknown, Unknown, No, No
-"Stony Brook University", 39000, 39000, 59557, 83, public, summer-no-gtd cpt-fee, 13000, 13000, No, No
+"Stony Brook University", 39000, 39000, 59557, 165, public, summer-no-gtd cpt-fee, 13000, 13000, No, No
 "University of Rochester (CS)", 41011, 41011, 44874, 0, private, summer-gtd, 9192, 9192, No, No
 "University of Utah", 34248, 35448, 47160, 300, public, summer-no-gtd varies, 8562, 8862, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74
 "Purdue University (CS)", 25852, 25852, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
