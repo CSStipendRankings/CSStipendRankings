@@ -61,4 +61,4 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Pittsburgh", 30000, 30000, 43957, 50, public, summer-gtd, 10000, 10000, No, No
 "University of Colorado - Boulder", 37200, 39996, 54822, 416, public, summer-no-gtd varies cpt-fee, 9300, 9999, No, No
 "University at Buffalo", 29900, 29900, 43669, 3300, public, summer-no-gtd, 6900, 6900, No, No
-"Georgetown University", 38950, 38950, 56165, 0, private, summer-no-gtd cpt-fee, 38950, 38950, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/125, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/125
+"Georgetown University", 38950, 38950, 56165, 0, private, summer-no-gtd cpt-fee, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/125, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/125
