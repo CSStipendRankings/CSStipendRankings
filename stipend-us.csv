@@ -22,7 +22,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "New York University (Tandon)", 40800, 40800, 61817, 0, private, summer-unknown varies, Unknown, Unknown, No, No
 "Cornell University", 43326, 43326, 51249, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Princeton University", 52536, 52536, 51451, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Northwestern University", 45000, 45000, 49273, 42, private, summer-gtd, 11250, 11250, No, No
+"Northwestern University", 45000, 45000, 49273, 42, private, summer-gtd, 11250, 11250, Y12 https://github.com/CSStipendRankings/CSStipendRankings/pull/101, Y12 https://github.com/CSStipendRankings/CSStipendRankings/pull/101
 "New York University (Courant)", 48036, 48036, 58320, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Johns Hopkins University", 47000, 45500, 49946, 0, private, summer-unknown, Unknown, Unknown, Yes, No
 "University of Texas at Austin (ECE)", 31600, 31600, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
