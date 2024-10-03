@@ -13,7 +13,7 @@
 #### Option 1
 The fastest way to add or update the data is by [editing `stipend-us.csv`](https://github.com/CSStipendRankings/CSStipendRankings/edit/main/stipend-us.csv) and submit a [pull request](https://github.com/CSStipendRankings/CSStipendRankings/pulls). The stipend data are stored as rows in `stipend-us.csv` in the format of 
 
-> ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>,<Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees (and Health Insurance) Charged by University ($)>, <Public or Private>, <Summer Funding Guarantee>```
+> ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>,<Annual Local Living Wage ($)>, <Annual Out-of-pocket Fees (and Health Insurance) Charged by University ($)>, <Public or Private>, <Labels such as Summer Funding Guarantee>, <Summer Stipend Amount (Pre-Qualification) ($)>, <Summer Stipend Amount (Post-Qualification) ($)>, <Is Pre Qualification Stipend verified (Add Link)>? <Is Post Qualification Stipend verified (Add Link)>?```
 
 Please place the institution name within `"`'s. Use the name however it appears on [CSRankings.org](https://csrankings.org/).
 
