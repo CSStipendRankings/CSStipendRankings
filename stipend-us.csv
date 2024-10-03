@@ -14,7 +14,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Utah", 34248, 35448, 47160, 300, public, summer-no-gtd varies, 8562, 8862, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74
 "Purdue University (CS)", 25852, 25852, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
 "Purdue University (ECE)", 26400, 26400, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
-"Yale University", 48330, 48330, 48247, 0, private, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95
+"Yale University", 49538, 49538, 48247, 0, private, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/95
 "University of Chicago", 43600, 43600, 50260, 0, private, summer-gtd, Unknown, Unknown, No, No
 "Northeastern University", 50000, 50000, 62487, 869, private, summer-unknown, Unknown, Unknown, No, No
 "Univ. of California - Santa Barbara", 40000, 40000, 66793, 0, public, summer-unknown, Unknown, Unknown, No, No
