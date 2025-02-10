@@ -18,7 +18,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Chicago", 43600, 43600, 50260, 0, private, summer-gtd, Unknown, Unknown, No, No
 "Northeastern University", 50000, 50000, 62487, 869, private, summer-unknown, Unknown, Unknown, No, No
 "Univ. of California - Santa Barbara", 40000, 40000, 66793, 0, public, summer-unknown, Unknown, Unknown, No, No
-"Brown University", 43791, 43791, 48310, 0, private, summer-gtd, 10947, 10947, Yes, Yes
+"Brown University", 52198, 52198, 42270, 0, private, summer-gtd, 13050, 13050, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/132, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/132
 "New York University (Tandon)", 40800, 40800, 61817, 0, private, summer-unknown varies, Unknown, Unknown, No, No
 "Cornell University", 43326, 43326, 51249, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Princeton University", 52536, 52536, 51451, 0, private, summer-unknown, Unknown, Unknown, No, No
