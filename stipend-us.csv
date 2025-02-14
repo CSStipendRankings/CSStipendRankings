@@ -36,7 +36,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Lehigh University", 29400, 29400, 45878, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Pennsylvania State University", 30928, 30928, 48155, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Massachusetts Institute of Technology", 46548, 50016, 62487, 396, private, summer-unknown, Unknown, Unknown, No, No
-"University of Notre Dame", 40000, 40000, 39773, 0, private, summer-gtd, 13332, 13332, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104
+"University of Notre Dame", 41400, 41400, 39773, 0, private, summer-gtd, 13332, 13332, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/104
 "University of Washington (CSE)", 46844, 48608, 59695, 789, public, summer-no-gtd varies, 16730, 17360, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
 "University of Washington (ECE)", 35489, 36834, 59695, 789, public, summer-no-gtd, 7715, 8007, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
 "College of William and Mary", 29000, 29000, 49916, 0, public, summer-unknown, Unknown, Unknown, No, No
