@@ -44,7 +44,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Pennsylvania", 40500, 40500, 50173, 0, private, summer-gtd, 10125, 10125, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/62
 "University of Massachusetts Amherst", 37534, 37534, 47681, 1322, public, summer-no-gtd, 10105, 10105, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82
 "University of Texas at Dallas", 23400, 25800, 47381, 3267, public, summer-no-gtd no-guarantee cpt-fee, Unknown, Unknown, No, No
-"Arizona State University", 21000, 25800, 41849, 0, public, summer-no-gtd, Unknown, Unknown, No, No
+"Arizona State University", 26544, 26544, 53433, 1500, public, summer-no-gtd, Unknown, Unknown, No, No
 "Columbia University", 50120, 50120, 58320, 50, private, summer-gtd, Unknown, Unknown, No, No
 "University of Illinois at Chicago", 28714, 28714, 50260, 2433, public, summer-no-gtd, 5221, 5221, No, No
 "Texas A&M University", 27000, 27000, 40172, 15, public, summer-gtd, Unknown, Unknown, No, No
