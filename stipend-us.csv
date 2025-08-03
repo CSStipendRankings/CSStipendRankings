@@ -24,7 +24,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Princeton University", 54216, 54216, 51451, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Northwestern University", 46356, 46356, 51752, 0, private, summer-gtd, 12938, 12938, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/134, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/134
 "New York University (Courant)", 48036, 48036, 58320, 0, private, summer-unknown, Unknown, Unknown, No, No
-"Johns Hopkins University", 47000, 45500, 49946, 0, private, summer-unknown, Unknown, Unknown, Yes, No
+"Johns Hopkins University", 50000, 50000, 43997, 0, private, summer-no-gtd, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/142, No
 "University of Texas at Austin (ECE)", 31600, 31600, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
 "University of Texas at Austin (CS)", 38400, 38400, 49878, 0, public, summer-unknown, Unknown, Unknown, No, No
 "Boston University", 44290, 44290, 62487, 0, private, summer-unknown, Unknown, Unknown, No, No
