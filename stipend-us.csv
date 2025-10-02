@@ -59,7 +59,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Rochester Institute of Technology", 23000, 23000, 44933, 880, private, summer-no-gtd varies, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/135, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/135
 "Washington University in St Louis", 38500, 38500, 43898, 0, private, summer-gtd, 9625, 9625, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/97
 "University of Pittsburgh", 30000, 30000, 43957, 50, public, summer-gtd, 10000, 10000, No, No
-"University of Colorado - Boulder", 38688, 41596, 54822, 436, public, summer-no-gtd varies cpt-fee, 9672, 10399, No, No
+"University of Colorado - Boulder", 43261, 43261, 54452, 440, public, summer-no-gtd varies cpt-fee, 10815, 10815, No, No
 "University at Buffalo", 29900, 29900, 43669, 3300, public, summer-no-gtd, 6900, 6900, No, No
 "Georgetown University", 39924, 39924, 60840, 0, private, summer-no-gtd cpt-fee, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/144, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/144
 "University of Florida", 32000, 32000, 41675, 0, public, summer-unknown, Unknown, Unknown, No, No
