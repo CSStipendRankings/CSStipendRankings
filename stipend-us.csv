@@ -30,7 +30,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Boston University", 44290, 44290, 62487, 0, private, summer-unknown, Unknown, Unknown, No, No
 "University of Southern California", 45000, 45000, 55385, 0, private, summer-unknown, Unknown, Unknown, No, No
 "University of North Carolina", 42931, 42931, 48596, 0, public, summer-gtd, Unknown, Unknown, Yes, Yes
-"Ohio State University", 32436, 33048, 43139, 1054, public, summer-no-gtd, 8109, 8262, No, No
+"Ohio State University", 34764, 41136, 43139, 1054, public, summer-no-gtd, 11588, 13712, Yes https://gradsch.osu.edu/news/2026/01/23/minimum-graduate-associate-and-fellowship-stipend-increase-2026, Yes https://gradsch.osu.edu/news/2026/01/23/minimum-graduate-associate-and-fellowship-stipend-increase-2026
 "Carnegie Mellon University", 42900, 42900, 43957, 0, private, summer-no-gtd, Unknown, Unknown, No, No
 "North Carolina State University", 31200, 31200, 48596, 4106, public, summer-no-gtd cpt-fee, 7800, 7800, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90
 "Lehigh University", 29400, 29400, 45878, 0, private, summer-unknown, Unknown, Unknown, No, No
