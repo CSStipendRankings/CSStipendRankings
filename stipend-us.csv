@@ -66,3 +66,4 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Tennessee - Knoxville", 35328, 35328, 46520, 0, public, summer-gtd, 8832, 8832, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/136, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/136
 "University of Oregon", 23232, 23232, 47680, 183, public, summer-no-gtd, Unknown, Unknown, No, No
 "University of Minnesota", 32989, 32989, 51023, 325, public, summer-no-gtd, 8403, 8403, Yes https://cse.umn.edu/cs/assistantships, Yes https://cse.umn.edu/cs/assistantships
+"Kansas State University (CS)", 14400, 14400, 36761, 1378.48, public, summer-no-gtd, Unknown, Unknown, No, No
