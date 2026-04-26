@@ -1,3 +1,13 @@
+living_wage_csv = $.ajax({ type: "GET", url: "mit-living-wage.csv", async: false }).responseText
+living_wage_rows = $.csv.toArrays(living_wage_csv)
+living_wage_rows = living_wage_rows.slice(1) // Remove header
+living_wage_map = {}
+for (i = 0; i < living_wage_rows.length; i++) {
+    var fips = living_wage_rows[i][0].trim()
+    var wage = Number(living_wage_rows[i][2])
+    living_wage_map[fips] = wage
+}
+
 csv = $.ajax({ type: "GET", url: "stipend-us.csv", async: false }).responseText
 data = $.csv.toArrays(csv)
 data = data.slice(1) // Remove header
@@ -6,12 +16,13 @@ uni_and_cost_of_living = [];
 for (i = 0; i < data.length; i++) {
     data[i][1] = Number(data[i][1]) // pre_qual stipend
     data[i][2] = Number(data[i][2]) // after_qual stipend
-    data[i][3] = Number(data[i][3]) // living cost
+    var county_fips = data[i][3].trim() // county_fips
+    data[i][3] = living_wage_map[county_fips] || 0 // resolve to annual living cost
     data[i][4] = Number(data[i][4]) // fee
     data[i][5] = data[i][5].trimStart() // public/private
     data[i][6] = data[i][6].trimStart() // summer funding guarantee
-    data[i][7] = Number(data[i][7]) // pre_qual stipend
-    data[i][8] = Number(data[i][8]) // after_qual stipend
+    data[i][7] = Number(data[i][7]) // pre_qual summer
+    data[i][8] = Number(data[i][8]) // after_qual summer
     data[i][9] = data[i][9].trimStart() // pre_qual verified
     data[i][10] = data[i][10].trimStart() // post_qual verified
 
