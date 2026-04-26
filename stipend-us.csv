@@ -4,13 +4,13 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "Univ. of Illinois at Urbana-Champaign (ECE)", 33456, 35760, 41500, 1266, public, summer-no-gtd, Unknown, Unknown, No, No
 "Georgia Institute of Technology", 40800, 40800, 54296, 3081, public, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/141, No
 "Harvard University", 42588, 42588, 62487, 0, private, summer-gtd, Unknown, Unknown, No, No
-"University of Wisconsin - Madison", 34067, 36074, 44480, 2980, public, summer-no-gtd no-guarantee, 8512, 9019, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88
+"University of Wisconsin - Madison", 34067, 36074, 44480, 2980, public, summer-no-gtd no-guarantee cpt-fee, 8512, 9019, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88
 "Rice University", 40333, 40333, 43327, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Stanford University", 52560, 52560, 68624, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 50523, 0, public, summer-gtd, 11024, 11778, Yes, Yes
 "Univ. of California - Santa Cruz", 58240, 60565, 76215, 0, public, summer-no-gtd, 22484, 24226, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/130, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/130
 "Stony Brook University", 39000, 39000, 59557, 165, public, summer-no-gtd cpt-fee, 13000, 13000, No, No
-"University of Rochester (CS)", 41011, 41011, 44874, 0, private, summer-gtd, 9192, 9192, No, No
+"University of Rochester (CS)", 41011, 41011, 44874, 0, private, summer-gtd cpt-fee, 9192, 9192, No, No
 "University of Utah", 34248, 35448, 47160, 300, public, summer-no-gtd varies, 8562, 8862, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/74
 "Purdue University (CS)", 25852, 25852, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
 "Purdue University (ECE)", 26400, 26400, 40707, 1482, public, summer-unknown, Unknown, Unknown, No, No
@@ -35,7 +35,7 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "North Carolina State University", 31200, 31200, 48596, 4106, public, summer-no-gtd cpt-fee, 7800, 7800, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/90
 "Lehigh University", 29400, 29400, 45878, 0, private, summer-unknown, Unknown, Unknown, No, No
 "Pennsylvania State University", 30928, 30928, 48155, 0, public, summer-unknown, Unknown, Unknown, No, No
-"Massachusetts Institute of Technology", 46548, 50016, 62487, 396, private, summer-unknown, Unknown, Unknown, No, No
+"Massachusetts Institute of Technology", 46548, 50016, 62487, 396, private, summer-unknown cpt-fee, Unknown, Unknown, No, No
 "University of Notre Dame", 41400, 41400, 39773, 0, private, summer-gtd, 13332, 13332, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/133, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/133
 "University of Washington (CSE)", 46844, 48608, 59695, 789, public, summer-no-gtd varies, 16730, 17360, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
 "University of Washington (ECE)", 35489, 36834, 59695, 789, public, summer-no-gtd, 7715, 8007, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf, Yes https://grad.uw.edu/wp-content/uploads/2022-23-RA_salary_chart.pdf
@@ -44,8 +44,8 @@ institution, pre_qual stipend, after_qual stipend, living cost, fee, public/priv
 "University of Pennsylvania", 49000, 49000, 48554, 0, private, summer-gtd, 12250, 12250, No, No
 "University of Massachusetts Amherst", 37534, 37534, 47681, 1322, public, summer-no-gtd, 10105, 10105, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/82
 "University of Texas at Dallas", 23400, 25800, 47381, 3267, public, summer-no-gtd no-guarantee cpt-fee, Unknown, Unknown, No, No
-"Arizona State University", 34507, 34507, 53433, 1500, public, summer-no-gtd, 7963, 7963, No, No
-"Columbia University", 50120, 50120, 58320, 50, private, summer-gtd, Unknown, Unknown, No, No
+"Arizona State University", 34507, 34507, 53433, 1500, public, summer-no-gtd cpt-fee, 7963, 7963, No, No
+"Columbia University", 50120, 50120, 58320, 50, private, summer-gtd cpt-fee, Unknown, Unknown, No, No
 "University of Illinois at Chicago", 28714, 28714, 50260, 2433, public, summer-no-gtd, 5221, 5221, No, No
 "Texas A&M University", 27000, 27000, 40172, 15, public, summer-gtd, Unknown, Unknown, No, No
 "Univ. of California - Los Angeles", 42600, 42600, 57346, 180, public, summer-unknown cpt-fee, Unknown, Unknown, No, No
