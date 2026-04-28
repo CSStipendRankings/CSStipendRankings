@@ -8,17 +8,11 @@
 
 **First of all, thank you for your interest in contributing to CSStipendRankings! We welcome contributions from everyone.** Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
-### The easiest way: let an AI do it for you
+### The easiest way: open an issue and `@claude`
 
-You no longer need to hand-edit CSVs to contribute. Pick whichever workflow fits you best:
+Open the [stipend data issue template](https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose) and describe what you know — a link to your department's funding page, an offer letter or payroll PDF (with personal info redacted), or just the numbers. Then `@claude` in a comment on the issue, and the [Claude PR Assistant workflow](.github/workflows/claude.yml) will draft the CSV change as a pull request for maintainers to review. Please keep the original source link or document handy — maintainers will verify before merging, and verified submissions get a checkmark on the website.
 
-1. **Open an issue and let Claude help.** Use the [stipend data issue template](https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose). Paste a link to your department's funding page, attach an offer letter or payroll PDF (with personal info redacted), or just describe what you know. Once the issue is open, you (or a maintainer) can `@claude` in a comment and the [Claude PR Assistant workflow](.github/workflows/claude.yml) will draft the CSV change as a pull request for review.
-2. **Ask an AI assistant locally.** Open this repo in [Claude Code](https://claude.com/claude-code), Cursor, or any other AI-native editor and ask it to "add stipend data for `<your university>`". The agent has the full schema in front of it (see the data layout below) and can fill in `stipend-us.csv`, `university-fips.csv`, `mit-living-wage.csv`, and `epi-living-cost.csv` consistently, then open a PR.
-3. **Have an LLM pre-fill the issue for you.** Drop your offer letter / department FAQ / payroll record into ChatGPT or Claude with a prompt like "extract the fields requested by this issue template", paste the result into the issue, and submit.
-
-In all three cases, please **keep the original source link or document handy** — maintainers will verify before merging, and verified submissions get a checkmark on the website.
-
-### The manual way: edit the CSVs directly
+### Editing the CSVs directly
 
 If you prefer to edit by hand, the data lives in a few small CSV files at the repo root:
 
