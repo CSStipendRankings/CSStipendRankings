@@ -14,8 +14,12 @@ university_fips_rows = university_fips_rows.slice(1) // Remove header
 university_fips_map = {}
 for (i = 0; i < university_fips_rows.length; i++) {
     var institution = university_fips_rows[i][0].trim()
-    var fips = university_fips_rows[i][1].trim()
-    university_fips_map[institution] = fips
+    university_fips_map[institution] = {
+        fips: university_fips_rows[i][1].trim(),
+        county: university_fips_rows[i][2].trim(),
+        state: university_fips_rows[i][3].trim(),
+        address: university_fips_rows[i][4].trim()
+    }
 }
 
 csv = $.ajax({ type: "GET", url: "stipend-us.csv", async: false }).responseText
@@ -26,7 +30,8 @@ uni_and_cost_of_living = [];
 for (i = 0; i < data.length; i++) {
     data[i][1] = Number(data[i][1]) // pre_qual stipend
     data[i][2] = Number(data[i][2]) // after_qual stipend
-    var fips = university_fips_map[data[i][0].trim()] || ""
+    var uniInfo = university_fips_map[data[i][0].trim()] || {}
+    var fips = uniInfo.fips || ""
     data[i].splice(3, 0, living_wage_map[fips] || 0) // insert annual living cost at index 3
     data[i][4] = Number(data[i][4]) // fee
     data[i][5] = data[i][5].trimStart() // public/private
@@ -179,6 +184,12 @@ function get_university(arr) {
 
 function get_university_type(arr) {
     return arr[5]
+}
+
+function get_university_tooltip(arr) {
+    var info = university_fips_map[arr[0].trim()] || {}
+    if (!info.address) return ""
+    return "Address: " + info.address + "\nCounty: " + info.county + "\nFIPS: " + info.fips
 }
 
 function is_verified(arr) {
@@ -343,7 +354,7 @@ function sort_on_column(col, desc_or_asc) {
             $("#ranking").find("tbody").append(
                 $("<tr>")
                     .append($("<td>").text(local_rank + 1))
-                    .append($("<td>").text(get_university(temp_data[i])).append(namefix).append(namefix2).attr("style", institution_style))
+                    .append($("<td>").append($("<span>").text(get_university(temp_data[i])).attr("title", get_university_tooltip(temp_data[i]))).append(namefix).append(namefix2).attr("style", institution_style))
                     .append($("<td>").append(stipendfix).append("&nbsp;"+get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
@@ -361,7 +372,7 @@ function sort_on_column(col, desc_or_asc) {
             $("#ranking").find("tbody").append(
                 $("<tr>")
                     .append($("<td>").text(local_rank + 1))
-                    .append($("<td>").text(get_university(temp_data[i])).append(namefix).append(namefix2).attr("style", institution_style))
+                    .append($("<td>").append($("<span>").text(get_university(temp_data[i])).attr("title", get_university_tooltip(temp_data[i]))).append(namefix).append(namefix2).attr("style", institution_style))
                     .append($("<td>").append(stipendfix).append("&nbsp;"+get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
