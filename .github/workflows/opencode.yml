@@ -28,10 +28,28 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Configure git for opencode-agent
+        run: |
+          # Get the opencode-agent bot user ID
+          USER_ID=$(gh api /users/opencode-agent --jq .id 2>/dev/null || echo "")
+          if [ -n "$USER_ID" ]; then
+            git config --global user.name "opencode-agent[bot]"
+            git config --global user.email "${USER_ID}+opencode-agent[bot]@users.noreply.github.com"
+          else
+            # Fallback: use generic bot identity
+            git config --global user.name "opencode-agent[bot]"
+            git config --global user.email "opencode-agent[bot]@users.noreply.github.com"
+          fi
+          echo "Git config:"
+          git config --global user.name
+          git config --global user.email
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run opencode
         uses: anomalyco/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
           model: opencode-go/deepseek-v4-pro
-          prompt: ${{ github.event_name == 'issues' && 'Analyze this issue and implement the necessary changes. Create a new branch, make the required modifications, and open a pull request with a clear description of the changes. If the issue is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated.' || '' }}
+          prompt: ${{ github.event_name == 'issues' && 'Analyze this issue and implement the necessary changes. Create a new branch, make the required modifications, and open a pull request with a clear description of the changes. If the issue is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated. When committing, include the issue author as co-author using: Co-authored-by: ${{ github.event.issue.user.name || github.event.issue.user.login }} <${{ github.event.issue.user.email || github.event.issue.user.login || '' }}@users.noreply.github.com>' || '' }}
