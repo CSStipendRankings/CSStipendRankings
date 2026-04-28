@@ -241,8 +241,7 @@
                 working to collect such data. For now, this data is not complete.
               </li>
               <li>Fees are annual non-reimbursible tariffs (including health insurance) reclaimed by said institution. <b>See why health insurance is included in <a href="/faq.html#:~:text=Why is health insurance included in fees?" target="_blank">here.</a></b> If the institution charges a CPT fee or summer enrollment fee for international students, they should also be counted here. <b>In short, this should be the maximum possible fee that the institution charges.</b></li>
-              <li>Living cost is calculated based on the <a href="https://livingwage.mit.edu/" target="_blank">MIT Living Wage
-                  Calculator </a> for the institution's city. <b>See why we use this calculator and its limitations in <a href="/faq.html#:~:text=Why MIT Living Cost Calculator?" target="_blank">here</a></b>.</li>
+              <li>Living cost is based on the institution's city. We support two data sources: the <a href="https://livingwage.mit.edu/" target="_blank">MIT Living Wage Calculator</a> (default) and the <a href="https://www.epi.org/resources/budget/" target="_blank">EPI Family Budget Calculator</a> (1 adult, 0 children). <b>See why we use the MIT calculator and its limitations in <a href="/faq.html#:~:text=Why MIT Living Cost Calculator?" target="_blank">here</a></b>. You can switch between sources using the toggle below.</li>
             </ul>
             <p>We use the following labels on the website:
               <ul>
@@ -324,6 +323,13 @@
                   <label for="css">Show fellowships and set the living cost to the institution</label>
                   <select id="university_locations" name="university_locations" onchange="do_change_CoL(this.value)"></select>
                 </div>
+                <div>
+                  Living cost source: &nbsp;
+                  <input type="radio" id="col-mit" name="col-source" value="mit" checked></input>
+                  <label for="col-mit"><a href="https://livingwage.mit.edu/" target="_blank">MIT Living Wage Calculator</a> &nbsp;</label>
+                  <input type="radio" id="col-epi" name="col-source" value="epi"></input>
+                  <label for="col-epi"><a href="https://www.epi.org/resources/budget/" target="_blank">EPI Family Budget Calculator</a> (1 adult, 0 children) &nbsp;</label>
+                </div>
               </div>
             </div>
           </div>
@@ -358,7 +364,7 @@
                       </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
                     </th>
                     <th data-column="living-cost" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <abbr
+                      <abbr id="living-cost-header-abbr"
                         title="The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator.">
                         <font color="#777">Living Cost ($)</font>
                       </abbr><!--&nbsp;<span class="sort-indicator"></span>-->
