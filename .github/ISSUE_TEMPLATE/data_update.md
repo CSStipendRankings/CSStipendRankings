@@ -20,15 +20,18 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 
 - **Annual Stipend Amount (USD, both Pre-Qualification and Post-Qualification if different)**:
 
-  > 12-month, pre-tax USD figure that **at least 80% of PhD students** receive.
-  > If your department only guarantees an academic-year (8–10 month) amount,
-  > write that here and break down summer separately below.
+  > Always a **12-month**, pre-tax USD figure that **at least 80% of PhD
+  > students** receive — regardless of whether summer is guaranteed. If your
+  > department's headline number is academic-year only, add the typical
+  > summer amount and report the 12-month total here.
 
-- **How much of the annual figure comes from summer funding?** (USD, or "none / not guaranteed"):
+- **Summer Stipend Amount (USD)**:
 
-  > E.g. "$12,000 of the $42,000 is summer TA/RA pay" or "academic year is
-  > $30,000 and summer is not guaranteed". This lets us tell whether the
-  > headline number is really 12-month.
+  > The summer portion of the 12-month total above, written separately.
+  > E.g. if the academic year is $30,000 and summer TA/RA pay is $12,000,
+  > the annual stipend is $42,000 and the summer stipend is $12,000. The
+  > website computes the guaranteed-only view from these two numbers plus
+  > the summer-guarantee flag below.
 
 - **Annual Out-of-pocket Fees (and Health Insurance) Charged by University (USD)**:
 
