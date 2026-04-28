@@ -181,13 +181,21 @@
                 <h2>Can I contribute? How?</h2>
                 <p>
                     Everyone is welcomed to submit patches or report the stipend via <a
-                        href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull requests</a>.
-                    Another option to submit valuable datapoints is through <a
-                        href="https://forms.gle/fmF3EjiWxMQdoqhR9">this
-                        Google Form</a>.
-                    Also, feel free to submit <a
-                        href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issues on
+                        href="https://github.com/CSStipendRankings/CSStipendRankings/pulls">pull requests</a> or by
+                    opening an <a
+                        href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose">issue on
                         GitHub</a>.
+                    <br><br>
+                    <b>The easiest way is to let an AI do the formatting for you.</b> Drop your offer letter, payroll
+                    record, or your department's funding page into ChatGPT / Claude / your favorite LLM and ask it to
+                    fill in our issue template. Paste the result into a new issue and submit. You (or a maintainer) can
+                    also <code>@claude</code> in a comment afterwards and the
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/.github/workflows/claude.yml">Claude
+                        PR Assistant</a> workflow will draft the CSV pull request automatically.
+                    Alternatively, open the repo in <a href="https://claude.com/claude-code" target="_blank">Claude
+                        Code</a>, Cursor, or any other AI-native editor and ask the agent to add or update your
+                    institution &mdash; the schema is small and self-describing. Please always include a source link or
+                    a (redacted) source document so maintainers can verify before merging.
                 </p>
                 <h2>What's your plan for the future? Will X, Y, and Z be added?</h2>
                 <p>
@@ -199,8 +207,7 @@
                 <ul>
                     <li>Gathering data for summer funding guarantees. We plan to incorporate a feature that allows
                         users to exclude non-guaranteed funds when calculating the stipends.</li>
-                    <li>Add alternative sources of living cost. In the future, users should have the ability to
-                        choose between different sources of living cost while ranking.</li>
+                    <li>Continuing to expand verified data via AI-assisted issue/PR submissions.</li>
                 </ul>
                 Other functionalities will not be added.
 
