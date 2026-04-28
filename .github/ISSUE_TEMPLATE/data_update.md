@@ -1,12 +1,12 @@
 ---
 name: Stipend Data Update
-about: Add or update stipend data for an institution. AI-assisted submissions are encouraged.
+about: Add or update stipend data for an institution.
 title: "[Data Update]: "
 labels: data-update, needs-triage
 assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 ---
 
-> **You don't have to fill this in by hand.** Drop your offer letter, payroll record, department funding page, or any other source into ChatGPT / Claude / your favorite LLM and ask it to "fill in the CSStipendRankings issue template". Paste the result here. You can also `@claude` in a comment after submitting and the [Claude PR Assistant](../blob/main/.github/workflows/claude.yml) will draft a CSV pull request for maintainers to review.
+> Fill in what you know below. After submitting, you can `@claude` in a comment and the Claude PR Assistant will draft the CSV change as a pull request for maintainers to review.
 >
 > Please **always include a source link or attach the (redacted) source document** so we can verify before merging.
 >
