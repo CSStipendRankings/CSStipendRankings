@@ -8,12 +8,6 @@ on:
 
 jobs:
   opencode:
-    if: |
-      github.event_name == 'issues' ||
-      contains(github.event.comment.body, ' /oc') ||
-      startsWith(github.event.comment.body, '/oc') ||
-      contains(github.event.comment.body, ' /opencode') ||
-      startsWith(github.event.comment.body, '/opencode')
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -21,7 +15,21 @@ jobs:
       pull-requests: write
       issues: read
     steps:
+      - name: Check if should run
+        id: check
+        shell: bash
+        run: |
+          EVENT="${{ github.event_name }}"
+          if [ "$EVENT" = "issues" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          elif echo "${{ github.event.comment.body }}" | grep -qE '(^|[[:space:]])(/oc|/opencode)'; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No /oc or /opencode command found, nothing to do."
+          fi
       - name: Checkout repository
+        if: steps.check.outputs.should_run == 'true'
         uses: actions/checkout@v6
         with:
           persist-credentials: false
@@ -41,10 +49,12 @@ jobs:
           echo "Git config:"
           git config --global user.name
           git config --global user.email
+        if: steps.check.outputs.should_run == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run opencode
+        if: steps.check.outputs.should_run == 'true'
         uses: anomalyco/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
