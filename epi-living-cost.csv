@@ -1,0 +1,57 @@
+county_fips,county_name,annual_living_wage
+04013,"Maricopa County, AZ",48000
+06001,"Alameda County, CA",72000
+06037,"Los Angeles County, CA",62000
+06073,"San Diego County, CA",62000
+06083,"Santa Barbara County, CA",64000
+06085,"Santa Clara County, CA",74000
+06087,"Santa Cruz County, CA",68000
+08013,"Boulder County, CO",56000
+09009,"New Haven County, CT",53000
+11001,"District of Columbia, DC",64000
+12001,"Alachua County, FL",37000
+13121,"Fulton County, GA",49000
+17019,"Champaign County, IL",38000
+17031,"Cook County, IL",53000
+18141,"St. Joseph County, IN",37000
+18157,"Tippecanoe County, IN",36000
+20161,"Riley County, KS",36000
+24033,"Prince George's County, MD",62000
+24510,"Baltimore City, MD",47000
+25015,"Hampshire County, MA",46000
+25017,"Middlesex County, MA",71000
+25025,"Suffolk County, MA",71000
+26065,"Ingham County, MI",42000
+26161,"Washtenaw County, MI",51000
+27053,"Hennepin County, MN",53000
+29189,"St. Louis County, MO",44000
+34013,"Essex County, NJ",65000
+34017,"Hudson County, NJ",67000
+34021,"Mercer County, NJ",58000
+36029,"Erie County, NY",43000
+36047,"Kings County, NY",79000
+36055,"Monroe County, NY",44000
+36061,"New York County, NY",82000
+36103,"Suffolk County, NY",64000
+36109,"Tompkins County, NY",43000
+37063,"Durham County, NC",46000
+37135,"Orange County, NC",45000
+37183,"Wake County, NC",48000
+39049,"Franklin County, OH",43000
+41039,"Lane County, OR",45000
+42003,"Allegheny County, PA",43000
+42027,"Centre County, PA",40000
+42095,"Northampton County, PA",45000
+42101,"Philadelphia County, PA",52000
+44007,"Providence County, RI",51000
+47037,"Davidson County, TN",46000
+47093,"Knox County, TN",40000
+48041,"Brazos County, TX",37000
+48113,"Dallas County, TX",50000
+48201,"Harris County, TX",43000
+48453,"Travis County, TX",50000
+49035,"Salt Lake County, UT",47000
+51540,"Charlottesville City, VA",41000
+51830,"Williamsburg City, VA",46000
+53033,"King County, WA",62000
+55025,"Dane County, WI",46000
