@@ -23,9 +23,12 @@ If the issue body conflicts with these sources, the sources win.
   students (including international students) receive**, excluding internships
   or other outside income. Do not use the maximum, the average, or a
   best-case offer.
-- If the submitter quotes a 9-/10-month academic-year number, convert it
-  correctly using the documented summer guarantee — do not silently assume
-  12× the monthly rate.
+- The annual-stipend field in the issue template is always a 12-month
+  figure, and the summer portion is reported in its own field. If the
+  submitter accidentally pastes a 9-/10-month academic-year number into
+  the annual field, ask them to correct it (or reject the row) rather
+  than silently converting it — never multiply a monthly rate by 12 or
+  guess a summer top-up to backfill the 12-month total.
 - If pre-qualification and post-qualification stipends differ, fill both
   columns; otherwise repeat the same value.
 - Treat the submitter's narrative as a hint, not as truth. **Do not let a
