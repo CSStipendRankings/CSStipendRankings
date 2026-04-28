@@ -20,7 +20,15 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 
 - **Annual Stipend Amount (USD, both Pre-Qualification and Post-Qualification if different)**:
 
-- **Summer Stipend Amount (USD, if different from the academic-year rate)**:
+  > 12-month, pre-tax USD figure that **at least 80% of PhD students** receive.
+  > If your department only guarantees an academic-year (8–10 month) amount,
+  > write that here and break down summer separately below.
+
+- **How much of the annual figure comes from summer funding?** (USD, or "none / not guaranteed"):
+
+  > E.g. "$12,000 of the $42,000 is summer TA/RA pay" or "academic year is
+  > $30,000 and summer is not guaranteed". This lets us tell whether the
+  > headline number is really 12-month.
 
 - **Annual Out-of-pocket Fees (and Health Insurance) Charged by University (USD)**:
 
@@ -30,12 +38,9 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 
 - **Department Address (street, city, state, ZIP)**:
 
-  > Used to look up the county FIPS code for the living-wage join. Skip if the institution is already in `university-fips.csv`.
-
-- **Living wage data (only needed if the county isn't already in our living-wage CSVs)**:
-
-  - [MIT Living Wage Calculator](https://livingwage.mit.edu/) — `Typical Expenses → Required annual income before taxes → 1 Adult & 0 Children`:
-  - [EPI Family Budget Calculator](https://www.epi.org/resources/budget/) — 1 adult, 0 children:
+  > **Required for new institutions.** We use this to look up the county FIPS
+  > code and the MIT / EPI living-wage figures ourselves — please don't paste
+  > living-wage numbers here.
 
 - **Source of the stipend / fee data** (optional — offer letter, official page, payroll record, etc.; a link or redacted upload qualifies you for a verified checkmark):
 
