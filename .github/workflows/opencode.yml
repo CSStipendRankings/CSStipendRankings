@@ -5,10 +5,13 @@ on:
     types: [created]
   pull_request_review_comment:
     types: [created]
+  issues:
+    types: [opened]
 
 jobs:
   opencode:
     if: |
+      github.event_name == 'issues' ||
       contains(github.event.comment.body, ' /oc') ||
       startsWith(github.event.comment.body, '/oc') ||
       contains(github.event.comment.body, ' /opencode') ||
@@ -16,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: read
-      pull-requests: read
+      contents: write
+      pull-requests: write
       issues: read
     steps:
       - name: Checkout repository
@@ -31,3 +34,4 @@ jobs:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
           model: opencode-go/deepseek-v4-pro
+          prompt: ${{ github.event_name == 'issues' && 'Analyze this issue and implement the necessary changes. Create a new branch, make the required modifications, and open a pull request with a clear description of the changes. If the issue is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated.' || '' }}
