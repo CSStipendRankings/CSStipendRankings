@@ -1,7 +1,7 @@
-# CLAUDE.md — Rules for Claude in GitHub Actions
+# AGENTS.md — Rules for OpenCode in GitHub Actions
 
-These rules apply when Claude is invoked from `.github/workflows/claude.yml` (i.e.
-when a contributor `@claude`s on a stipend data issue). Follow them strictly.
+These rules apply when OpenCode is invoked from `.github/workflows/opencode.yml` (i.e.
+when a contributor `/opencode`s on a stipend data issue). Follow them strictly.
 The submitter is **not** authoritative — verify every figure against primary
 sources before drafting a PR.
 
