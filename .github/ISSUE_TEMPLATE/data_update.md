@@ -8,7 +8,7 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 
 > Fill in what you know below. After submitting, you can `@claude` in a comment and the Claude PR Assistant will draft the CSV change as a pull request for maintainers to review.
 >
-> Please **always include a source link or attach the (redacted) source document** so we can verify before merging.
+> Source documents are **optional but encouraged**: if you can share a link or upload a (redacted) copy, we can add a verified checkmark on the website.
 >
 > Duplicate the block below for each institution you want to add or update.
 
@@ -37,6 +37,6 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
   - [MIT Living Wage Calculator](https://livingwage.mit.edu/) — `Typical Expenses → Required annual income before taxes → 1 Adult & 0 Children`:
   - [EPI Family Budget Calculator](https://www.epi.org/resources/budget/) — 1 adult, 0 children:
 
-- **Source of the stipend / fee data** (offer letter, official page, payroll record, etc. — link or attach a redacted copy):
+- **Source of the stipend / fee data** (optional — offer letter, official page, payroll record, etc.; a link or redacted upload qualifies you for a verified checkmark):
 
 - **Additional comments (optional)**:

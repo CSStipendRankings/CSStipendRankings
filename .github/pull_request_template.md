@@ -1,6 +1,6 @@
 - **Institution name(s)**:
 
-- **Source of the stipend and fee data** (your own offer letter, an official page, payroll record, etc. — please link or attach a redacted copy):
+- **Source of the stipend and fee data** (optional — your own offer letter, an official page, payroll record, etc.; a link or redacted upload qualifies the entry for a verified checkmark):
 
 - **Living wage data updated?** (only if the institution's county isn't already in our living-wage CSVs)
 
