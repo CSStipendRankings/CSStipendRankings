@@ -24,12 +24,23 @@ If you prefer to edit by hand, the data lives in a few small CSV files at the re
 | `epi-living-cost.csv` | Per-county annual budget from the [EPI Family Budget Calculator](https://www.epi.org/resources/budget/) (1 adult, 0 children). Keyed by FIPS. Used when the user toggles "EPI" on the website. |
 | `fellowship-us.csv` | Stipend amounts for major fellowships. |
 
-`stipend-us.csv` rows have the following format:
+`stipend-us.csv` columns, in order:
 
-> ```"<Institution Name (Optional Notes)>", <Annual Stipend Amount (Pre-Qualification) ($)>, <Annual Stipend Amount (Post-Qualification) ($)>, <Annual Out-of-pocket Fees (and Health Insurance) Charged by University ($)>, <Public or Private>, <Labels such as summer-gtd>, <Summer Stipend Amount (Pre-Qualification) ($)>, <Summer Stipend Amount (Post-Qualification) ($)>, <Is Pre-Qualification Stipend verified (with optional link)>, <Is Post-Qualification Stipend verified (with optional link)>```
+| # | Header | What goes in it |
+| --- | --- | --- |
+| 1 | `institution` | Institution name (with optional parenthetical notes), wrapped in `"`s. |
+| 2 | `pre_qual stipend` | **12-month**, pre-tax USD pre-qualification stipend that ≥80% of PhD students receive. |
+| 3 | `after_qual stipend` | Same rule, for the post-qualification stipend. Repeat the pre-qual value if they're identical. |
+| 4 | `fee` | Annual out-of-pocket fees + health insurance charged by the university (USD). |
+| 5 | `public/private` | `public` or `private`. |
+| 6 | `labels` | Space-separated tags. Always include exactly one `summer-*` tag (`summer-gtd`, `summer-partial-gtd=N`, `summer-no-gtd`, or `summer-unknown`). Other recognized tags: `varies`, `no-guarantee`, `striking`, `cpt-fee`, `survey=<URL>`. Unknown strings are silently ignored by the frontend. |
+| 7 | `pre_qual summer` | Summer portion of the pre-qual 12-month total (USD integer), or `Unknown`. The frontend uses this together with the summer-guarantee label to compute the guaranteed-only view. |
+| 8 | `after_qual summer` | Same, for the post-qualification stipend. |
+| 9 | `pre_qual verified` | `Yes`, `Y12`, or `No`, optionally followed by a space and a source URL when verified. |
+| 10 | `post_qual verified` | Same, for the post-qualification stipend. |
 
-- Wrap the institution name in `"`'s and use the same name as on [CSRankings.org](https://csrankings.org/).
-- **All stipend and cost figures should be for 12 months. The annual stipend is the minimum amount, pre-tax, that at least 80% of students (including international students) receive**, excluding additional income from internships, etc.
+- Use the same institution name as on [CSRankings.org](https://csrankings.org/).
+- **All stipend and cost figures are 12-month, pre-tax USD.** The annual stipend is the minimum amount that at least 80% of PhD students (including international students) receive, excluding internships and other outside income. Summer is reported separately in columns 7–8 — do **not** subtract it from the annual figure based on the summer guarantee; the frontend handles that.
 - For a brand-new institution, also add a row to `university-fips.csv`. The county FIPS code can be looked up via the [Census geocoder](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress).
 - If that county doesn't already appear in `mit-living-wage.csv` and `epi-living-cost.csv`, add it. Use the MIT calculator's `Typical Expenses → Required annual income before taxes → 1 Adult & 0 Children` figure for `mit-living-wage.csv`, and the 1-adult/0-children value from the EPI calculator for `epi-living-cost.csv`.
 - **Submit a pull request with your updates.** Please mention the source of the data (your own offer letter, an official page, etc.) in the PR description.
