@@ -6,7 +6,7 @@ labels: data-update, needs-triage
 assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 ---
 
-> Fill in what you know below. After submitting, you can `@claude` in a comment and the Claude PR Assistant will draft the CSV change as a pull request for maintainers to review.
+> Fill in what you know below. After submitting, you can `/opencode` in a comment and the OpenCode PR Assistant will draft the CSV change as a pull request for maintainers to review.
 >
 > Source documents are **optional but encouraged**: if you can share a link or upload a (redacted) copy, we can add a verified checkmark on the website.
 >
