@@ -22,6 +22,15 @@ for (i = 0; i < university_fips_rows.length; i++) {
     }
 }
 
+notes_csv = $.ajax({ type: "GET", url: "notes.csv", async: false }).responseText
+notes_rows = $.csv.toArrays(notes_csv)
+notes_rows = notes_rows.slice(1) // Remove header
+notes_map = {}
+for (i = 0; i < notes_rows.length; i++) {
+    var institution = notes_rows[i][0].trim()
+    notes_map[institution] = notes_rows[i][1].trim()
+}
+
 epi_living_wage_csv = $.ajax({ type: "GET", url: "epi-living-cost.csv", async: false }).responseText
 epi_living_wage_rows = $.csv.toArrays(epi_living_wage_csv)
 epi_living_wage_rows = epi_living_wage_rows.slice(1) // Remove header
@@ -206,8 +215,16 @@ function get_university_type(arr) {
 
 function get_university_tooltip(arr) {
     var info = university_fips_map[arr[0].trim()] || {}
-    if (!info.address) return ""
-    return "Address: " + info.address + "\nCounty: " + info.county + "\nFIPS: " + info.fips
+    var tooltip = ""
+    if (info.address) {
+        tooltip = "Address: " + info.address + "\nCounty: " + info.county + "\nFIPS: " + info.fips
+    }
+    var note = notes_map[arr[0].trim()]
+    if (note && note.length > 0) {
+        if (tooltip.length > 0) tooltip += "\n\n"
+        tooltip += "Note: " + note
+    }
+    return tooltip
 }
 
 function is_verified(arr) {
