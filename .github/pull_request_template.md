@@ -1,9 +1,12 @@
-- **Institution name(s)**: 
+- **Institution name(s)**:
 
-- **Source of the stipend and fee data (e.g., your own data point, a link to an official website, etc.)**: 
+- **Source of the stipend and fee data** (your own offer letter, an official page, payroll record, etc. — please link or attach a redacted copy):
 
-- **Link to the [MIT Living Wage Calculator](http://livingwage.mit.edu/)**: 
-  
-  > Note: Please use The number in `Typical Expenses -> Required annual income before taxes -> 1 Adult & 0 Children` as the annual local living wage.
+- **Living wage data updated?** (only if the institution's county isn't already in our living-wage CSVs)
 
-- **Additional Comments (Optional)**: 
+  - [MIT Living Wage Calculator](https://livingwage.mit.edu/) — `Typical Expenses → Required annual income before taxes → 1 Adult & 0 Children`:
+  - [EPI Family Budget Calculator](https://www.epi.org/resources/budget/) — 1 adult, 0 children:
+
+- **University FIPS row added/updated?** (yes / no / not needed — county FIPS can be looked up via the [Census geocoder](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress))
+
+- **Additional Comments (Optional)**:
