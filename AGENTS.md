@@ -40,17 +40,14 @@ If the issue body conflicts with these sources, the sources win.
 ## Living-wage data lookup (when the county isn't already in the CSVs)
 
 When adding a new institution whose county is **not** already present in
-`mit-living-wage.csv` / `epi-living-cost.csv`, you must populate both files.
+`epi-living-cost.csv`, you must populate it.
 
-1. **EPI** — open <https://www.epi.org/resources/budget/>, download the EPI
-   Family Budget Calculator data file, and look up the row by **county name +
-   state**. Use the **1 adult, 0 children (1p0c)** configuration. Write the
-   annual figure to `epi-living-cost.csv` keyed by county FIPS.
-2. **MIT** — open the MIT Living Wage Calculator at
-   <https://livingwage.mit.edu/> for the same county. Use
-   `Typical Expenses → Required annual income before taxes → 1 Adult & 0
-   Children`. Write that figure to `mit-living-wage.csv` keyed by county FIPS.
-3. Look up the county FIPS via the Census geocoder
+1. **EPI** — download the EPI Family Budget Calculator data file directly from
+   <https://files.epi.org/uploads/fbc_data_2026.xlsx>, and look up the row by
+   **county name + state**. Use the **1 adult, 0 children (1p0c)**
+   configuration. Write the annual figure to `epi-living-cost.csv` keyed by
+   county FIPS.
+2. Look up the county FIPS via the Census geocoder
    (<https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress>)
    from the department address, and add a row to `university-fips.csv`.
 
@@ -140,8 +137,7 @@ Before opening the PR, confirm:
 - [ ] All money figures are integers (no `$`, no commas, no decimals).
 - [ ] 12-month, pre-tax, ≥80% rule honored.
 - [ ] If new institution: row added to `university-fips.csv` with correct FIPS.
-- [ ] If new county: rows added to both `mit-living-wage.csv` and
-      `epi-living-cost.csv` using the lookups above.
+- [ ] If new county: row added to `epi-living-cost.csv` using the lookup above.
 - [ ] Verified columns reflect actual evidence, with the link appended when
       the value is `Yes` / `Y12`.
 - [ ] PR description cites the source (URL or "issue #N attachment") and notes
