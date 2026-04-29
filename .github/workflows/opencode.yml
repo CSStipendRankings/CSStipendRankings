@@ -10,10 +10,8 @@ jobs:
   opencode:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: write
-      pull-requests: write
-      issues: read
+      actions: write
+      issues: write
     steps:
       - name: Check if should run
         id: check
@@ -28,68 +26,32 @@ jobs:
             echo "should_run=false" >> "$GITHUB_OUTPUT"
             echo "::notice::No /oc or /opencode command found, nothing to do."
           fi
-      - name: Prepare context
-        id: ctx
+      - name: Extract issue info
+        id: issue
         if: steps.check.outputs.should_run == 'true'
         shell: bash
         run: |
           ISSUE_NUM="${{ github.event.issue.number }}"
-          TIMESTAMP="$(date -u +%Y%m%d-%H%M%S)"
-          BRANCH="opencode/issue-${ISSUE_NUM}-${TIMESTAMP}"
-          echo "branch=${BRANCH}" >> "$GITHUB_OUTPUT"
-          echo "::notice::Branch name: ${BRANCH}"
 
           EVENT="${{ github.event_name }}"
           if [ "$EVENT" = "issues" ]; then
-            AUTHOR="${{ github.event.issue.user.name || github.event.issue.user.login }}"
-            EMAIL="${{ github.event.issue.user.email || github.event.issue.user.login }}"
+            AUTHOR="${{ github.event.issue.user.login }}"
           else
-            AUTHOR="${{ github.event.comment.user.name || github.event.comment.user.login }}"
-            EMAIL="${{ github.event.comment.user.email || github.event.comment.user.login }}"
+            AUTHOR="${{ github.event.comment.user.login }}"
           fi
-          COAUTHOR="Co-authored-by: ${AUTHOR} <${EMAIL}@users.noreply.github.com>"
 
-          PROMPT="Follow the rules in AGENTS.md. Analyze and implement the requested changes from issue #${ISSUE_NUM}."
-          PROMPT="${PROMPT} Create a branch named '${BRANCH}', make your changes, commit, and push."
-          PROMPT="${PROMPT} After pushing, create a pull request using 'gh pr create --title \"[Issue #${ISSUE_NUM}] <description>\" --body ...'."
-          PROMPT="${PROMPT} In the PR body, always include 'Closes #${ISSUE_NUM}.' on its own line."
-          PROMPT="${PROMPT} If the request is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated."
-          PROMPT="${PROMPT} When committing, include the issue author as co-author: ${COAUTHOR}."
-
-          echo "prompt<<PROMPT_EOF" >> "$GITHUB_OUTPUT"
-          echo "$PROMPT" >> "$GITHUB_OUTPUT"
-          echo "PROMPT_EOF" >> "$GITHUB_OUTPUT"
-
-      - name: Checkout repository
+          echo "number=${ISSUE_NUM}" >> "$GITHUB_OUTPUT"
+          echo "author=${AUTHOR}" >> "$GITHUB_OUTPUT"
+          echo "::notice::Dispatching opencode-execute for issue #${ISSUE_NUM} by @${AUTHOR}"
+      - name: Dispatch execute workflow
         if: steps.check.outputs.should_run == 'true'
-        uses: actions/checkout@v6
-        with:
-          persist-credentials: false
-
-      - name: Configure git for opencode-agent
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          # Get the opencode-agent bot user ID
-          USER_ID=$(gh api /users/opencode-agent --jq .id 2>/dev/null || echo "")
-          if [ -n "$USER_ID" ]; then
-            git config --global user.name "opencode-agent[bot]"
-            git config --global user.email "${USER_ID}+opencode-agent[bot]@users.noreply.github.com"
-          else
-            # Fallback: use generic bot identity
-            git config --global user.name "opencode-agent[bot]"
-            git config --global user.email "opencode-agent[bot]@users.noreply.github.com"
-          fi
-          echo "Git config:"
-          git config --global user.name
-          git config --global user.email
-        if: steps.check.outputs.should_run == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Run opencode
-        if: steps.check.outputs.should_run == 'true'
-        uses: anomalyco/opencode/github@latest
-        env:
-          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
-        with:
-          model: opencode-go/deepseek-v4-pro
-          prompt: ${{ steps.ctx.outputs.prompt }}
+          ISSUE_NUM="${{ steps.issue.outputs.number }}"
+          AUTHOR="${{ steps.issue.outputs.author }}"
+          gh workflow run opencode-execute.yml \
+            -f issue_number="$ISSUE_NUM" \
+            -f author="$AUTHOR"
+          echo "::notice::Dispatched opencode-execute for issue #${ISSUE_NUM}"
