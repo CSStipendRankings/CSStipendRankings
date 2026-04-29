@@ -68,3 +68,4 @@ institution, pre_qual stipend, after_qual stipend, fee, public/private, labels, 
 "University of Minnesota", 32989, 32989, 325, public, summer-no-gtd, 8403, 8403, Yes https://cse.umn.edu/cs/assistantships, Yes https://cse.umn.edu/cs/assistantships
 "Kansas State University (CS)", 14400, 14400, 1378, public, summer-no-gtd varies, Unknown, Unknown, No, No
 "Vanderbilt University", 40000, 40000, 0, private, summer-gtd, Unknown, Unknown, No, No
+"George Mason University", 40000, 40000, 0, public, summer-gtd, 10000, 10000, No, No
