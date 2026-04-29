@@ -42,7 +42,7 @@ assignees: mjc0608, jiong-zhu, pyjhzwh, eltsai, TonyZhangND
 - **Department Address (street, city, state, ZIP)**:
 
   > **Required for new institutions.** We use this to look up the county FIPS
-  > code and the MIT / EPI living-wage figures ourselves — please don't paste
+  > code and the EPI living-wage figure ourselves — please don't paste
   > living-wage numbers here.
 
 - **Source of the stipend / fee data** (optional — offer letter, official page, payroll record, etc.; a link or redacted upload qualifies you for a verified checkmark):

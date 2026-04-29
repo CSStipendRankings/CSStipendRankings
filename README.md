@@ -20,8 +20,7 @@ If you prefer to edit by hand, the data lives in a few small CSV files at the re
 | --- | --- |
 | `stipend-us.csv` | Per-institution stipend, fee, labels, and verification info. **Does not** contain the living wage anymore — that's looked up via FIPS. |
 | `university-fips.csv` | Maps each institution to its address, county, state, and county FIPS code. Add a new row here whenever you add a new institution. |
-| `mit-living-wage.csv` | Per-county annual living wage from the [MIT Living Wage Calculator](https://livingwage.mit.edu/) (1 Adult & 0 Children). Keyed by FIPS. |
-| `epi-living-cost.csv` | Per-county annual budget from the [EPI Family Budget Calculator](https://www.epi.org/resources/budget/) (1 adult, 0 children). Keyed by FIPS. Used when the user toggles "EPI" on the website. |
+| `epi-living-cost.csv` | Per-county annual budget from the [EPI Family Budget Calculator](https://www.epi.org/resources/budget/) (1 adult, 0 children). Keyed by FIPS. |
 | `fellowship-us.csv` | Stipend amounts for major fellowships. |
 
 `stipend-us.csv` columns, in order:
@@ -42,7 +41,7 @@ If you prefer to edit by hand, the data lives in a few small CSV files at the re
 - Use the same institution name as on [CSRankings.org](https://csrankings.org/).
 - **All stipend and cost figures are 12-month, pre-tax USD.** The annual stipend is the minimum amount that at least 80% of PhD students (including international students) receive, excluding internships and other outside income. Summer is reported separately in columns 7–8 — do **not** subtract it from the annual figure based on the summer guarantee; the frontend handles that.
 - For a brand-new institution, also add a row to `university-fips.csv`. The county FIPS code can be looked up via the [Census geocoder](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress).
-- If that county doesn't already appear in `mit-living-wage.csv` and `epi-living-cost.csv`, add it. Use the MIT calculator's `Typical Expenses → Required annual income before taxes → 1 Adult & 0 Children` figure for `mit-living-wage.csv`, and the 1-adult/0-children value from the EPI calculator for `epi-living-cost.csv`.
+- If that county doesn't already appear in `epi-living-cost.csv`, add it. Use the 1-adult/0-children value from the EPI Family Budget Calculator.
 - **Submit a pull request with your updates.** Please mention the source of the data (your own offer letter, an official page, etc.) in the PR description.
 
 ### Update website content

@@ -1,13 +1,3 @@
-living_wage_csv = $.ajax({ type: "GET", url: "mit-living-wage.csv", async: false }).responseText
-living_wage_rows = $.csv.toArrays(living_wage_csv)
-living_wage_rows = living_wage_rows.slice(1) // Remove header
-living_wage_map = {}
-for (i = 0; i < living_wage_rows.length; i++) {
-    var fips = living_wage_rows[i][0].trim()
-    var wage = Number(living_wage_rows[i][2])
-    living_wage_map[fips] = wage
-}
-
 university_fips_csv = $.ajax({ type: "GET", url: "university-fips.csv", async: false }).responseText
 university_fips_rows = $.csv.toArrays(university_fips_csv)
 university_fips_rows = university_fips_rows.slice(1) // Remove header
@@ -51,7 +41,7 @@ for (i = 0; i < data.length; i++) {
     data[i][2] = Number(data[i][2]) // after_qual stipend
     var uniInfo = university_fips_map[data[i][0].trim()] || {}
     var fips = uniInfo.fips || ""
-    data[i].splice(3, 0, living_wage_map[fips] || 0) // insert annual living cost at index 3
+    data[i].splice(3, 0, epi_wage_map[fips] || 0) // insert annual living cost at index 3
     data[i][4] = Number(data[i][4]) // fee
     data[i][5] = data[i][5].trimStart() // public/private
     data[i][6] = data[i][6].trimStart() // summer funding guarantee
@@ -90,10 +80,6 @@ for (i = 0; i < fellowship_data.length; i++) {
 
 function use_fellowship() {
     return $("#fellowship").is(":checked")
-}
-
-function use_epi_data() {
-    return $("#col-epi").is(":checked")
 }
 
 function is_subtract_living() {
@@ -198,10 +184,6 @@ function get_fee(arr) {
 }
 
 function get_living_cost(arr) {
-    if (use_epi_data()) {
-        var fips = (university_fips_map[arr[0].trim()] || {}).fips || ""
-        if (fips && epi_wage_map[fips]) return epi_wage_map[fips]
-    }
     return arr[3]
 }
 
@@ -255,10 +237,7 @@ function sync_fellowship_dropdown() {
     for (var i = 0; i < uni_and_cost_of_living.length; i++) {
         var opt = document.createElement('option')
         opt.text = uni_and_cost_of_living[i][0]
-        var fips = (university_fips_map[uni_and_cost_of_living[i][0]] || {}).fips || ""
-        opt.value = (use_epi_data() && fips && epi_wage_map[fips])
-            ? epi_wage_map[fips]
-            : uni_and_cost_of_living[i][1]
+        opt.value = uni_and_cost_of_living[i][1]
         if (uni_and_cost_of_living[i][0] === selectedText) opt.selected = true
         sel.appendChild(opt)
     }
@@ -272,11 +251,7 @@ function sync_fellowship_dropdown() {
 function update_col_header() {
     var abbr = document.getElementById('living-cost-header-abbr')
     if (!abbr) return
-    if (use_epi_data()) {
-        abbr.title = "Annual cost of living for 1 adult with 0 children (1p0c), from the EPI Family Budget Calculator. Source: https://www.epi.org/resources/budget/"
-    } else {
-        abbr.title = "The money that an individual in a household must earn to support their life, according to the MIT Living Wage Calculator."
-    }
+    abbr.title = "Annual cost of living for 1 adult with 0 children (1p0c), from the EPI Family Budget Calculator. Source: https://www.epi.org/resources/budget/"
 }
 
 function sort_on_column(col, desc_or_asc) {
@@ -459,12 +434,6 @@ function do_sort() {
     sort_on_column(get_sort_by(), is_low_to_high());
 }
 $(".sort-trigger").on("click", do_sort)
-
-$("input[name='col-source']").on("change", function() {
-    sync_fellowship_dropdown()
-    update_col_header()
-    do_sort()
-})
 
 function do_change_CoL(val){
     for (i = 0; i < fellowship_data.length; i++) {
