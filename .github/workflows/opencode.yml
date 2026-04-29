@@ -28,6 +28,38 @@ jobs:
             echo "should_run=false" >> "$GITHUB_OUTPUT"
             echo "::notice::No /oc or /opencode command found, nothing to do."
           fi
+      - name: Prepare context
+        id: ctx
+        if: steps.check.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          ISSUE_NUM="${{ github.event.issue.number }}"
+          TIMESTAMP="$(date -u +%Y%m%d-%H%M%S)"
+          BRANCH="opencode/issue-${ISSUE_NUM}-${TIMESTAMP}"
+          echo "branch=${BRANCH}" >> "$GITHUB_OUTPUT"
+          echo "::notice::Branch name: ${BRANCH}"
+
+          EVENT="${{ github.event_name }}"
+          if [ "$EVENT" = "issues" ]; then
+            AUTHOR="${{ github.event.issue.user.name || github.event.issue.user.login }}"
+            EMAIL="${{ github.event.issue.user.email || github.event.issue.user.login }}"
+          else
+            AUTHOR="${{ github.event.comment.user.name || github.event.comment.user.login }}"
+            EMAIL="${{ github.event.comment.user.email || github.event.comment.user.login }}"
+          fi
+          COAUTHOR="Co-authored-by: ${AUTHOR} <${EMAIL}@users.noreply.github.com>"
+
+          PROMPT="Follow the rules in AGENTS.md. Analyze and implement the requested changes from issue #${ISSUE_NUM}."
+          PROMPT="${PROMPT} Create a branch named '${BRANCH}', make your changes, commit, and push."
+          PROMPT="${PROMPT} After pushing, create a pull request using 'gh pr create --title \"[Issue #${ISSUE_NUM}] <description>\" --body ...'."
+          PROMPT="${PROMPT} In the PR body, always include 'Closes #${ISSUE_NUM}.' on its own line."
+          PROMPT="${PROMPT} If the request is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated."
+          PROMPT="${PROMPT} When committing, include the issue author as co-author: ${COAUTHOR}."
+
+          echo "prompt<<PROMPT_EOF" >> "$GITHUB_OUTPUT"
+          echo "$PROMPT" >> "$GITHUB_OUTPUT"
+          echo "PROMPT_EOF" >> "$GITHUB_OUTPUT"
+
       - name: Checkout repository
         if: steps.check.outputs.should_run == 'true'
         uses: actions/checkout@v6
@@ -60,5 +92,4 @@ jobs:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
           model: opencode-go/deepseek-v4-pro
-          prompt: >-
-            ${{ github.event_name == 'issues' && format('Follow the rules in AGENTS.md. Analyze this issue and implement the necessary changes. Create a new branch, make the required modifications, and open a pull request with a clear description of the changes. If the issue is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated. When committing, include the issue author as co-author using: Co-authored-by: {0} <{1}@users.noreply.github.com>', github.event.issue.user.name || github.event.issue.user.login, github.event.issue.user.email || github.event.issue.user.login) || format('Follow the rules in AGENTS.md. Analyze the comment body and the issue it belongs to, then implement the requested changes. Create a new branch, make the required modifications, and open a pull request with a clear description of the changes. If the request is about data updates (stipends, universities), follow the patterns in the existing CSV files and ensure all required fields are populated. When committing, include the comment author as co-author using: Co-authored-by: {0} <{1}@users.noreply.github.com>', github.event.comment.user.name || github.event.comment.user.login, github.event.comment.user.email || github.event.comment.user.login) }}
+          prompt: ${{ steps.ctx.outputs.prompt }}
