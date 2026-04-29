@@ -42,10 +42,11 @@ If the issue body conflicts with these sources, the sources win.
 When adding a new institution whose county is **not** already present in
 `epi-living-cost.csv`, you must populate it.
 
-1. **EPI** — open <https://www.epi.org/resources/budget/>, download the EPI
-   Family Budget Calculator data file, and look up the row by **county name +
-   state**. Use the **1 adult, 0 children (1p0c)** configuration. Write the
-   annual figure to `epi-living-cost.csv` keyed by county FIPS.
+1. **EPI** — download the EPI Family Budget Calculator data file directly from
+   <https://files.epi.org/uploads/fbc_data_2026.xlsx>, and look up the row by
+   **county name + state**. Use the **1 adult, 0 children (1p0c)**
+   configuration. Write the annual figure to `epi-living-cost.csv` keyed by
+   county FIPS.
 2. Look up the county FIPS via the Census geocoder
    (<https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress>)
    from the department address, and add a row to `university-fips.csv`.
