@@ -5,7 +5,7 @@ institution, pre_qual stipend, after_qual stipend, fee, public/private, labels, 
 "Georgia Institute of Technology", 40800, 40800, 3081, public, summer-unknown, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/141, No
 "Harvard University", 42588, 42588, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Wisconsin - Madison", 34067, 36074, 2980, public, summer-no-gtd no-guarantee cpt-fee, 8512, 9019, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/88
-"Rice University", 40333, 40333, 0, private, summer-unknown, Unknown, Unknown, No, No
+"Rice University", 41543, 41543, 730, private, summer-gtd, 10386, 10386, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/196, Y12 https://github.com/CSStipendRankings/CSStipendRankings/issues/196
 "Stanford University", 52560, 52560, 0, private, summer-gtd, Unknown, Unknown, No, No
 "University of Virginia", 33072, 35334, 0, public, summer-gtd, 11024, 11778, Yes, Yes
 "Univ. of California - Santa Cruz", 58240, 60565, 0, public, summer-no-gtd, 22484, 24226, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/130, Yes https://github.com/CSStipendRankings/CSStipendRankings/issues/130
