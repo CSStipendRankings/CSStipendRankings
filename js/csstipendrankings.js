@@ -25,10 +25,23 @@ epi_living_wage_csv = $.ajax({ type: "GET", url: "epi-living-cost.csv", async: f
 epi_living_wage_rows = $.csv.toArrays(epi_living_wage_csv)
 epi_living_wage_rows = epi_living_wage_rows.slice(1) // Remove header
 epi_wage_map = {}
+epi_components_map = {}
 for (i = 0; i < epi_living_wage_rows.length; i++) {
     var fips = epi_living_wage_rows[i][0].trim()
     var wage = Number(epi_living_wage_rows[i][2])
     epi_wage_map[fips] = wage
+    if (epi_living_wage_rows[i].length >= 10) {
+        epi_components_map[fips] = {
+            total: Number(epi_living_wage_rows[i][2]),
+            housing: Number(epi_living_wage_rows[i][3]),
+            food: Number(epi_living_wage_rows[i][4]),
+            transportation: Number(epi_living_wage_rows[i][5]),
+            healthcare: Number(epi_living_wage_rows[i][6]),
+            other_necessities: Number(epi_living_wage_rows[i][7]),
+            childcare: Number(epi_living_wage_rows[i][8]),
+            taxes: Number(epi_living_wage_rows[i][9])
+        }
+    }
 }
 
 csv = $.ajax({ type: "GET", url: "stipend-us.csv", async: false }).responseText
@@ -100,6 +113,63 @@ function get_sort_by() {
     else if ($("#living-cost").is(":checked")) return "living-cost";
     else if ($("#after").is(":checked")) return "after-fee-wage";
     else return "error";
+}
+
+function is_exclude_healthcare() {
+    return $("#exclude-healthcare").is(":checked")
+}
+
+function is_exclude_transportation() {
+    return $("#exclude-transportation").is(":checked")
+}
+
+function is_correct_tax() {
+    return $("#correct-tax").is(":checked")
+}
+
+function calc_federal_tax(income) {
+    var std_deduction = 15000
+    var taxable = Math.max(0, income - std_deduction)
+    var tax = 0
+    if (taxable > 0)
+        tax += Math.min(taxable, 11925) * 0.10
+    if (taxable > 11925)
+        tax += (Math.min(taxable, 48475) - 11925) * 0.12
+    if (taxable > 48475)
+        tax += (Math.min(taxable, 103350) - 48475) * 0.22
+    if (taxable > 103350)
+        tax += (taxable - 103350) * 0.24
+    return tax
+}
+
+function calc_corrected_tax(stipend, epi_total, epi_taxes) {
+    var fed_tax = calc_federal_tax(stipend)
+    var fica = stipend * 0.0765
+    var epi_fed = calc_federal_tax(epi_total)
+    var epi_fica = epi_total * 0.0765
+    var epi_state = Math.max(0, epi_taxes - epi_fed - epi_fica)
+    var state_rate = epi_total > 0 ? epi_state / epi_total : 0
+    var state_tax = stipend * state_rate
+    return Math.round(fed_tax + fica + state_tax)
+}
+
+function get_living_cost(arr) {
+    var total = arr[3]
+    var uniInfo = university_fips_map[arr[0].trim()] || {}
+    var fips = uniInfo.fips || ""
+    var comp = epi_components_map[fips]
+    if (!comp) return total
+    var adjusted = total
+    if (is_exclude_healthcare())
+        adjusted -= comp.healthcare
+    if (is_exclude_transportation())
+        adjusted -= comp.transportation
+    if (is_correct_tax()) {
+        var stipend = get_stipend(arr)
+        if (!isNaN(stipend))
+            adjusted = adjusted - comp.taxes + calc_corrected_tax(stipend, comp.total, comp.taxes)
+    }
+    return adjusted
 }
 
 function get_stipend_type() {
@@ -183,10 +253,6 @@ function get_fee(arr) {
     return arr[4]
 }
 
-function get_living_cost(arr) {
-    return arr[3]
-}
-
 function get_university(arr) {
     return arr[0]
 }
@@ -251,7 +317,15 @@ function sync_fellowship_dropdown() {
 function update_col_header() {
     var abbr = document.getElementById('living-cost-header-abbr')
     if (!abbr) return
-    abbr.title = "Annual cost of living for 1 adult with 0 children (1p0c), from the EPI Family Budget Calculator. Source: https://www.epi.org/resources/budget/"
+    var base = "Annual cost of living for 1 adult with 0 children (1p0c), from the EPI Family Budget Calculator. Source: https://www.epi.org/resources/budget/"
+    var notes = []
+    if (is_exclude_healthcare()) notes.push("health care excluded")
+    if (is_exclude_transportation()) notes.push("transportation excluded")
+    if (is_correct_tax()) notes.push("tax recalculated for stipend income")
+    if (notes.length > 0)
+        abbr.title = base + " Adjustments: " + notes.join(", ") + "."
+    else
+        abbr.title = base
 }
 
 function sort_on_column(col, desc_or_asc) {
@@ -432,6 +506,7 @@ sort_on_column("after-fee-wage", true)
 
 function do_sort() {
     sort_on_column(get_sort_by(), is_low_to_high());
+    update_col_header();
 }
 $(".sort-trigger").on("click", do_sort)
 
@@ -445,5 +520,6 @@ function do_change_CoL(val){
 
 $("#rankform").on("submit", function(event) {
     do_sort();
+    update_col_header();
     event.preventDefault();
 })
