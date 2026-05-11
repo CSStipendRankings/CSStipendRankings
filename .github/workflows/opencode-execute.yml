@@ -69,4 +69,4 @@ jobs:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
           MODEL: opencode-go/deepseek-v4-pro
           PROMPT: ${{ steps.prompt.outputs.prompt }}
-        run: opencode github run --print-logs --log-level DEBUG
+        run: opencode github run
