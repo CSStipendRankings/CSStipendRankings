@@ -52,6 +52,7 @@ jobs:
           ISSUE_NUM="${{ steps.issue.outputs.number }}"
           AUTHOR="${{ steps.issue.outputs.author }}"
           gh workflow run opencode-execute.yml \
+            --repo "${{ github.repository }}" \
             -f issue_number="$ISSUE_NUM" \
             -f author="$AUTHOR"
           echo "::notice::Dispatched opencode-execute for issue #${ISSUE_NUM}"
