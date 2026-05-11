@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      issues: read
+      issues: write
       id-token: write
     steps:
       - name: Checkout repository
@@ -36,9 +36,7 @@ jobs:
           BRANCH="opencode/issue-${ISSUE_NUM}-${TIMESTAMP}"
 
           PROMPT="Follow the rules in AGENTS.md. Analyze and implement the requested changes from issue #${ISSUE_NUM}."
-          PROMPT="${PROMPT} First, post a comment on issue #${ISSUE_NUM} letting the author know you are working on this and a PR will be created shortly."
-          PROMPT="${PROMPT} Use: gh issue comment ${ISSUE_NUM} --body 'your message here'"
-          PROMPT="${PROMPT} Then read the full issue with: gh issue view ${ISSUE_NUM} --json body,title,comments"
+          PROMPT="${PROMPT} Read the full issue with: gh issue view ${ISSUE_NUM} --json body,title,comments"
           PROMPT="${PROMPT} Create a branch named '${BRANCH}', make your changes, commit, and push."
           PROMPT="${PROMPT} After pushing, create a pull request using 'gh pr create --title \"[Issue #${ISSUE_NUM}] <description>\" --body ...'."
           PROMPT="${PROMPT} In the PR body, always include 'Closes #${ISSUE_NUM}.' on its own line."
@@ -49,10 +47,26 @@ jobs:
           echo "$PROMPT" >> "$GITHUB_OUTPUT"
           echo "PROMPT_EOF" >> "$GITHUB_OUTPUT"
 
+      - name: Post working-on comment
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment "${{ inputs.issue_number }}" \
+            --body "Starting to work on this — I'll open a PR shortly."
+
+      - name: Install opencode
+        shell: bash
+        run: curl -fsSL https://opencode.ai/install | bash
+
+      - name: Add opencode to PATH
+        shell: bash
+        run: echo "$HOME/.opencode/bin" >> "$GITHUB_PATH"
+
       - name: Run opencode
-        uses: anomalyco/opencode/github@latest
+        shell: bash
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
-        with:
-          model: opencode-go/deepseek-v4-pro
-          prompt: ${{ steps.prompt.outputs.prompt }}
+          MODEL: opencode-go/deepseek-v4-pro
+          PROMPT: ${{ steps.prompt.outputs.prompt }}
+        run: opencode github run --print-logs --log-level DEBUG
