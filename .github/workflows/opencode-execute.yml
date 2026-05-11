@@ -55,18 +55,10 @@ jobs:
           gh issue comment "${{ inputs.issue_number }}" \
             --body "Starting to work on this — I'll open a PR shortly."
 
-      - name: Install opencode
-        shell: bash
-        run: curl -fsSL https://opencode.ai/install | bash
-
-      - name: Add opencode to PATH
-        shell: bash
-        run: echo "$HOME/.opencode/bin" >> "$GITHUB_PATH"
-
       - name: Run opencode
-        shell: bash
+        uses: anomalyco/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
-          MODEL: opencode-go/deepseek-v4-pro
-          PROMPT: ${{ steps.prompt.outputs.prompt }}
-        run: opencode github run
+        with:
+          model: opencode-go/deepseek-v4-pro
+          prompt: ${{ steps.prompt.outputs.prompt }}
