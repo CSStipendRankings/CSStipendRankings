@@ -323,18 +323,32 @@
                   <label for="css">Show fellowships and set the living cost to the institution</label>
                   <select id="university_locations" name="university_locations" onchange="do_change_CoL(this.value)"></select>
                 </div>
+                <div>
+                  Living Cost Adjustment: &nbsp;
+                  <input type="checkbox" id="exclude-healthcare" name="exclude-healthcare" class="sort-trigger"></input>
+                  <label for="exclude-healthcare">Exclude Health Care &nbsp;</label>
+                  <input type="checkbox" id="exclude-transportation" name="exclude-transportation" class="sort-trigger"></input>
+                  <label for="exclude-transportation">Exclude Transportation &nbsp;</label>
+                  <input type="checkbox" id="correct-tax" name="correct-tax" class="sort-trigger" checked></input>
+                  <label for="correct-tax">Correct Tax to Stipend</label>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <br>
         <div class="row switch-xs row-centered">
 
           <!-- start ranking window -->
 
           <div class="col-xs-12 col-sm-push-12 col-sm-12 col-md-12 col-lg-12 text-center">
             <div id="success">
+              <div id="healthcare-warning" style="display:none; color:red; font-weight:bold; padding:10px; margin-bottom:10px; border:2px solid red; background:#fff0f0; border-radius:4px; text-align:left; font-size:14px;">
+                ⚠ Health Care Excluded — Health care costs go beyond insurance premiums. You may still face co-pays, co-insurance, annual out-of-pocket maximums, and uncovered services. In case of severe illness or ongoing therapy, costs can rise substantially even with university coverage. Please budget accordingly.
+              </div>
+              <div id="transportation-warning" style="display:none; color:red; font-weight:bold; padding:10px; margin-bottom:10px; border:2px solid red; background:#fff0f0; border-radius:4px; text-align:left; font-size:14px;">
+                ⚠ Transportation Excluded — The EPI estimate assumes car ownership, which may not apply to everyone. However, even without a car, you may still incur transit pass costs, rideshare fares, or occasional car rentals. In many areas outside major transit hubs, going without a car can be impractical. Please budget accordingly.
+              </div>
               <table class="table table-fit table-sm table-striped center" id="ranking" valign="top">
                 <thead>
                   <tr>
