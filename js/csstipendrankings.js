@@ -127,49 +127,129 @@ function is_correct_tax() {
     return $("#correct-tax").is(":checked")
 }
 
-function calc_federal_tax(income) {
-    var std_deduction = 15000
-    var taxable = Math.max(0, income - std_deduction)
-    var tax = 0
-    if (taxable > 0)
-        tax += Math.min(taxable, 11925) * 0.10
-    if (taxable > 11925)
-        tax += (Math.min(taxable, 48475) - 11925) * 0.12
-    if (taxable > 48475)
-        tax += (Math.min(taxable, 103350) - 48475) * 0.22
-    if (taxable > 103350)
-        tax += (taxable - 103350) * 0.24
-    return tax
+// ============================================================================
+// TAX CALCULATION — adapted from tax-logic-core (MIT License)
+// https://github.com/tax-logic-core/tax-logic-core
+// ============================================================================
+
+// 2025 federal income tax brackets for single filers
+var FEDERAL_BRACKETS_2025 = [
+    [0,      0.10],
+    [11925,  0.12],
+    [48475,  0.22],
+    [103350, 0.24],
+    [197300, 0.32],
+    [250525, 0.35],
+    [626350, 0.37]
+];
+
+var STD_DEDUCTION_2025 = 15000;  // 2025 standard deduction, single filer
+
+// States with no income tax on wages
+var NO_INCOME_TAX_STATES = ['AK','FL','NV','NH','SD','TN','TX','WA','WY'];
+
+// States with flat income tax rates (2025)
+var FLAT_TAX_STATES = {
+    'AZ': 0.025,   'CO': 0.044,   'GA': 0.0539,
+    'ID': 0.058,   'IL': 0.0495,  'IN': 0.0305,
+    'KY': 0.04,    'MI': 0.0425,  'MS': 0.044,
+    'NC': 0.0425,  'PA': 0.0307,  'UT': 0.0455
+};
+
+// Massachusetts: flat 5% (millionaire surcharge irrelevant for stipend range)
+var MA_RATE = 0.05;
+
+// Graduated state tax brackets for single filers (2025)
+// Format: [threshold, rate]; rate applies to income from this threshold up to next
+var STATE_TAX_BRACKETS = {
+    'AL': [[0,0.02],[500,0.04],[3000,0.05]],
+    'AR': [[0,0.02],[5099,0.04],[10299,0.044]],
+    'CA': [[0,0.01],[10412,0.02],[24684,0.04],[38959,0.06],[54081,0.08],[68350,0.093],[349137,0.103],[418961,0.113],[698271,0.123],[1000000,0.133]],
+    'CT': [[0,0.02],[10000,0.045],[50000,0.055],[100000,0.06],[200000,0.065],[250000,0.069],[500000,0.0699]],
+    'DC': [[0,0.04],[10000,0.06],[40000,0.065],[60000,0.085],[250000,0.0925],[500000,0.0975],[1000000,0.1075]],
+    'DE': [[0,0],[2000,0.022],[5000,0.039],[10000,0.048],[20000,0.052],[25000,0.0555],[60000,0.066]],
+    'HI': [[0,0.014],[2400,0.032],[4800,0.055],[9600,0.064],[14400,0.068],[19200,0.072],[24000,0.076],[36000,0.079],[48000,0.0825],[150000,0.09],[175000,0.10],[200000,0.11]],
+    'IA': [[0,0.044],[6210,0.0482],[31050,0.057]],
+    'KS': [[0,0.031],[15000,0.0525],[30000,0.057]],
+    'LA': [[0,0.0185],[12500,0.035],[50000,0.0425]],
+    'MD': [[0,0.02],[1000,0.03],[2000,0.04],[3000,0.0475],[100000,0.05],[125000,0.0525],[150000,0.055],[250000,0.0575]],
+    'ME': [[0,0.058],[26050,0.0675],[61600,0.0715]],
+    'MN': [[0,0.0535],[31690,0.068],[104090,0.0785],[193240,0.0985]],
+    'MO': [[0,0.02],[1207,0.025],[2414,0.03],[3621,0.035],[4828,0.04],[6035,0.045],[7242,0.048]],
+    'MT': [[0,0.047],[20500,0.059]],
+    'ND': [[0,0.0195],[44725,0.0235]],
+    'NE': [[0,0.0246],[3700,0.0351],[22170,0.0501],[35730,0.0584]],
+    'NJ': [[0,0.014],[20000,0.0175],[35000,0.035],[40000,0.05525],[75000,0.0637],[500000,0.0897],[1000000,0.1075]],
+    'NM': [[0,0.017],[5500,0.032],[11000,0.047],[16000,0.049],[210000,0.059]],
+    'NY': [[0,0.04],[8500,0.045],[11700,0.0525],[13900,0.055],[80650,0.06],[215400,0.0685],[1077550,0.0965],[5000000,0.103],[25000000,0.109]],
+    'OH': [[0,0],[26050,0.02765],[100000,0.035]],
+    'OK': [[0,0.0025],[1000,0.0075],[2500,0.0175],[3750,0.0275],[4900,0.0375],[7200,0.0475]],
+    'OR': [[0,0.0475],[4300,0.0675],[10750,0.0875],[125000,0.099]],
+    'RI': [[0,0.0375],[77450,0.0475],[176050,0.0599]],
+    'SC': [[0,0],[3460,0.03],[17330,0.062]],
+    'VA': [[0,0.02],[3000,0.03],[5000,0.05],[17000,0.0575]],
+    'VT': [[0,0.0335],[45400,0.066],[110050,0.076],[229550,0.0875]],
+    'WI': [[0,0.035],[14320,0.044],[28640,0.053],[315310,0.0765]],
+    'WV': [[0,0.0236],[10000,0.0315],[25000,0.0354],[40000,0.0472],[60000,0.0512]]
+};
+
+function calc_bracket_tax(income, brackets) {
+    if (income <= 0) return 0;
+    var tax = 0;
+    for (var i = 0; i < brackets.length; i++) {
+        var limit = brackets[i][0];
+        var rate = brackets[i][1];
+        var next_limit = (i + 1 < brackets.length) ? brackets[i+1][0] : Infinity;
+        if (income > next_limit) {
+            tax += (next_limit - limit) * rate;
+        } else {
+            tax += Math.max(0, income - limit) * rate;
+            break;
+        }
+    }
+    return Math.max(0, tax);
 }
 
-function calc_corrected_tax(stipend, epi_total, epi_taxes) {
-    var fed_tax = calc_federal_tax(stipend)
-    var fica = stipend * 0.0765
-    var epi_fed = calc_federal_tax(epi_total)
-    var epi_fica = epi_total * 0.0765
-    var epi_state = Math.max(0, epi_taxes - epi_fed - epi_fica)
-    var state_rate = epi_total > 0 ? epi_state / epi_total : 0
-    var state_tax = stipend * state_rate
-    return Math.round(fed_tax + fica + state_tax)
+function calc_federal_tax(income) {
+    var taxable = Math.max(0, income - STD_DEDUCTION_2025);
+    return calc_bracket_tax(taxable, FEDERAL_BRACKETS_2025);
+}
+
+function calc_state_tax(taxable_income, state) {
+    if (!state || NO_INCOME_TAX_STATES.indexOf(state) >= 0) return 0;
+    if (FLAT_TAX_STATES[state] !== undefined) return taxable_income * FLAT_TAX_STATES[state];
+    if (state === 'MA') return taxable_income * MA_RATE;
+    var brackets = STATE_TAX_BRACKETS[state];
+    if (!brackets) return 0;
+    return calc_bracket_tax(taxable_income, brackets);
+}
+
+function calc_corrected_tax(stipend, state) {
+    var fed_tax = calc_federal_tax(stipend);
+    var fica = stipend * 0.0765;  // 6.2% SS + 1.45% Medicare
+    var taxable_income = Math.max(0, stipend - STD_DEDUCTION_2025);
+    var state_tax = calc_state_tax(taxable_income, state);
+    return Math.round(fed_tax + fica + state_tax);
 }
 
 function get_living_cost(arr) {
-    var total = arr[3]
-    var uniInfo = university_fips_map[arr[0].trim()] || {}
-    var fips = uniInfo.fips || ""
-    var comp = epi_components_map[fips]
-    if (!comp) return total
-    var adjusted = total
+    var total = arr[3];
+    var uniInfo = university_fips_map[arr[0].trim()] || {};
+    var fips = uniInfo.fips || "";
+    var state = uniInfo.state || "";
+    var comp = epi_components_map[fips];
+    if (!comp) return total;
+    var adjusted = total;
     if (is_exclude_healthcare())
-        adjusted -= comp.healthcare
+        adjusted -= comp.healthcare;
     if (is_exclude_transportation())
-        adjusted -= comp.transportation
+        adjusted -= comp.transportation;
     if (is_correct_tax()) {
-        var stipend = get_stipend(arr)
+        var stipend = get_stipend(arr);
         if (!isNaN(stipend))
-            adjusted = adjusted - comp.taxes + calc_corrected_tax(stipend, comp.total, comp.taxes)
+            adjusted = adjusted - comp.taxes + calc_corrected_tax(stipend, state);
     }
-    return adjusted
+    return adjusted;
 }
 
 function get_stipend_type() {
