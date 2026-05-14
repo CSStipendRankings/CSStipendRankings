@@ -252,6 +252,54 @@ function get_living_cost(arr) {
     return adjusted;
 }
 
+function get_living_cost_breakdown(arr) {
+    var uniInfo = university_fips_map[arr[0].trim()] || {};
+    var fips = uniInfo.fips || "";
+    var state = uniInfo.state || "";
+    var comp = epi_components_map[fips];
+    if (!comp) return "No breakdown available";
+
+    var lines = [];
+    lines.push("Housing: $" + comp.housing.toLocaleString("en-US"));
+    lines.push("Food: $" + comp.food.toLocaleString("en-US"));
+
+    if (is_exclude_transportation())
+        lines.push("Transportation: $" + comp.transportation.toLocaleString("en-US") + " (excluded)");
+    else
+        lines.push("Transportation: $" + comp.transportation.toLocaleString("en-US"));
+
+    if (is_exclude_healthcare())
+        lines.push("Health Care: $" + comp.healthcare.toLocaleString("en-US") + " (excluded)");
+    else
+        lines.push("Health Care: $" + comp.healthcare.toLocaleString("en-US"));
+
+    lines.push("Other Necessities: $" + comp.other_necessities.toLocaleString("en-US"));
+
+    if (is_correct_tax()) {
+        var stipend = get_stipend(arr);
+        if (!isNaN(stipend)) {
+            var fed_tax = Math.round(calc_federal_tax(stipend));
+            var fica = Math.round(stipend * 0.0765);
+            var taxable_income = Math.max(0, stipend - STD_DEDUCTION_2025);
+            var state_tax = Math.round(calc_state_tax(taxable_income, state));
+            lines.push("Taxes: $" + comp.taxes.toLocaleString("en-US") + " (EPI original)");
+            lines.push("  Corrected: $" + calc_corrected_tax(stipend, state).toLocaleString("en-US") +
+                " (Fed $" + fed_tax.toLocaleString("en-US") +
+                " + FICA $" + fica.toLocaleString("en-US") +
+                " + State $" + state_tax.toLocaleString("en-US") + ")");
+        } else {
+            lines.push("Taxes: $" + comp.taxes.toLocaleString("en-US"));
+        }
+    } else {
+        lines.push("Taxes: $" + comp.taxes.toLocaleString("en-US"));
+    }
+
+    var total = get_living_cost(arr);
+    lines.push("");
+    lines.push("Total: $" + total.toLocaleString("en-US"));
+    return lines.join("\n");
+}
+
 function get_stipend_type() {
     if ($("#majority").is(":checked")) return "majority";
     else if ($("#guaranteed-only").is(":checked")) return "guaranteed-only";
@@ -553,7 +601,7 @@ function sort_on_column(col, desc_or_asc) {
                     .append($("<td>").append($("<span>").text(get_university(temp_data[i])).attr("title", get_university_tooltip(temp_data[i]))).append(namefix).append(namefix2).attr("style", institution_style))
                     .append($("<td>").append(stipendfix).append("&nbsp;"+get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
-                    .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right").attr("title", get_living_cost_breakdown(temp_data[i])))
                     .append($("<td>").text((get_stipend(temp_data[i]) - get_fee(temp_data[i]) - get_living_cost(temp_data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
             )
             local_rank = local_rank + 1
@@ -571,7 +619,7 @@ function sort_on_column(col, desc_or_asc) {
                     .append($("<td>").append($("<span>").text(get_university(temp_data[i])).attr("title", get_university_tooltip(temp_data[i]))).append(namefix).append(namefix2).attr("style", institution_style))
                     .append($("<td>").append(stipendfix).append("&nbsp;"+get_stipend(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
                     .append($("<td>").text(get_fee(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
-                    .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
+                    .append($("<td>").text(get_living_cost(temp_data[i]).toLocaleString("en-US")).attr("align", "right").attr("title", get_living_cost_breakdown(temp_data[i])))
                     .append($("<td>").text((get_stipend(temp_data[i]) - get_fee(temp_data[i]) - get_living_cost(temp_data[i])).toLocaleString("en-US")).attr("align", "right").attr("style", style))
             )
             local_rank = local_rank + 1
