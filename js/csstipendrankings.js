@@ -583,10 +583,17 @@ $("#overlay-loading").hide()
 
 // sort on stipend by default
 sort_on_column("after-fee-wage", true)
+toggle_healthcare_warning()
+
+function toggle_healthcare_warning() {
+    var banner = document.getElementById('healthcare-warning');
+    if (banner) banner.style.display = is_exclude_healthcare() ? '' : 'none';
+}
 
 function do_sort() {
     sort_on_column(get_sort_by(), is_low_to_high());
     update_col_header();
+    toggle_healthcare_warning();
 }
 $(".sort-trigger").on("click", do_sort)
 
