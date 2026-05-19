@@ -538,27 +538,30 @@ function sort_on_column(col, desc_or_asc) {
         for (k = 0; k < labels.length; k++) {
             if (labels[k] == "summer-gtd" || labels[k].includes("summer-partial-gtd")) {
                 if (!first) namefix2.append(",")
-                namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area"))
+                var gtd_title = labels[k].includes("summer-partial-gtd") ?
+                    "Summer funding partially guaranteed: $" + labels[k].split("=")[1] + " annually" :
+                    "Summer funding guaranteed for ≥80% of PhD students";
+                namefix2.append($("<span>").text("summer-gtd").attr("class", "areaname systems-area").attr("title", gtd_title))
                 first = false;
 	          } else if (labels[k] == "summer-no-gtd") {
                 if (!first) namefix2.append(",")
-                namefix2.append($("<span>").text("summer-no-gtd").attr("class", "areaname").attr("style", "color:red"))
+                namefix2.append($("<span>").text("summer-no-gtd").attr("class", "areaname").attr("style", "color:red").attr("title", "No summer funding guarantee"))
                 first = false;
             } else if (labels[k] == "varies") {
                 if (!first) namefix2.append(",")
-                namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area"))
+                namefix2.append($("<span>").text("varies").attr("class", "areaname systems-area").attr("title", "Stipend varies across advisors or sub-departments"))
                 first = false;
             } else if (labels[k] == "striking") {
                 if (!first) namefix2.append(",")
-                namefix2.append($("<span>").text("striking").attr("class", "areaname").attr("style", "color:red"))
+                namefix2.append($("<span>").text("striking").attr("class", "areaname").attr("style", "color:red").attr("title", "Program is currently on strike"))
                 first = false;
             } else if (labels[k] == "no-guarantee") {
                 if (!first) namefix2.append(",")
-                namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red"))
+                namefix2.append($("<span>").text("no-guarantee").attr("class", "areaname").attr("style", "color:red").attr("title", "Department does not guarantee multi-year funding"))
                 first = false;
             } else if (labels[k] == "cpt-fee") {
                 if (!first) namefix2.append(",")
-                namefix2.append($("<span>").text("cpt-fee").attr("class", "areaname").attr("style", "color:red"))
+                namefix2.append($("<span>").text("cpt-fee").attr("class", "areaname").attr("style", "color:red").attr("title", "International students charged additional CPT/visa fee"))
                 first = false;
 	    }
 
