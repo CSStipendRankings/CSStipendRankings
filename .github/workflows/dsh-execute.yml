@@ -91,7 +91,7 @@ jobs:
           printf '%s\n' \
             'agent-default-model:' \
             '  provider: deepseek-official' \
-            '  model: deepseek-v4-pro' \
+            '  model: deepseek-flash' \
             'llm-deepseek:' \
             '  reasoningEffort: high' > "$DSH_HOME/settings.yaml"
 
