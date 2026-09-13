@@ -1,0 +1,192 @@
+name: DeepSeek Harness execute
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to process'
+        required: true
+        type: string
+      author:
+        description: 'GitHub username of the issue author/commenter who triggered this'
+        required: true
+        type: string
+
+jobs:
+  dsh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    env:
+      DSH_HOME: /tmp/dsh-home
+      DSH_VERSION: 0.1.5-rc.2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Build prompt
+        id: prompt
+        shell: bash
+        env:
+          ISSUE_NUM: ${{ inputs.issue_number }}
+          AUTHOR: ${{ inputs.author }}
+        run: |
+          TIMESTAMP="$(date -u +%Y%m%d-%H%M%S)"
+          BRANCH="dsh/issue-${ISSUE_NUM}-${TIMESTAMP}"
+
+          PROMPT="Follow the rules in AGENTS.md. Analyze and implement the requested changes from issue #${ISSUE_NUM}."
+          PROMPT="${PROMPT} Read the full issue context from .git/dsh-issue-context.json."
+          PROMPT="${PROMPT} Create a branch named '${BRANCH}', make your changes, and commit them."
+          PROMPT="${PROMPT} Do NOT push the branch and do NOT create a pull request — this workflow will push the branch and create the PR."
+          PROMPT="${PROMPT} Keep the commit message concise: describe only the key changes, no checklist or meta-instructions."
+          PROMPT="${PROMPT} When committing, include the issue author as co-author: Co-authored-by: ${AUTHOR} <${AUTHOR}@users.noreply.github.com>."
+
+          {
+            echo "prompt<<PROMPT_EOF"
+            echo "$PROMPT"
+            echo "PROMPT_EOF"
+            echo "branch=${BRANCH}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Fetch issue context
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUM: ${{ inputs.issue_number }}
+        run: |
+          gh issue view "$ISSUE_NUM" \
+            --repo "${{ github.repository }}" \
+            --json title,body,comments > .git/dsh-issue-context.json
+
+      - name: Post working-on comment
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUM: ${{ inputs.issue_number }}
+        run: |
+          gh issue comment "$ISSUE_NUM" \
+            --repo "${{ github.repository }}" \
+            --body "Starting to work on this with DeepSeek Harness — I'll open a PR shortly."
+
+      - name: Configure git identity
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Configure DeepSeek Harness
+        shell: bash
+        run: |
+          mkdir -p "$DSH_HOME"
+          printf '%s\n' \
+            'agent-default-model:' \
+            '  provider: deepseek-official' \
+            '  model: deepseek-flash' \
+            'llm-deepseek:' \
+            '  reasoningEffort: high' > "$DSH_HOME/settings.yaml"
+
+      - name: Run DeepSeek Harness
+        id: dsh
+        shell: bash
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DSH_PERMISSION_MODE: danger-full-access
+          DSH_TELEMETRY_DISABLED: '1'
+          NO_COLOR: '1'
+          PROMPT: ${{ steps.prompt.outputs.prompt }}
+        run: |
+          npx --yes "@deepseek-ai/dsh@${DSH_VERSION}" --profile headless "$PROMPT"
+
+      - name: Push generated branch
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="${{ steps.prompt.outputs.branch }}"
+
+          if ! git rev-parse --verify "$BRANCH" > /dev/null 2>&1; then
+            echo "::warning::Branch ${BRANCH} not found — DeepSeek Harness did not create a commit"
+            exit 0
+          fi
+
+          ORIGIN_URL="https://github.com/${{ github.repository }}.git"
+          AUTH_ORIGIN_URL="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+
+          git remote set-url origin "$AUTH_ORIGIN_URL"
+          trap 'git remote set-url origin "$ORIGIN_URL"' EXIT
+          git push --set-upstream origin "$BRANCH"
+
+      - name: Extract change summary
+        id: changes
+        if: always()
+        shell: bash
+        run: |
+          BRANCH="${{ steps.prompt.outputs.branch }}"
+
+          if git rev-parse --verify "${BRANCH}" > /dev/null 2>&1; then
+            BASE_REF=""
+            for candidate in origin/main main; do
+              if git rev-parse --verify "${candidate}" > /dev/null 2>&1; then
+                BASE_REF="${candidate}"
+                break
+              fi
+            done
+
+            COMMIT_LOG=""
+            if [ -n "$BASE_REF" ]; then
+              COMMIT_LOG="$(git log "${BASE_REF}..${BRANCH}" --format='- %s' 2>/dev/null || true)"
+            fi
+            if [ -z "$COMMIT_LOG" ]; then
+              COMMIT_LOG="$(git log -1 --format='- %s' "${BRANCH}" 2>/dev/null || true)"
+            fi
+            if [ -z "$COMMIT_LOG" ]; then
+              COMMIT_LOG="- (no commit messages available)"
+            fi
+
+            {
+              echo "commits<<COMMITS_EOF"
+              echo "$COMMIT_LOG"
+              echo "COMMITS_EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "commits=- (branch not created)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create pull request
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMITS: ${{ steps.changes.outputs.commits }}
+          ISSUE_NUM: ${{ inputs.issue_number }}
+        run: |
+          BRANCH="${{ steps.prompt.outputs.branch }}"
+          ISSUE_TITLE="$(gh issue view "${ISSUE_NUM}" --repo "${{ github.repository }}" --json title -q .title)"
+
+          # Wait a moment for the push to propagate.
+          sleep 5
+
+          BRANCH_API="${BRANCH//\//%2F}"
+          if gh api "repos/${{ github.repository }}/branches/${BRANCH_API}" --jq .name > /dev/null 2>&1; then
+            echo "Branch ${BRANCH} found, creating PR..."
+            gh pr create \
+              --repo "${{ github.repository }}" \
+              --head "${BRANCH}" \
+              --base main \
+              --title "${ISSUE_TITLE}" \
+              --body "$(printf 'Closes #%s.\n\n## Changes\n%s\n\nAuto-generated by DeepSeek Harness from issue #%s.' "${ISSUE_NUM}" "${COMMITS}" "${ISSUE_NUM}")" \
+              || echo "::warning::Failed to create PR (may already exist or DeepSeek Harness did not push)"
+          else
+            echo "::warning::Branch ${BRANCH} not found — DeepSeek Harness may not have committed successfully"
+          fi
