@@ -38,15 +38,22 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          PR_URL: ${{ github.event.issue.pull_request.url }}
         run: |
           AUTHOR="$ISSUE_AUTHOR"
           if [ "$EVENT" != "issues" ]; then
             AUTHOR="$COMMENT_AUTHOR"
           fi
 
+          IS_PR="false"
+          if [ -n "$PR_URL" ]; then
+            IS_PR="true"
+          fi
+
           echo "number=${ISSUE_NUMBER}" >> "$GITHUB_OUTPUT"
           echo "author=${AUTHOR}" >> "$GITHUB_OUTPUT"
-          echo "::notice::Dispatching DeepSeek Harness for issue #${ISSUE_NUMBER} by @${AUTHOR}"
+          echo "is_pr=${IS_PR}" >> "$GITHUB_OUTPUT"
+          echo "::notice::Dispatching DeepSeek Harness for issue/PR #${ISSUE_NUMBER} by @${AUTHOR}"
 
       - name: Dispatch execute workflow
         if: steps.check.outputs.should_run == 'true'
@@ -55,9 +62,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
           AUTHOR: ${{ steps.issue.outputs.author }}
+          ISSUE_IS_PR: ${{ steps.issue.outputs.is_pr }}
         run: |
           gh workflow run dsh-execute.yml \
             --repo "${{ github.repository }}" \
             -f issue_number="$ISSUE_NUMBER" \
-            -f author="$AUTHOR"
-          echo "::notice::Dispatched DeepSeek Harness execute for issue #${ISSUE_NUMBER}"
+            -f author="$AUTHOR" \
+            -f is_pr="$ISSUE_IS_PR"
+          echo "::notice::Dispatched DeepSeek Harness execute for issue/PR #${ISSUE_NUMBER}"

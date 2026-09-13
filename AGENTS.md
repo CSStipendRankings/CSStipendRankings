@@ -1,9 +1,9 @@
 # AGENTS.md — Rules for DeepSeek Harness in GitHub Actions
 
 These rules apply when DeepSeek Harness is invoked from `.github/workflows/dsh.yml` (i.e.
-when a contributor comments `/dsh` on a stipend data issue). Follow them strictly.
-The submitter is **not** authoritative — verify every figure against primary
-sources before drafting a PR.
+when a contributor comments `/dsh` on a stipend data issue or on an existing PR). Follow
+them strictly. The submitter is **not** authoritative — verify every figure against
+primary sources before drafting a PR.
 
 ## Authoritative sources (read before editing)
 
@@ -15,6 +15,27 @@ sources before drafting a PR.
   records linked in the issue.
 
 If the issue body conflicts with these sources, the sources win.
+
+## Clarifying questions (only when necessary)
+
+If the issue or PR conversation does not make clear **which figure belongs to which
+column**, **what period a number covers**, **what a label means**, or **whether funding
+is guaranteed**, do not guess and do not silently fill in a value.
+
+Write concise, numbered questions to `.dsh-question.md` in the repository root. Include:
+
+- the specific ambiguity;
+- the minimum evidence or answer needed to resolve it; and
+- this exact line so the user knows how to continue:
+
+```text
+Reply with your answers, then comment `/dsh` to re-run.
+```
+
+The workflow will post that file as a comment on the PR (or the issue if no PR exists yet).
+Only use this path when clarification is genuinely necessary. If the missing information is
+small and can be found from the authoritative sources already available to you, find it
+instead of asking.
 
 ## Stipend calculation rules
 
