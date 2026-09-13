@@ -4,12 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: 'Issue number to process'
+        description: 'Issue or pull request number to process'
         required: true
         type: string
       author:
         description: 'GitHub username of the issue author/commenter who triggered this'
         required: true
+        type: string
+      is_pr:
+        description: 'Set to true when the trigger is a pull request conversation'
+        required: false
+        default: 'false'
         type: string
 
 jobs:
@@ -24,10 +29,65 @@ jobs:
       DSH_HOME: /tmp/dsh-home
       DSH_VERSION: 0.1.5-rc.2
     steps:
+      - name: Resolve target
+        id: target
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUM: ${{ inputs.issue_number }}
+          IS_PR: ${{ inputs.is_pr }}
+        run: |
+          echo "blocked=false" >> "$GITHUB_OUTPUT"
+          echo "context=issue" >> "$GITHUB_OUTPUT"
+          echo "branch=" >> "$GITHUB_OUTPUT"
+          echo "checkout_ref=main" >> "$GITHUB_OUTPUT"
+
+          if [ "$IS_PR" = "true" ]; then
+            PR_JSON="$(gh pr view "$ISSUE_NUM" --repo "$GITHUB_REPOSITORY" --json headRefName,headRepositoryOwner,headRepository,isCrossRepository)"
+            PR_BRANCH="$(printf '%s' "$PR_JSON" | jq -r '.headRefName // empty')"
+            HEAD_OWNER="$(printf '%s' "$PR_JSON" | jq -r '.headRepositoryOwner.login // empty')"
+            HEAD_REPO="$(printf '%s' "$PR_JSON" | jq -r '.headRepository.name // empty')"
+            IS_CROSS="$(printf '%s' "$PR_JSON" | jq -r '.isCrossRepository // false')"
+
+            echo "context=pr" >> "$GITHUB_OUTPUT"
+            echo "branch=${PR_BRANCH}" >> "$GITHUB_OUTPUT"
+
+            if [ "$IS_CROSS" = "true" ] || [ "${HEAD_OWNER}/${HEAD_REPO}" != "$GITHUB_REPOSITORY" ]; then
+              echo "blocked=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "checkout_ref=refs/pull/${ISSUE_NUM}/head" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Reject unsupported pull request
+        if: steps.target.outputs.blocked == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUM: ${{ inputs.issue_number }}
+        run: |
+          gh pr comment "$ISSUE_NUM" \
+            --repo "$GITHUB_REPOSITORY" \
+            --body "I can only re-run on branches in this repository. Please comment \`/dsh\` on the original issue instead."
+          exit 1
+
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          ref: ${{ steps.target.outputs.checkout_ref }}
           persist-credentials: false
+
+      - name: Prepare branch
+        id: baseline
+        shell: bash
+        env:
+          IS_PR: ${{ inputs.is_pr }}
+          PR_BRANCH: ${{ steps.target.outputs.branch }}
+        run: |
+          if [ "$IS_PR" = "true" ] && [ -n "$PR_BRANCH" ]; then
+            git checkout -B "$PR_BRANCH"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -40,16 +100,26 @@ jobs:
         env:
           ISSUE_NUM: ${{ inputs.issue_number }}
           AUTHOR: ${{ inputs.author }}
+          IS_PR: ${{ inputs.is_pr }}
+          PR_BRANCH: ${{ steps.target.outputs.branch }}
         run: |
-          TIMESTAMP="$(date -u +%Y%m%d-%H%M%S)"
-          BRANCH="dsh/issue-${ISSUE_NUM}-${TIMESTAMP}"
+          if [ "$IS_PR" = "true" ]; then
+            BRANCH="$PR_BRANCH"
+            PROMPT="Follow the rules in AGENTS.md. Analyze the conversation on pull request #${ISSUE_NUM} and implement the requested changes."
+            PROMPT="${PROMPT} Read the full issue/PR context from .git/dsh-context.json."
+            PROMPT="${PROMPT} You are already on branch '${BRANCH}'. Make your changes directly on this branch and commit them."
+            PROMPT="${PROMPT} Do NOT create a new branch, do NOT push, and do NOT create a pull request — this workflow updates the branch and PR."
+          else
+            BRANCH="dsh/issue-${ISSUE_NUM}-$(date -u +%Y%m%d-%H%M%S)"
+            PROMPT="Follow the rules in AGENTS.md. Analyze and implement the requested changes from issue #${ISSUE_NUM}."
+            PROMPT="${PROMPT} Read the full issue context from .git/dsh-context.json."
+            PROMPT="${PROMPT} Create a branch named '${BRANCH}', make your changes, and commit them."
+            PROMPT="${PROMPT} Do NOT push the branch and do NOT create a pull request — this workflow will push the branch and create the PR."
+          fi
 
-          PROMPT="Follow the rules in AGENTS.md. Analyze and implement the requested changes from issue #${ISSUE_NUM}."
-          PROMPT="${PROMPT} Read the full issue context from .git/dsh-issue-context.json."
-          PROMPT="${PROMPT} Create a branch named '${BRANCH}', make your changes, and commit them."
-          PROMPT="${PROMPT} Do NOT push the branch and do NOT create a pull request — this workflow will push the branch and create the PR."
           PROMPT="${PROMPT} Keep the commit message concise: describe only the key changes, no checklist or meta-instructions."
-          PROMPT="${PROMPT} When committing, include the issue author as co-author: Co-authored-by: ${AUTHOR} <${AUTHOR}@users.noreply.github.com>."
+          PROMPT="${PROMPT} When committing, include the triggering user as co-author: Co-authored-by: ${AUTHOR} <${AUTHOR}@users.noreply.github.com>."
+          PROMPT="${PROMPT} If required data is ambiguous (for example, which figure belongs to which column, or whether funding is guaranteed), do NOT guess. Write concise numbered questions and the minimum evidence needed to .dsh-question.md in the repository root. Include the exact line: Reply with your answers, then comment /dsh to re-run. Only ask when necessary; otherwise implement the change."
 
           {
             echo "prompt<<PROMPT_EOF"
@@ -58,25 +128,39 @@ jobs:
             echo "branch=${BRANCH}"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Fetch issue context
+      - name: Fetch issue or pull request context
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUM: ${{ inputs.issue_number }}
+          IS_PR: ${{ inputs.is_pr }}
         run: |
-          gh issue view "$ISSUE_NUM" \
-            --repo "${{ github.repository }}" \
-            --json title,body,comments > .git/dsh-issue-context.json
+          if [ "$IS_PR" = "true" ]; then
+            gh pr view "$ISSUE_NUM" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json title,body,comments,headRefName,baseRefName,url > .git/dsh-context.json
+          else
+            gh issue view "$ISSUE_NUM" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json title,body,comments,url > .git/dsh-context.json
+          fi
 
       - name: Post working-on comment
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUM: ${{ inputs.issue_number }}
+          IS_PR: ${{ inputs.is_pr }}
         run: |
-          gh issue comment "$ISSUE_NUM" \
-            --repo "${{ github.repository }}" \
-            --body "Starting to work on this with DeepSeek Harness — I'll open a PR shortly."
+          if [ "$IS_PR" = "true" ]; then
+            gh pr comment "$ISSUE_NUM" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body "Starting to work on this PR feedback with DeepSeek Harness — I'll update the branch shortly."
+          else
+            gh issue comment "$ISSUE_NUM" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body "Starting to work on this with DeepSeek Harness — I'll open a PR shortly."
+          fi
 
       - name: Configure git identity
         shell: bash
@@ -108,7 +192,7 @@ jobs:
           npx --yes "@deepseek-ai/dsh@${DSH_VERSION}" --profile headless "$PROMPT"
 
       - name: Push generated branch
-        if: always()
+        if: ${{ always() && steps.target.outputs.blocked != 'true' }}
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -120,8 +204,8 @@ jobs:
             exit 0
           fi
 
-          ORIGIN_URL="https://github.com/${{ github.repository }}.git"
-          AUTH_ORIGIN_URL="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          ORIGIN_URL="https://github.com/${GITHUB_REPOSITORY}.git"
+          AUTH_ORIGIN_URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
           git remote set-url origin "$AUTH_ORIGIN_URL"
           trap 'git remote set-url origin "$ORIGIN_URL"' EXIT
@@ -129,29 +213,17 @@ jobs:
 
       - name: Extract change summary
         id: changes
-        if: always()
+        if: ${{ always() && steps.target.outputs.blocked != 'true' }}
         shell: bash
+        env:
+          BASE_SHA: ${{ steps.baseline.outputs.sha }}
         run: |
           BRANCH="${{ steps.prompt.outputs.branch }}"
 
           if git rev-parse --verify "${BRANCH}" > /dev/null 2>&1; then
-            BASE_REF=""
-            for candidate in origin/main main; do
-              if git rev-parse --verify "${candidate}" > /dev/null 2>&1; then
-                BASE_REF="${candidate}"
-                break
-              fi
-            done
-
-            COMMIT_LOG=""
-            if [ -n "$BASE_REF" ]; then
-              COMMIT_LOG="$(git log "${BASE_REF}..${BRANCH}" --format='- %s' 2>/dev/null || true)"
-            fi
+            COMMIT_LOG="$(git log "${BASE_SHA}..${BRANCH}" --format='- %s' 2>/dev/null || true)"
             if [ -z "$COMMIT_LOG" ]; then
-              COMMIT_LOG="$(git log -1 --format='- %s' "${BRANCH}" 2>/dev/null || true)"
-            fi
-            if [ -z "$COMMIT_LOG" ]; then
-              COMMIT_LOG="- (no commit messages available)"
+              COMMIT_LOG="- (no new commits)"
             fi
 
             {
@@ -163,30 +235,94 @@ jobs:
             echo "commits=- (branch not created)" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create pull request
-        if: always()
+      - name: Open or update pull request
+        id: pr
+        if: ${{ always() && steps.target.outputs.blocked != 'true' }}
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           COMMITS: ${{ steps.changes.outputs.commits }}
           ISSUE_NUM: ${{ inputs.issue_number }}
+          IS_PR: ${{ inputs.is_pr }}
+          BASE_SHA: ${{ steps.baseline.outputs.sha }}
         run: |
+          echo "number=" >> "$GITHUB_OUTPUT"
+          echo "url=" >> "$GITHUB_OUTPUT"
+
+          if [ "$IS_PR" = "true" ]; then
+            echo "number=${ISSUE_NUM}" >> "$GITHUB_OUTPUT"
+            echo "url=https://github.com/${GITHUB_REPOSITORY}/pull/${ISSUE_NUM}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           BRANCH="${{ steps.prompt.outputs.branch }}"
+
+          if ! git rev-parse --verify "${BRANCH}" > /dev/null 2>&1; then
+            echo "::warning::Branch ${BRANCH} not found — DeepSeek Harness did not create a commit"
+            exit 0
+          fi
+
+          if [ "$(git rev-list --count "${BASE_SHA}..${BRANCH}" 2>/dev/null || echo 0)" -eq 0 ]; then
+            echo "::warning::No new commits on ${BRANCH}; not opening a pull request"
+            exit 0
+          fi
+
+          BRANCH_API="${BRANCH//\//%2F}"
+          if ! gh api "repos/${GITHUB_REPOSITORY}/branches/${BRANCH_API}" --jq .name > /dev/null 2>&1; then
+            echo "::warning::Branch ${BRANCH} was not pushed; not opening a pull request"
+            exit 0
+          fi
+
+          EXISTING_PR="$(gh pr list --repo "${GITHUB_REPOSITORY}" --head "${BRANCH}" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$EXISTING_PR" ]; then
+            echo "number=${EXISTING_PR}" >> "$GITHUB_OUTPUT"
+            echo "url=https://github.com/${GITHUB_REPOSITORY}/pull/${EXISTING_PR}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           ISSUE_TITLE="$(gh issue view "${ISSUE_NUM}" --repo "${{ github.repository }}" --json title -q .title)"
 
           # Wait a moment for the push to propagate.
           sleep 5
 
-          BRANCH_API="${BRANCH//\//%2F}"
-          if gh api "repos/${{ github.repository }}/branches/${BRANCH_API}" --jq .name > /dev/null 2>&1; then
-            echo "Branch ${BRANCH} found, creating PR..."
-            gh pr create \
-              --repo "${{ github.repository }}" \
-              --head "${BRANCH}" \
-              --base main \
-              --title "${ISSUE_TITLE}" \
-              --body "$(printf 'Closes #%s.\n\n## Changes\n%s\n\nAuto-generated by DeepSeek Harness from issue #%s.' "${ISSUE_NUM}" "${COMMITS}" "${ISSUE_NUM}")" \
-              || echo "::warning::Failed to create PR (may already exist or DeepSeek Harness did not push)"
+          PR_URL="$(gh pr create \
+            --repo "${{ github.repository }}" \
+            --head "${BRANCH}" \
+            --base main \
+            --title "${ISSUE_TITLE}" \
+            --body "$(printf 'Closes #%s.\n\n## Changes\n%s\n\nAuto-generated by DeepSeek Harness from issue #%s.' "${ISSUE_NUM}" "${COMMITS}" "${ISSUE_NUM}")")" || {
+            echo "::warning::Failed to create PR (may already exist or DeepSeek Harness did not push)"
+            exit 0
+          }
+
+          PR_NUM="${PR_URL##*/}"
+          echo "number=${PR_NUM}" >> "$GITHUB_OUTPUT"
+          echo "url=${PR_URL}" >> "$GITHUB_OUTPUT"
+
+      - name: Post clarifying question
+        if: ${{ always() && steps.target.outputs.blocked != 'true' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          ISSUE_NUM: ${{ inputs.issue_number }}
+        run: |
+          QUESTION_FILE=".dsh-question.md"
+
+          if [ ! -s "$QUESTION_FILE" ]; then
+            exit 0
+          fi
+
+          if ! grep -q '/dsh' "$QUESTION_FILE"; then
+            printf '\n\n---\nReply with your answers, then comment `/dsh` to re-run.\n' >> "$QUESTION_FILE"
+          fi
+
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr comment "$PR_NUMBER" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file "$QUESTION_FILE"
           else
-            echo "::warning::Branch ${BRANCH} not found — DeepSeek Harness may not have committed successfully"
+            gh issue comment "$ISSUE_NUM" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file "$QUESTION_FILE"
           fi

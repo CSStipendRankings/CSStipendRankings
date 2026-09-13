@@ -10,7 +10,7 @@
 
 ### The easiest way: open an issue and `/dsh`
 
-Open the [stipend data issue template](https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose) and describe what you know — a link to your department's funding page, an offer letter or payroll PDF (with personal info redacted), or just the numbers. Then `/dsh` in a comment on the issue, and the [DeepSeek Harness PR Assistant workflow](.github/workflows/dsh.yml) will draft the CSV change as a pull request for maintainers to review. If you have a source document link or can upload a (redacted) copy, we can add a verified checkmark on the website — it's optional, but encouraged.
+Open the [stipend data issue template](https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose) and describe what you know — a link to your department's funding page, an offer letter or payroll PDF (with personal info redacted), or just the numbers. Then `/dsh` in a comment on the issue, and the [DeepSeek Harness PR Assistant workflow](.github/workflows/dsh.yml) will draft the CSV change as a pull request for maintainers to review. If something is genuinely ambiguous, the assistant will ask focused questions on the PR; reply with the answers and comment `/dsh` again to continue. If you have a source document link or can upload a (redacted) copy, we can add a verified checkmark on the website — it's optional, but encouraged.
 
 ### Editing the CSVs directly
 
