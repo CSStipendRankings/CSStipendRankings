@@ -1,0 +1,63 @@
+name: DeepSeek Harness
+
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      issues: write
+    steps:
+      - name: Check if should run
+        id: check
+        shell: bash
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          EVENT="${{ github.event_name }}"
+          if [ "$EVENT" = "issues" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          elif printf '%s\n' "$COMMENT_BODY" | grep -qE '(^|[[:space:]])/(dsh|deepseek)([[:space:]]|$)'; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No /dsh or /deepseek command found, nothing to do."
+          fi
+
+      - name: Extract issue info
+        id: issue
+        if: steps.check.outputs.should_run == 'true'
+        shell: bash
+        env:
+          EVENT: ${{ github.event_name }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+        run: |
+          AUTHOR="$ISSUE_AUTHOR"
+          if [ "$EVENT" != "issues" ]; then
+            AUTHOR="$COMMENT_AUTHOR"
+          fi
+
+          echo "number=${ISSUE_NUMBER}" >> "$GITHUB_OUTPUT"
+          echo "author=${AUTHOR}" >> "$GITHUB_OUTPUT"
+          echo "::notice::Dispatching DeepSeek Harness for issue #${ISSUE_NUMBER} by @${AUTHOR}"
+
+      - name: Dispatch execute workflow
+        if: steps.check.outputs.should_run == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          AUTHOR: ${{ steps.issue.outputs.author }}
+        run: |
+          gh workflow run dsh-execute.yml \
+            --repo "${{ github.repository }}" \
+            -f issue_number="$ISSUE_NUMBER" \
+            -f author="$AUTHOR"
+          echo "::notice::Dispatched DeepSeek Harness execute for issue #${ISSUE_NUMBER}"

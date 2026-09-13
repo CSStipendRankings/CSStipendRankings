@@ -1,7 +1,7 @@
-# AGENTS.md — Rules for OpenCode in GitHub Actions
+# AGENTS.md — Rules for DeepSeek Harness in GitHub Actions
 
-These rules apply when OpenCode is invoked from `.github/workflows/opencode.yml` (i.e.
-when a contributor `/opencode`s on a stipend data issue). Follow them strictly.
+These rules apply when DeepSeek Harness is invoked from `.github/workflows/dsh.yml` (i.e.
+when a contributor comments `/dsh` on a stipend data issue). Follow them strictly.
 The submitter is **not** authoritative — verify every figure against primary
 sources before drafting a PR.
 
