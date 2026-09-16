@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+    <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="preconnect" href="https://dblp.org">
+
+
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"
+        type="text/javascript">
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript">
+
+    <meta name="description" content="How to contribute to CSStipendRankings">
+    <meta name="keywords"
+        content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="citation_title" content="CSRankings">
+    <meta name="citation_author" content="Berger, Emery D.">
+    <meta name="citation_publication_date" content="2020">
+    <meta name="citation_fulltext_html_url" content="https://csrankings.org">
+    <meta name="citation_publisher" content="">
+    <meta name="citation_fulltext_world_readable" content="">
+
+    <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
+
+    <link rel="canonical" href="https://csstipendrankings.org/contributing.html">
+
+    <title>CSStipendRankings: Contributing</title>
+
+    <script defer>
+        var trackOutboundLink = function (url, new_window) {
+            /* Setting a default value for backward compatibility */
+            if (new_window === undefined) {
+                new_window = false;
+            }
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon',
+                'hitCallback':
+                    function () {
+                        if (!new_window) {
+                            document.location = url;
+                        }
+                    }
+            });
+            if (new_window) {
+                window.open(url);
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        type="text/javascript"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TMFP7XV9R8');
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page-header">
+
+            <h1>CSStipendRankings: Contributing</h1>
+            <p>
+                <a href="/index.html">Home</a> &middot;
+                <a href="/methodology.html">Data &amp; Methodology</a> &middot;
+                <a href="/labels.html">Labels &amp; Icons</a> &middot;
+                <a href="/faq.html">FAQs</a>
+            </p>
+            <br>
+
+            <div class="page-footer">
+                <p>
+                    Everyone is welcomed to submit patches or report the stipend via
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull
+                        requests</a> or by opening
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose"
+                        target="_blank">an issue on GitHub</a>.
+                </p>
+
+                <h2>Why we prefer issues</h2>
+                <p>
+                    We encourage submitting datapoints through issues because they facilitate public discussion.
+                    They also let us create a hyperlink on the verified checkmark that directs to the corresponding
+                    issue. In most cases, we will respond to a submitted issue within a few days.
+                </p>
+                <p>
+                    You may also want to read the
+                    <a href="/faq.html" target="_blank">FAQ</a> first &mdash; it covers how data is collected and
+                    which documents we accept.
+                </p>
+
+                <h2>What happens after you submit</h2>
+                <p>
+                    The DeepSeek Harness PR Assistant automatically reviews new issues and drafts CSV changes as a
+                    pull request. You can also trigger a re-run by commenting <code>/dsh</code> (or
+                    <code>/deepseek</code>) on any issue or pull request.
+                </p>
+
+                <h2>Getting a verified checkmark</h2>
+                <p>
+                    Source documents are optional but encouraged &mdash; if you share a link or upload a (redacted)
+                    copy, we can add a verified checkmark on the website. See the FAQ for the
+                    <a href="/faq.html" target="_blank">documents we currently accept</a>, and the
+                    <a href="/labels.html" target="_blank">labels and icons page</a> for what the checkmarks mean.
+                </p>
+
+                <h2>Public discussion</h2>
+                <p>
+                    We believe issues and comments should be discussed and resolved publicly on GitHub for
+                    transparency. If you believe any data is inaccurate or have additional comments, please open an
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose"
+                        target="_blank">issue</a> or a
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull
+                        request</a>. The maintainers will <i>not</i> respond to private messages sent to their
+                    personal or university accounts regarding this website.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
