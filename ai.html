@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+    <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="preconnect" href="https://dblp.org">
+
+
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"
+        type="text/javascript">
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript">
+
+    <meta name="description" content="How CSStipendRankings uses AI, and why AI-generated data may be wrong">
+    <meta name="keywords"
+        content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="citation_title" content="CSRankings">
+    <meta name="citation_author" content="Berger, Emery D.">
+    <meta name="citation_publication_date" content="2020">
+    <meta name="citation_fulltext_html_url" content="https://csrankings.org">
+    <meta name="citation_publisher" content="">
+    <meta name="citation_fulltext_world_readable" content="">
+
+    <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
+
+    <link rel="canonical" href="https://csstipendrankings.org/ai.html">
+
+    <title>CSStipendRankings: AI Usage</title>
+
+    <style type="text/css">
+        .note {
+            font-weight: bold;
+        }
+    </style>
+
+    <script defer>
+        var trackOutboundLink = function (url, new_window) {
+            /* Setting a default value for backward compatibility */
+            if (new_window === undefined) {
+                new_window = false;
+            }
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon',
+                'hitCallback':
+                    function () {
+                        if (!new_window) {
+                            document.location = url;
+                        }
+                    }
+            });
+            if (new_window) {
+                window.open(url);
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        type="text/javascript"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!-- verified icon -->
+    <!--<iconify-icon icon="material-symbols:verified-rounded" style="color: #0197f6;" width="24"></iconify-icon>-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TMFP7XV9R8');
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page-header">
+
+            <h1>CSStipendRankings: AI Usage</h1>
+            <p>
+                <a href="/index.html">Home</a> &middot;
+                <a href="/methodology.html">Data &amp; Methodology</a> &middot;
+                <a href="/labels.html">Labels &amp; Icons</a> &middot;
+                <a href="/contributing.html">Contributing</a> &middot;
+                <a href="/faq.html">FAQs</a>
+            </p>
+            <br>
+
+            <div class="page-footer">
+                <p>
+                    We use AI (large language models) to help review submissions and draft changes to this
+                    website. AI is a tool, not an authority: it can be wrong, and a human maintainer reviews
+                    every change before it is merged. This page explains where AI is used and what to watch
+                    out for.
+                </p>
+
+                <h2>Where we use AI</h2>
+                <ul>
+                    <li>
+                        The <b>DeepSeek Harness PR Assistant</b> reads new issues and drafts CSV changes as a
+                        pull request for maintainers to review. You can trigger a re-run by commenting
+                        <code>/dsh</code> (or <code>/deepseek</code>) on an issue or pull request &mdash; see
+                        <a href="/contributing.html">Contributing</a>.
+                    </li>
+                    <li>
+                        AI also helps write and maintain parts of this website, including the text on these
+                        pages.
+                    </li>
+                    <li>
+                        The assistant is instructed to follow strict rules (12-month, pre-tax figures covering
+                        at least 80% of students) and to ask clarifying questions instead of guessing. It does
+                        not always succeed.
+                    </li>
+                    <li>
+                        AI is never the final decision-maker: a human maintainer reviews and merges every
+                        change that reaches the website.
+                    </li>
+                </ul>
+
+                <h2>AI can be wrong</h2>
+                <p class="note">
+                    AI-generated content may contain errors. Always verify against a primary source before
+                    relying on it.
+                </p>
+                <p>Typical failure modes include:</p>
+                <ul>
+                    <li>Incorrect or invented stipend and fee amounts.</li>
+                    <li>
+                        Figures placed in the wrong column or period (pre- vs. post-qualification, semester vs.
+                        summer, 9- vs. 12-month).
+                    </li>
+                    <li>Stale or dead links, or sources that do not say what the AI claims they say.</li>
+                    <li>
+                        Wrong labels &mdash; for example, marking summer funding as guaranteed when it is not;
+                        see <a href="/labels.html">Labels &amp; Icons</a>.
+                    </li>
+                    <li>Confident, fluent prose that is simply false.</li>
+                </ul>
+                <p>
+                    Even a correct figure may be outdated, or may describe fewer than 80% of students. Treat
+                    every entry as a starting point and check the linked source. See
+                    <a href="/methodology.html">Data &amp; Methodology</a> for how each figure is defined.
+                </p>
+
+                <h2>What this means for you</h2>
+                <p>
+                    Do not use this website as the sole basis for a decision. See the disclaimer on the
+                    <a href="/index.html">home page</a>, and read
+                    <a href="https://csrankings.org/advice.html" target="_blank">CSRankings' advice for
+                        prospective graduate students</a>.
+                </p>
+
+                <h2>Found an AI mistake?</h2>
+                <p>
+                    Please report it. Open an
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose"
+                        target="_blank">issue</a> or a
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull
+                        request</a> with the correction and a primary source &mdash; public reports are the
+                    fastest way to get AI-generated errors fixed. See
+                    <a href="/contributing.html">Contributing</a> for details; the maintainers will
+                    <i>not</i> respond to private messages sent to their personal or university accounts.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
