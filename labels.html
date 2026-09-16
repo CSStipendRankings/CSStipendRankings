@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+    <link rel="preload" as="style" href="css/csrankings.css">
+    <link rel="preload" as="style" href="css/csrankings-extra.css">
+
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="preconnect" href="https://dblp.org">
+
+
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"
+        type="text/javascript">
+    <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript">
+
+    <meta name="description" content="Labels and icons used on CSStipendRankings">
+    <meta name="keywords"
+        content="computer science rankings, best computer science programs, best computer science schools, top computer science schools, top computer science universities, best computer science programs">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="citation_title" content="CSRankings">
+    <meta name="citation_author" content="Berger, Emery D.">
+    <meta name="citation_publication_date" content="2020">
+    <meta name="citation_fulltext_html_url" content="https://csrankings.org">
+    <meta name="citation_publisher" content="">
+    <meta name="citation_fulltext_world_readable" content="">
+
+    <link rel="stylesheet" href="css/csrankings.css">
+    <link rel="stylesheet" href="css/csrankings-extra.css">
+
+    <link rel="canonical" href="https://csstipendrankings.org/labels.html">
+
+    <title>CSStipendRankings: Labels and Icons</title>
+
+    <style type="text/css">
+        .label-entry {
+            margin-bottom: 0.75em;
+        }
+
+        .label-chip {
+            font-variant: small-caps;
+            font-weight: bold;
+        }
+    </style>
+
+    <script defer>
+        var trackOutboundLink = function (url, new_window) {
+            /* Setting a default value for backward compatibility */
+            if (new_window === undefined) {
+                new_window = false;
+            }
+            ga('send', 'event', 'outbound', 'click', url, {
+                'transport': 'beacon',
+                'hitCallback':
+                    function () {
+                        if (!new_window) {
+                            document.location = url;
+                        }
+                    }
+            });
+            if (new_window) {
+                window.open(url);
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+        type="text/javascript"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        type="text/javascript"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!-- verified icon -->
+    <!--<iconify-icon icon="material-symbols:verified-rounded" style="color: #0197f6;" width="24"></iconify-icon>-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TMFP7XV9R8');
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page-header">
+
+            <h1>CSStipendRankings: Labels and Icons</h1>
+            <p>
+                <a href="/index.html">Home</a> &middot;
+                <a href="/methodology.html">Data &amp; Methodology</a> &middot;
+                <a href="/contributing.html">Contributing</a> &middot;
+                <a href="/ai.html">AI Usage</a> &middot;
+                <a href="/faq.html">FAQs</a>
+            </p>
+            <br>
+
+            <div class="page-footer">
+                <p>
+                    The ranking table annotates each institution with small-caps <b>labels</b> and a few
+                    <b>icons</b> that summarize its funding situation. This page explains what each one means.
+                    Labels are drawn from the <code>labels</code> column of
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv"
+                        target="_blank">stipend-us.csv</a>; a tag that is not documented here is ignored by the
+                    website and does nothing.
+                </p>
+
+                <h2>Summer-funding labels</h2>
+                <p>
+                    Exactly one of these is attached to every institution, and it drives the
+                    &ldquo;Summer funding guaranteed?&rdquo; information and the
+                    <em>Guaranteed stipend only</em> ranking mode.
+                </p>
+                <ul>
+                    <li class="label-entry">
+                        <span class="label-chip systems-area">summer-gtd</span> &mdash; summer funding is guaranteed
+                        for at least 80% of PhD students. In <em>Guaranteed stipend only</em> mode, the full annual
+                        stipend is counted as guaranteed.
+                    </li>
+                    <li class="label-entry">
+                        <span class="label-chip systems-area">summer-gtd</span>
+                        (stored in the CSV as <code>summer-partial-gtd=N</code>) &mdash; summer funding is
+                        <em>partially</em> guaranteed. <code>N</code> is the guaranteed annual amount in USD
+                        (an integer, no <code>$</code> or commas). In <em>Guaranteed stipend only</em> mode, the
+                        guaranteed portion <code>N</code> is counted instead of the reported summer amount.
+                    </li>
+                    <li class="label-entry">
+                        <span class="label-chip" style="color:red">summer-no-gtd</span> &mdash; there is no summer
+                        funding guarantee. In <em>Guaranteed stipend only</em> mode, the summer columns are
+                        subtracted from the annual stipend.
+                    </li>
+                    <li class="label-entry">
+                        <code>summer-unknown</code> &mdash; the summer-funding policy could not be confirmed.
+                        This is a placeholder that is <b>not rendered</b> on the website; it simply makes the
+                        missing data explicit in the CSV.
+                    </li>
+                </ul>
+
+                <h2>Other labels</h2>
+                <p>These can be combined freely with the summer-funding label.</p>
+                <ul>
+                    <li class="label-entry">
+                        <span class="label-chip systems-area">varies</span> &mdash; the stipend varies meaningfully
+                        from advisor to advisor or across sub-departments.
+                    </li>
+                    <li class="label-entry">
+                        <span class="label-chip" style="color:red">no-guarantee</span> &mdash; the department does not
+                        guarantee any funding at all (at least for a subset of its enrolled PhD students, where a PhD
+                        student is defined as a graduate student who is required to conduct research under an advisor
+                        to graduate and get a degree). In <em>Guaranteed stipend only</em> mode, the stipend is
+                        treated as <b>$0</b>.
+                        <b>Anyone who can prove this is welcomed and encouraged to submit an issue, and we will add
+                        this label immediately. See the reason
+                        <a href="/faq.html#no-guarantee" target="_blank">here</a>.</b>
+                    </li>
+                    <li class="label-entry">
+                        <span class="label-chip" style="color:red">cpt-fee</span> &mdash; international students in
+                        this department need to pay a fee for their CPT applications that is not already reflected
+                        in the fees column.
+                    </li>
+                    <li class="label-entry">
+                        <span class="label-chip" style="color:red">striking</span> &mdash; the department is currently
+                        under a strike.
+                    </li>
+                    <li class="label-entry">
+                        <code>survey=&lt;URL&gt;</code> &mdash; attaches a survey-link icon next to the institution
+                        name pointing to a stable public survey page (e.g., a department survey-results page).
+                    </li>
+                </ul>
+
+                <h2>Verification and survey icons</h2>
+                <ul>
+                    <li class="label-entry">
+                        <span class="iconify" data-icon="material-symbols:verified-rounded"
+                            style="color: #a9a9a9;"></span>
+                        <b>Gray checkmark</b> &mdash; the stipend is verified for the semesters, but not for the
+                        summer. The icon also serves as a hyperlink to the document used for verification when that
+                        document is publicly accessible (for example, a GitHub issue).
+                    </li>
+                    <li class="label-entry">
+                        <span class="iconify" data-icon="material-symbols:verified-rounded"
+                            style="color: #0197f6;"></span>
+                        <b>Blue checkmark</b> &mdash; the stipend is verified for 12 months. Like the gray
+                        checkmark, it may link to the verification document.
+                    </li>
+                    <li class="label-entry">
+                        <span class="iconify" data-icon="icon-park-solid:file-question"
+                            style="color: #960018;"></span>
+                        <b>Survey icon</b> &mdash; we have a survey for this department. If you are a PhD student
+                        there, please click the icon to fill it in.
+                    </li>
+                </ul>
+
+                <p>
+                    Checkmarks are often applied by our AI assistant rather than by a human, so a checkmark
+                    means that a source document was matched at the time &mdash; not that a person
+                    independently confirmed it. See <a href="/ai.html">AI Usage</a> for what AI can get wrong,
+                    and open the linked document to judge for yourself.
+                </p>
+
+                <h2>How can I add or correct a label?</h2>
+                <p>
+                    Labels are assigned only from evidence in the issue, a linked primary source, or an official
+                    statement &mdash; they are never inferred from third-party news articles. If a label on your
+                    department is wrong or missing, please open an
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose"
+                        target="_blank">issue</a> or a
+                    <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull
+                        request</a> with supporting documentation, or start from the
+                    <a href="/faq.html" target="_blank">FAQ</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

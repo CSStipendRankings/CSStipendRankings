@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="css/csrankings.css">
   <link rel="stylesheet" href="css/csrankings-extra.css">
 
-  <title>CSStipendRankings: CS PhD Stipend Rankings</title>
+  <title>CSStipendRankings: Computer Science PhD Stipend Rankings</title>
 
   <style type="text/css">
     @media (max-width: 768px) {
@@ -219,7 +219,7 @@
     <form id="rankform" name="rankform">
       <div class="page-header">
 
-        <h1>CSStipendRankings: PhD Stipend Rankings</h1>
+        <h1>CSStipendRankings: Computer Science PhD Stipend Rankings</h1>
 
         <div class="panel panel-info">
           <div class="panel-heading">
@@ -233,39 +233,27 @@
               For reviewing individual PhD advisors, please refer to <a href="https://pi-review.com" target="_blank">PI Review</a>.
             </p>
             <p>
+              <b>Stipend</b>, <b>fees</b>, and <b>living cost</b> are what we rank by. Full definitions are on the
+              <a href="/methodology.html" target="_blank">data &amp; methodology page</a>; the short version:
+            </p>
             <ul>
-                <li>Stipend is the minimal amount of <b>pre-tax</b> allowance graciously granted by the institution to its PhD students. 
-                  Currently, we support displaying (1) <em>the stipend received by <a href="/faq.html#:~:text=What's the definition of majority?" target="_blank"><b>the majority</b></a> of students</em>,
-                  (2) <em>the minimal guaranteed stipend</em>, and (3) <em>the stipend that students receive during the semester only</em>.
-                <br>Note that <b>some departments do not have guaranteed summer funding</b>, and we are currently
-                working to collect such data. For now, this data is not complete.
-              </li>
-              <li>Fees are annual non-reimbursible tariffs (including health insurance) reclaimed by said institution. <b>See why health insurance is included in <a href="/faq.html#:~:text=Why is health insurance included in fees?" target="_blank">here.</a></b> If the institution charges a CPT fee or summer enrollment fee for international students, they should also be counted here. <b>In short, this should be the maximum possible fee that the institution charges.</b></li>
-              <li>Living cost is based on the institution's county, using the <a href="https://www.epi.org/resources/budget/" target="_blank">EPI Family Budget Calculator</a> (1 adult, 0 children). See the <a href="/faq.html#why-epi" target="_blank">FAQ</a> for details on our choice of data source.</li>
+              <li><b>Stipend</b> &mdash; the minimal <b>pre-tax</b> allowance granted by the institution to its PhD
+                students. We display the stipend received by <a href="/methodology.html#stipend" target="_blank"><b>the
+                majority</b></a> of students, the minimal guaranteed stipend, and the semester-only stipend.
+                Note that <b>some departments do not have guaranteed summer funding</b>, and this data is not yet complete.</li>
+              <li><b>Fees</b> &mdash; annual non-reimbursible tariffs (including health insurance) reclaimed by the
+                institution; the <b>maximum possible fee</b>, including any CPT or summer enrollment fee for international
+                students. See <a href="/methodology.html#fees" target="_blank">why health insurance is included</a>.</li>
+              <li><b>Living cost</b> &mdash; the <a href="https://www.epi.org/resources/budget/" target="_blank">EPI Family
+                Budget Calculator</a> estimate (1 adult, 0 children) for the institution's county. See
+                <a href="/methodology.html#living-cost" target="_blank">how we compute it</a>.</li>
             </ul>
-            <p>We use the following labels on the website:
-              <ul>
-                <li><span class="areaname systems-area">summer-gtd</span>, indicating summer funding is guaranteed in this department.</li>
-                <li><span class="areaname systems-area">varies</span>, indicating the amount of funding varies from advisor to advisor in this department.</li>
-                <li><span class="areaname" style="color:red">no-guarantee</span>, indicating this department does not guarantee any funding at all (at least for a subset of its enrolled PhD students, where a PhD student is defined as a graduate student who is required to conduct research under an advisor to graduate and get a degree). <b>Anyone who can prove this is welcomed and encouraged to submit an issue, and we will add this label immediately. See the reason <a href="/faq.html#no-guarantee">here</a>.</b></li>
-                <li><span class="areaname" style="color:red">cpt-fee</span>, indicating international students in this department need to pay a fee for their CPT applications.</li>
-                <li><span class="areaname" style="color:red">striking</span>, indicating this department is currently under a strike.</li>
-                <li><span class="iconify" data-icon="material-symbols:verified-rounded" style="color: #a9a9a9;"></span>, indicating the stipend is verified for the semesters, but not for the summer.
-                  This icon also serves as a hyperlink to the document used for verification, if the document is uploaded to a publicly accessible location, such as GitHub issues.
-                </li>
-                <li><span class="iconify" data-icon="material-symbols:verified-rounded" style="color: #0197f6;"></span>, indicating the stipend is verified for 12 months. Similarly, it may be a hyperlink to the document used in verification.
-                <li><span class="iconify" data-icon="icon-park-solid:file-question" style="color: #960018;"></span>, indicating we have a survey for this department. If you are a PhD student at this department,
-			please click the icon to fill it.</li>
-                </li>
-              </ul>
+            <p>
+              Institutions carry <a href="/labels.html" target="_blank"><b>labels and icons</b></a> flagging summer-funding
+              guarantees, funding variability, CPT fees, strikes, and stipend verification &mdash; see the
+              <a href="/labels.html" target="_blank">labels page</a> for what each one means.
             </p>
             <b>We hope you find CSStipendRankings useful towards getting your institution to pay a living wage.</b>
-            </p>
-          <p><b>To raise issues/comments</b>: We believe issues and comments should be discussed and resolved publicly on GitHub for transparency. 
-            <b>If you believe any data is inaccurate or have additional comments,
-            please open an <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose" target="_blank">issue</a> or a <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull request</a>.
-            The maintainers will <i>not</i> respond to private messages sent to their personal or university accounts regarding this website.</b>
-            </p>
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 Rank
@@ -415,62 +403,49 @@
             computer science and related areas are paid for their labor &ndash; <i>inadequately</i>, in most cases.
           </p>
           <p>
-            Most of the frontend code of this website is from <a href="https://csrankings.org/"
-              style="color:inherit; text-decoration: underline;" target="_blank">CSRankings</a>,
-            and we intentionally used the same template. The code of this website can be found at
-            <a
-              href="https://github.com/CSStipendRankings/CSStipendRankings" target="_blank">https://github.com/CSStipendRankings/CSStipendRankings</a>,
-            and the data presented can be found as a CSV file <a
-              href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv" target="_blank">here</a>.
+            <b>Contributing:</b> Everyone is welcomed to submit patches or report the stipend via a
+            <a href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull request</a> or
+            <a href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose" target="_blank">an
+            issue on GitHub</a>. We believe issues and comments should be discussed and resolved publicly on GitHub
+            for transparency, and the maintainers will <i>not</i> respond to private messages sent to their personal
+            or university accounts regarding this website. See
+            <a href="/contributing.html" target="_blank">how to contribute</a> for details.
           </p>
           <p>
-            <b>Contributing:</b> Everyone is welcomed to submit patches or report the stipend via <a
-              href="https://github.com/CSStipendRankings/CSStipendRankings/pulls" target="_blank">pull requests</a> or
-            by opening <a
-              href="https://github.com/CSStipendRankings/CSStipendRankings/issues/new/choose" target="_blank">an issue on GitHub</a>.
-            We encourage submitting datapoints through issues due to its ability to facilitate public discussion. Additionally,
-            it provides the advantage of creating a hyperlink on the checkmark that directs to the corresponding issue. In most cases, we will respond
-            to a submitted issue within a few days.
-            The DeepSeek Harness PR Assistant automatically reviews new issues and drafts CSV changes as a pull request.
-            You can also trigger a re-run by commenting <code>/dsh</code> (or <code>/deepseek</code>) on any issue or pull request. Source documents are
-            optional but encouraged &mdash; if you share a link or upload a (redacted) copy, we can add a verified
-            checkmark on the website.
-          </p>
-          <p>
-            <b>Frequent-Asked Questions:</b> Please see FAQs <a href="/faq.html" target="_blank">here</a>.
+            <b>Learn more:</b> <a href="/methodology.html" target="_blank">Data &amp; Methodology</a> &middot;
+            <a href="/labels.html" target="_blank">Labels &amp; Icons</a> &middot;
+            <a href="/contributing.html" target="_blank">Contributing</a> &middot;
+            <a href="/ai.html" target="_blank">AI Usage</a> &middot;
+            <a href="/faq.html" target="_blank">Frequent-Asked Questions</a>.
           </p>
     <p>
-      <a id="disclaimer" style="color:inherit"><b>Disclaimer:</b> </a>
+      <a id="disclaimer" style="color:inherit; text-decoration: none"><b>Disclaimer:</b> </a>
         CSStipendRankings is designed to highlight stipend situations across various institutions, based on user-submitted information.
         We try our best to verify their accuracy, but we cannot guarantee they are correct or up-to-date. Ultimately, while we hope you find this information useful, <em>this should not be used as the primary basis for grad school decisions</em>. 
-      We advocate users to do their own research before making life decisions.
-    </p>
-  
-    <p class="text-muted"><small>THIS SOFTWARE AND INFORMATION IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
-      ANY EXPRESS OR IMPLIED WARRANTIES,
-      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</small>
+      We advocate users to do their own research before making life decisions. We also encourage students
+      to read <a href="https://csrankings.org/advice.html" target="_blank">CSRankings' advice for prospective
+        graduate students</a>.
     </p>
           <p class="text-muted">
-            <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
-              property="dct:title">CSStipendRankings</span> is licensed under a <a rel="license"
-              href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-              style="color:inherit; text-decoration: underline;" target="_blank">Creative Commons
-              Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
-            The frontend (i.e., CSS and HTML) of this website is based on code licensed from CSRankings, a work at <a
+            The <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
+              property="dct:title">CSStipendRankings</span> frontend (CSS and HTML) is licensed from <a
               xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
-              href="https://github.com/emeryberger/CSrankings" rel="dct:source"
-              style="color:inherit; text-decoration: underline;" target="_blank">https://github.com/emeryberger/CSrankings</a>.
-            The copyright of CSRankings is owned by <a href="https://emeryberger.com/"
-              style="color:inherit; text-decoration: underline;" target="_blank">Emery Berger</a>.
-            The copyright of the non-CSRankings part of CSStipendRankings is owned by its
+              href="https://csrankings.org/" rel="dct:source"
+              style="color:inherit; text-decoration: underline;" target="_blank">CSRankings</a>, a work by
+            <a href="https://emeryberger.com/" style="color:inherit; text-decoration: underline;"
+              target="_blank">Emery Berger</a>. The rest of the site is licensed under <a rel="license"
+              href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+              style="color:inherit; text-decoration: underline;" target="_blank"
+              title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">CC BY-NC-ND 4.0</a>,
+            with copyright owned by its
             <a href="https://github.com/CSStipendRankings/CSStipendRankings/contributors"
-              style="color:inherit; text-decoration: underline;" target="_blank">contributors</a>.
-            <br />
+              style="color:inherit; text-decoration: underline;" target="_blank">contributors</a>. The code is on
+            <a href="https://github.com/CSStipendRankings/CSStipendRankings" target="_blank"
+              style="color:inherit; text-decoration: underline;">GitHub</a> and the data is
+            available as a CSV file <a
+              href="https://github.com/CSStipendRankings/CSStipendRankings/blob/main/stipend-us.csv" target="_blank"
+              style="color:inherit; text-decoration: underline;">here</a>;
+            both are provided "as is", without warranties of any kind.
           </p>
         </div>
       </div>
