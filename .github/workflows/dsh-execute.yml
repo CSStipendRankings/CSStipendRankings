@@ -119,7 +119,7 @@ jobs:
 
           PROMPT="${PROMPT} Keep the commit message concise: describe only the key changes, no checklist or meta-instructions."
           PROMPT="${PROMPT} When committing, include the triggering user as co-author: Co-authored-by: ${AUTHOR} <${AUTHOR}@users.noreply.github.com>."
-          PROMPT="${PROMPT} If required data is ambiguous (for example, which figure belongs to which column, or whether funding is guaranteed), do NOT guess. Write concise numbered questions and the minimum evidence needed to .dsh-question.md in the repository root. Include the exact line: Reply with your answers, then comment /dsh to re-run. Only ask when necessary; otherwise implement the change."
+          PROMPT="${PROMPT} Only raise a clarifying question when one of these is true: (a) the issue/PR conversation contradicts itself, or (b) the evidence you found conflicts with what the issue claims. Do NOT ask about missing optional fields or values the submitter simply omitted — use the documented default or leave the value unverified and note it in the PR description instead. When a real conflict blocks a correct change, do NOT guess: write concise numbered questions and the minimum evidence needed to .dsh-question.md in the repository root. Include the exact line: Reply with your answers, then comment /dsh to re-run. Otherwise implement the change."
 
           {
             echo "prompt<<PROMPT_EOF"

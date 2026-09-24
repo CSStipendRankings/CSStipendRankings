@@ -14,17 +14,35 @@ primary sources before drafting a PR.
 - The institution's official funding / handbook page, offer letters, or payroll
   records linked in the issue.
 
-If the issue body conflicts with these sources, the sources win.
+If the issue body conflicts with these sources, the sources win — but when that conflict
+is material to the row you would write, surface it as a clarifying question (see below)
+instead of silently overriding the submitter.
 
 ## Clarifying questions (only when necessary)
 
-If the issue or PR conversation does not make clear **which figure belongs to which
-column**, **what period a number covers**, **what a label means**, or **whether funding
-is guaranteed**, do not guess and do not silently fill in a value.
+Asking blocks the run and costs the submitter a round-trip, so the bar is high. Raise a
+question **only** when one of these is true:
 
-Write concise, numbered questions to `.dsh-question.md` in the repository root. Include:
+- the issue body, comments, or attachments **contradict each other** (e.g. the narrative
+  says one figure and the linked document says another, or two comments disagree); or
+- the **evidence you found conflicts with what the issue claims** (e.g. the submitter
+  asserts a ≥80% 12-month figure but the linked source shows a different period, amount, or
+  student coverage).
 
-- the specific ambiguity;
+Do **not** ask about anything else:
+
+- **Never ask for a missing optional field** or for a value the submitter simply omitted.
+  Use the documented default (e.g. `summer-unknown`) or leave the value unverified and note
+  it in the PR description.
+- Do not ask when the answer is available in the authoritative sources already in the
+  repository or linked from the issue; look it up instead.
+- Do not ask merely because a figure is ambiguous in isolation — only when the conflict
+  above actually prevents you from writing a correct row.
+
+When, and only when, a real conflict remains after your own research, write concise,
+numbered questions to `.dsh-question.md` in the repository root. Include:
+
+- the specific conflict (quote both sides);
 - the minimum evidence or answer needed to resolve it; and
 - this exact line so the user knows how to continue:
 
@@ -33,9 +51,6 @@ Reply with your answers, then comment `/dsh` to re-run.
 ```
 
 The workflow will post that file as a comment on the PR (or the issue if no PR exists yet).
-Only use this path when clarification is genuinely necessary. If the missing information is
-small and can be found from the authoritative sources already available to you, find it
-instead of asking.
 
 ## Stipend calculation rules
 
