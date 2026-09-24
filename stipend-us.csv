@@ -70,3 +70,4 @@ institution, pre_qual stipend, after_qual stipend, fee, public/private, labels, 
 "Vanderbilt University", 40000, 40000, 0, private, summer-gtd, Unknown, Unknown, No, No
 "George Mason University", 40000, 40000, 0, public, summer-gtd, 10000, 10000, No, No
 "University of Hawai'i at Manoa", 28026, 28026, 934, public, summer-no-gtd, Unknown, Unknown, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/208, Yes https://github.com/CSStipendRankings/CSStipendRankings/pull/208
+"Loyola University Chicago", 34000, 34000, 968, private, summer-unknown, 6000, 6000, Y12 https://www.luc.edu/loyolaforyou/faq/, Y12 https://www.luc.edu/loyolaforyou/faq/
